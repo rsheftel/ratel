@@ -1,0 +1,45 @@
+######################################################################
+##
+## RUnit
+## =====================================
+##
+## inst/NAMESPACE
+## =====================================
+## initialization of classes, namespace, ...
+##
+##
+##
+##
+## Version
+## =====================================
+##  $Id: NAMESPACE,v 1.6 2006/08/16 23:14:31 burgerm Exp $
+##
+##
+######################################################################
+
+import(utils)
+import(methods)
+
+export(".setUp",
+       ".tearDown",
+       "checkTrue",
+       "checkEquals",
+       "checkEqualsNumeric",
+       "checkException",
+       "checkIdentical",
+       "DEACTIVATED",
+       "defineTestSuite",
+       "getErrors",
+       "inspect",
+       "isValidTestSuite",
+       "print.RUnitTestData",
+       "printTextProtocol",
+       "printQuantysProtocol",
+       "printHTMLProtocol",
+       "printHTML.trackInfo",
+       "runTestSuite",
+       "runTestFile",
+       "summary.RUnitTestData",
+       "tracker",
+       "shouldBomb")
+
