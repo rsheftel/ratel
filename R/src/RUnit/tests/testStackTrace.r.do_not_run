@@ -1,0 +1,18 @@
+.setUp <- function() {
+    f <- function() stop("setup failure")
+    f()
+}
+
+.tearDown <- function() {
+    f <- function() stop("teardown failure")
+    f()
+}
+
+testFails <- function() {
+    checkTrue(TRUE)
+    checkTrue(FALSE)
+}
+
+testError <- function() {
+    stop("this is a test error")
+}

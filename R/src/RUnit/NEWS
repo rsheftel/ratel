@@ -1,0 +1,101 @@
+        Dear Emacs, please make this -*-Text-*- mode!
+        **************************************************
+        * 
+        *
+        *       RUnit
+        *
+        * 
+        *
+        **************************************************
+
+Changes in RUnit 0.4.17
+    o   corrected documentation example code
+ 
+Changes in RUnit 0.4.16
+    o   changed the environment test code files are evaluated, now 
+        a new environment outside the RUnit namespace is utilized,
+        allowing e.g. setClass calls without specifying where=.GlobalEnv
+    o   updated documentation to use encoding latin1
+    o   use LazyLoad: yes instead of SaveImage:yes (to be deprecated for R 2.6.0)
+    o   intenal error handler rewritten to be more failure robust
+    o   added new test cases for .setUp and .tearDown, extended tests
+        to cover S4 class and method behaviour in check* functions
+    o   example on S4 virual class testing added
+    o   utility function to compare to RUnitTestResult objects added:
+        concept idea for comparing and optimizing test suite
+        performance (share/R/checkCode.r)
+
+Changes in RUnit 0.4.15
+    o   compatibility to R 1.9.0 as declared in DESCRIPTION: removed calls to isTRUE 
+        as this was introduced only in R 2.1.0, replaced where needed by identical(TRUE, x)
+    o   fixed printHTMLProtocol: on Windows Makeconf does not exist so
+        CC compiler used by R cannot be queried this way (reported by
+        Tobias Verbeke)
+
+Changes in RUnit 0.4.14
+    o   stated all package dependencies in DESCRIPTION, required for R
+        2.4.0 compatibility
+    
+Changes in RUnit 0.4.13
+    o   allow the RNG to be set by the user via new arguments 'rngKind' and 'rngNormalKind' to 
+        functions defineTestSuite and runTestFile (patch by Seth Falcon)
+    o   fixed exit status: RNG kind was left changed after runTestSuite execution in user workspace
+    o   email contact address modified
+
+Changes in RUnit 0.4.12
+    o   allow *.R test case file extension (suggested by Gregor Gorjanc)
+    o   fixed code typo in example vignette (spotted by Gregor Gorjanc)
+
+Changes in RUnit 0.4.11
+    o   checkException: argument silent added to allow to suppress
+        error messages emitted by the failing function
+    o   inspect: added argument track, which _has_ to be provided
+        at each invocation to avoid recursive default argument
+        reference call errors (experimental: subject to change if this
+        leads to new incompatibilities)
+
+Changes in RUnit 0.4.9
+    o   checkEquals has new compatibility argument checkNames
+
+Changes in RUnit 0.4.8
+    o   checkIdentical added, to allow to check for exact identity
+
+Changes in RUnit 0.4.7
+    o   update for checkEqualsNumeric to be compattible with R 2.3.0
+
+Changes in RUnit 0.4.5
+    o   improvements to error detection in runTestSuite
+
+Changes in RUnit 0.4.4
+    o   chaged maintainer
+
+Changes in RUnit 0.4.2
+    o   checkTrue: corrected handling of named logical arguments
+
+Changes in RUnit 0.4.1
+    o   printHTMLProtocol has new parameter 'testFileToLinkMap'
+        to allow to provide a function to add dynamically generated
+        URLs for each test case file, e.g. for use with CVSweb
+
+Changes in RUnit 0.4.0
+
+    o   New 'error' category DEACTIVATED introduced: If the function
+        DEACTIVATED is inserted into a test function the function
+        stops at that point and is reported as deactivated in the test
+        protocol.
+
+    o   New function 'getErrors' which takes a list of type
+        'RUnitTestData' and returns some very basic error information
+        of a test run.
+
+    o   The name of the currently executed test function is written to
+        standard out.
+
+    o   'printHTMLProtocol' fixed such that it does not produce a
+        warning anymore.
+
+    o   Dependency on package 'splines' removed.
+
+    o   Various small fixes of the documentation.
+
+

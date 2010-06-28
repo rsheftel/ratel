@@ -1,0 +1,10 @@
+Package:      Java
+Version:      0.0.1
+Date:         2010/06/23
+Title:        Java Wrapper
+Author:       The Ratel Team <nobody@foo.com>
+Maintainer:   The Ratel Team <nobody@foo.com>
+SaveImage:    yes
+Depends:      rJava
+Description:  Java Wrapper
+License:      Some license...
