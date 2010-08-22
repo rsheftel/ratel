@@ -1,0 +1,11 @@
+Market,System,Interval,Version,PV_Name,HistDaily
+AD.1C,NDayBreak,daily,1.0#,FXBD20,ASCII
+BP.1C,NDayBreak,daily,1.0#,FXBD20,ASCII
+CD.1C,NDayBreak,daily,1.0#,FXBD20,ASCII
+CET21.AA5M,CVE,daily,2.1#,CVEV1,TSDB
+CET21.YUM5M,CVE,daily,2.1#,CVEV1,TSDB
+CL.1C,NDayBreak,daily,1.0#,NRGBD40,ASCII
+EC.1C,NDayBreak,daily,1.0#,FXBD20,ASCII
+FV.1C,NDayBreak,daily,1.0#,BFBD20,ASCII
+FV.1C,NDayBreak,daily,1.0#,BFBD30,ASCII
+USDTRY6MTRI.P1,FXCarry,daily,1.0#,FXCarryV1,TSDB

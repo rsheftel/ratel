@@ -1,0 +1,5 @@
+time_series_name,quote_type,ccy,tenor,quote_side,quote_convention,instrument
+test_sit_rate_10y_mid,close,sit,10y,mid,rate,test
+test_sit_rate_30y_mid,close,sit,30y,mid,rate,test
+test_sit_rate_40y_mid,close,sit,40y,mid,rate,test
+test_sit_rate_40y_mid,close,sit,40y,mid,rate,test

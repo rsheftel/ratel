@@ -1,0 +1,2 @@
+SystemDB..MSIVBacktest:MSIV_Name*,SystemDB..MSIVBacktest:STOid*,SystemDB..MSIVBacktest:RunDate,SystemDB..MSIVBacktest:ValidationAccept
+TEST1_TestSystem1_daily_1.0,STOID1,20080101,TRUE

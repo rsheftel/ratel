@@ -1,0 +1,10 @@
+Package:      QFEquity
+Version:      0.0.1
+Date:         2008/06/16
+Title:        Quantys Fund Equity Analytics
+Author:       The Code Committee <sim_team@malbecpartners.com>
+Maintainer:   The Code Committee <sim_team@malbecpartners.com>
+SaveImage:    yes
+Depends:      GSFCore, GSFAnalytics
+Description:  Quantys Fund Equity Analytics
+License:      This software is owned by it's author and may not be used or copied by anyone without his explicit permission.

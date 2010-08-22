@@ -1,0 +1,7 @@
+#! /bin/sh 
+
+export R_LIBS=../../lib:/tp/R/R-2.5.0/library/
+R CMD INSTALL .
+#tests/create_test_db.sh
+../../scripts/run_tests.r 
+#tests/drop_test_db.sh

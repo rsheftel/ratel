@@ -1,0 +1,10 @@
+Package:      QFMortgage
+Version:      0.0.1
+Date:         2008/02/01
+Title:        Mortgage Classes for Quantys Fund
+Author:       Ryan Sheftel <ryan.sheftel@malbecpartners.com>
+Maintainer:   Ryan Sheftel <ryan.sheftel@malbecpartners.com>
+SaveImage:    yes
+Depends:      R (>= 1.9.0), utils (>= 1.9.0), methods (>= 1.9.0), R.oo (>= 1.2.3), RJDBC(>= 0.1-4), zoo (>= 1.2-1), GSFCore, GSFAnalytics, Java, QFMath, QFPairsTrading
+Description:  Mortgage Classes for Quantys Fund
+License:      This software is owned by it's author and may not be used or copied by anyone without his explicit permission.

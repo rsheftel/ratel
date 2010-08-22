@@ -1,0 +1,10 @@
+Package:      fincad
+Version:      0.0.1
+Date:         2007/07/05
+Title:        R wrapper around fincad
+Author:       Eric Knell <eknell@fftw.com>
+Maintainer:   Eric Knell <eknell@fftw.com>
+SaveImage:    yes
+Depends:      R (>= 1.9.0), R.oo(>= 1.2.3), Core
+Description:  R wrapper around fincad
+License:      This software is owned by it's author and may not be used or copied by anyone without his explicit permission.

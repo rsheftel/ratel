@@ -1,0 +1,3 @@
+SystemDB..PortfolioBacktest:STOdir,SystemDB..PortfolioBacktest:STOid,SystemDB..PortfolioBacktest:PortfolioName,SystemDB..PortfolioBacktest:MSIV_Name,SystemDB..PortfolioBacktest:weight
+NewStoDir,NewID4,Portfolio4,TEST1_TestSystem1_daily_1.0,0.5
+NewStoDir,NewID4,Portfolio4,TEST4_TestSystem1_daily_1.0,0.5

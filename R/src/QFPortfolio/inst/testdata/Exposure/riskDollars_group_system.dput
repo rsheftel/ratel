@@ -1,0 +1,6 @@
+structure(list(group = structure(c(1L, 1L, 2L, 2L, NA), .Label = c("TestExposureSub1", 
+"TestExposureSub2"), class = "factor"), system = structure(c(1L, 
+NA, 2L, NA, NA), .Label = c("TestSystem1", "TestSystem2"), class = "factor"), 
+    riskDollars = c(2500, 2500, 0.02, 0.02, 2500.02)), .Names = c("group", 
+"system", "riskDollars"), class = c("cast_df", "data.frame"), row.names = c(NA, 
+5L))

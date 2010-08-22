@@ -1,0 +1,3 @@
+SystemDB..MSIV:Market,SystemDB..MSIV:System,SystemDB..MSIV:Interval,SystemDB..MSIV:Version,SystemDB..MSIV:Name
+TEST2,TestSystem1,daily,1.0,TEST2_TestSystem1_daily_1.0
+TEST3,TestSystem1,daily,1.0,TEST3_TestSystem1_daily_1.0

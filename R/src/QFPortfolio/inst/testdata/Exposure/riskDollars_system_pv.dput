@@ -1,0 +1,6 @@
+structure(list(system = structure(c(1L, 1L, 1L, 2L, 2L, NA), .Label = c("TestSystem1", 
+"TestSystem2"), class = "factor"), pv = structure(c(1L, 2L, NA, 
+3L, NA, NA), .Label = c("Fast", "Slow", "TestPV3"), class = "factor"), 
+    riskDollars = c(1000, 1500, 2500, 0.02, 0.02, 2500.02)), .Names = c("system", 
+"pv", "riskDollars"), class = c("cast_df", "data.frame"), row.names = c(NA, 
+6L))

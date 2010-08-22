@@ -1,0 +1,2 @@
+PKG_CFLAGS+= -I/tp/fincad/include
+PKG_LIBS+= -L/tp/fincad/lib -lfca

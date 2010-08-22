@@ -1,0 +1,24 @@
+
+l <- function() {
+    library("GSFAnalytics")
+    library("STO")
+    library("RUnit")
+    library("QFPortfolio")
+    library("Live")
+}
+
+TS <- function() {
+    library("GSFCore")
+    if (exists("tsdb", where = globalenv())) return()
+    assign("tsdb", TimeSeriesDB(), pos = globalenv())
+}
+
+zz <- function() { 
+    q("no")
+}
+z <- zz
+g <- zz
+
+options(warning.length = 8170)
+
+print("finished loading $SVN/R/scripts/Rprofile_common")

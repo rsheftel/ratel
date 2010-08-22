@@ -1,0 +1,11 @@
+structure(list(From = structure(c(2002.08333333333, 1998.33333333333, 
+2005.16666666667, 1996.41666666667, 2001.66666666667), class = "yearmon"), 
+    Trough = structure(c(2002.66666666667, 1998.58333333333, 
+    2005.25, 1996.5, 2001.75), class = "yearmon"), To = structure(c(2003.5, 
+    1999.16666666667, 2005.5, 1996.58333333333, 2001.83333333333
+    ), class = "yearmon"), Depth = c(-0.157310541043758, -0.13009220236, 
+    -0.0398284800000001, -0.0304108000000001, -0.0292595999999999
+    ), Length = c(18, 11, 5, 3, 3), "To Trough" = c(8, 4, 2, 
+    2, 2), Recovery = c(10, 7, 3, 1, 1)), .Names = c("From", 
+"Trough", "To", "Depth", "Length", "To Trough", "Recovery"), row.names = c(NA, 
+-5L), class = "data.frame")

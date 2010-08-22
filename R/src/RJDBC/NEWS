@@ -1,0 +1,37 @@
+0.1-5	(under development)
+    *	instantiate driver's class and use a call to 'connect' as a
+	fall-back if the DriverManager fails to find a proper driver.
+
+0.1-4	2007-03-05
+    *	added SQL error information to most JDBC errors
+
+    *	use .jfindClass to load drivers
+
+0.1-3	2007-02-21
+    *	remove beforeFirst() as some DBMS don't like it. This also
+	allows a sequential use of fetch() with a limit to load data
+	in chunks.
+
+    *	fix a bug that caused NULL entries in string columns to fail
+	in fetch()
+
+0.1-2	2007-01-23
+    *	fix dbDisconnect return value and update manuals
+
+0.1-1	2007-01-17
+    *	added pre-compiled statements and proper dbWriteTable
+
+0.1-0	(not released)
+    *	drop pgsql access, switch to DBI
+
+0.0-3	2006-03-05
+    *	add direct insert support for pgsql
+
+0.0-2	2005-10-12
+    *	added converson of tables to data.frames
+
+0.0-1	2005-05-02
+    *	added type conversion (int, double, string)
+
+0.0-0	2004-11-02
+    *	first public release

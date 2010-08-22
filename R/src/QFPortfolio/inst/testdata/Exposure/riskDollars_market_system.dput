@@ -1,0 +1,7 @@
+structure(list(market = structure(c(1L, 1L, 2L, 2L, 3L, 3L, 4L, 
+4L, NA), .Label = c("TEST.SP.1C", "TEST.US.1C", "RE.TEST.TU.1C", 
+"RE.TEST.TY.1C"), class = "factor"), system = structure(c(1L, 
+NA, 1L, NA, 2L, NA, 2L, NA, NA), .Label = c("TestSystem1", "TestSystem2"
+), class = "factor"), riskDollars = c(1750, 1750, 750, 750, 0.01, 
+0.01, 0.01, 0.01, 2500.02)), .Names = c("market", "system", "riskDollars"
+), class = c("cast_df", "data.frame"), row.names = c(NA, 9L))
