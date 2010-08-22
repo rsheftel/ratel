@@ -1,0 +1,10 @@
+Package:      Java2
+Version:      0.0.1
+Date:         2007/12/18
+Title:        Java Wrapper
+Author:       The Code Committee <sim_team@malbecpartners.com>
+Maintainer:   The Code Committee <sim_team@malbecpartners.com>
+SaveImage:    yes
+Depends:      rJava, Core
+Description:  Java Wrapper
+License:      This software is owned by it's author and may not be used or copied by anyone without his explicit permission.

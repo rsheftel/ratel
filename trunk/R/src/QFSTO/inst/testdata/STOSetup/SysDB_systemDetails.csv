@@ -1,0 +1,2 @@
+SystemDB..SystemDetails:system_name,SystemDB..SystemDetails:version,SystemDB..SystemDetails:interval,SystemDB..SystemDetails:sto_dir,SystemDB..SystemDetails:sto_id,SystemDB..SystemDetails:pv_name
+TestSystem1,1.0,daily,NewStoDir,NewID3,

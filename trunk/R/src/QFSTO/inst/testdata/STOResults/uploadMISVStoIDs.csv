@@ -1,0 +1,9 @@
+SystemDB..MSIV:Market*,SystemDB..MSIV:System*,SystemDB..MSIV:Interval*,SystemDB..MSIV:Version*,SystemDB..MSIV:Name*,SystemDB..MSIV:InSampleSTOid,SystemDB..MSIV:OutSampleSTOid
+FV.1C,NBarFade,daily,1.0,FV.1C_NBarFade_daily_1.0,TestSTO_1,NA
+TU.1C,NBarFade,daily,1.0,TU.1C_NBarFade_daily_1.0,TestSTO_1,NA
+TY.1C,NBarFade,daily,1.0,TY.1C_NBarFade_daily_1.0,TestSTO_1,NA
+US.1C,NBarFade,daily,1.0,US.1C_NBarFade_daily_1.0,TestSTO_1,NA
+CL.1C,NBarFade,daily,1.0,CL.1C_NBarFade_daily_1.0,TestSTO_1,NA
+HO.1C,NBarFade,daily,1.0,HO.1C_NBarFade_daily_1.0,TestSTO_1,NA
+NG.1C,NBarFade,daily,1.0,NG.1C_NBarFade_daily_1.0,TestSTO_1,NA
+SP.1C,NBarFade,daily,1.0,SP.1C_NBarFade_daily_1.0,TestSTO_1,NA

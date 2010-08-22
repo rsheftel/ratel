@@ -1,0 +1,10 @@
+Package:      Live
+Version:      0.0.1
+Date:         2007/10/27
+Title:        Live Data Classes for Quantys Fund
+Author:       The Code Committee <sim_team@malbecpartners.com>
+Maintainer:   The Code Committee <sim_team@malbecpartners.com>
+SaveImage:    yes
+Depends:      R (>= 1.9.0), utils (>= 1.9.0), methods (>= 1.9.0), R.oo (>= 1.2.3), RJDBC(>= 0.1-4), zoo (>= 1.2-1), GSFCore, GSFAnalytics, QFCredit,QFEquity,QFFixedIncome, QFFutures, QFFuturesOptions, QFPairsTrading, QFMortgage, QFFX
+Description:  Live Data Classes for Quantys Fund
+License:      This software is owned by it's author and may not be used or copied by anyone without his explicit permission.

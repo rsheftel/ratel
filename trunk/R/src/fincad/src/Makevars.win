@@ -1,0 +1,2 @@
+PKG_CFLAGS+= -IT:/FINCAD/fcml10/include -mno-cygwin
+PKG_LIBS+= -LT:/FINCAD/fcml10/lib -lfca -mno-cygwin -L/usr/lib/mingw

@@ -1,0 +1,6 @@
+SystemDB..MSIVBacktest:MSIV_Name*,SystemDB..MSIVBacktest:STOid*,SystemDB..MSIVBacktest:RunDate,SystemDB..MSIVBacktest:ValidationAccept
+FV.1C_NBarFade_daily_1.0,TestSTO_1,20090405,TRUE
+TU.1C_NBarFade_daily_1.0,TestSTO_1,20090405,TRUE
+TY.1C_NBarFade_daily_1.0,TestSTO_1,20090405,TRUE
+US.1C_NBarFade_daily_1.0,TestSTO_1,20090405,TRUE
+SP.1C_NBarFade_daily_1.0,TestSTO_1,20090405,TRUE

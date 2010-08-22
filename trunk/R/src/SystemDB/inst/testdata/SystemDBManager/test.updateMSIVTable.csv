@@ -1,0 +1,2 @@
+SystemDB..MSIV:Market*,SystemDB..MSIV:System*,SystemDB..MSIV:Interval*,SystemDB..MSIV:Version*,SystemDB..MSIV:Name*,SystemDB..MSIV:InSampleSTOid,SystemDB..MSIV:OutSampleSTOid
+TEST1,TestSystem1,daily,1.0,TEST1_TestSystem1_daily_1.0,123,456

@@ -1,0 +1,4 @@
+System,Strategy,Name,ParameterName,ParameterValue,AsOfDate
+TestSystem1,TestSystem1,Fast,TestParameter1,50,19520105
+TestSystem1,TestSystem1,Slow,TestParameter1,37.5,19520105
+TestSystem2,TestSystem2,TestPV3,TestStrategy3Param1,10,19520105

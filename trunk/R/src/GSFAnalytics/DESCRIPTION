@@ -1,0 +1,10 @@
+Package:      GSFAnalytics
+Version:      0.0.1
+Date:         2007/03/27
+Title:        Analytics Classes for Quantys Fund
+Author:       Quantys Fund
+Maintainer:   Eric Knell <eric.m.knell@gmail.com>
+SaveImage:    yes
+Depends:      R (>= 1.9.0), utils (>= 1.9.0), methods (>= 1.9.0), R.oo (>= 1.2.3), fincad, GSFCore, zoo (>= 1.2-1)
+Description:  Analytics Classes for Global Systematic Fund
+License:      This software is owned by it's author and may not be used or copied by anyone without his explicit permission.

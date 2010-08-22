@@ -1,0 +1,5 @@
+run,TSAvgBarsEvenTrade,TSAvgBarsLosTrade,TSAvgBarWinTrade,TSGrossLoss,TSGrossProfit,TSLargestLosTrade,TSLargestWinTrade,TSMaxConsecLosers,TSMaxConsecWinners,TSMaxContractsHeld,TSClosePositionProfit,TSNumEvenTrades,TSNumLosTrades,TSNumWinTrades,TSPercentProfit,TSTotalTrades,TSTotalBarsEvenTrades,TSTotalBarsLosTrades,TSTotalBarsWinTrades,TSOpenPositionProfit,TSMaxIDDrawDown
+1,0,0,0,-32.3,123.4,0,0,0,0,0,0,0,0,8765,0,0,0,0,0,0,-1234
+2,2,0,0,0,0,0,0,0,0,0,0,0,0,1234567,0,0,0,0,10,0,-9876543
+3,0,0,0,0,0,-2.45,1234,0,0,0,125,0,0,2,0,10,0,0,0,25,0
+1,0,0,0,0,234.5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0

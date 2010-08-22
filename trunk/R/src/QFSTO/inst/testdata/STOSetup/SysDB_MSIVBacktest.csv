@@ -1,0 +1,4 @@
+SystemDB..MSIVBacktest:MSIV_Name,SystemDB..MSIVBacktest:RunDate,SystemDB..MSIVBacktest:STOid,SystemDB..MSIVBacktest:STOdir,SystemDB..MSIVBacktest:StartDate,SystemDB..MSIVBacktest:EndDate,SystemDB..MSIVBacktest:ValidationAccept
+TEST1_TestSystem1_daily_1.0,,NewID3,NewStoDir,19910203,20010405,
+TEST4_TestSystem1_daily_1.0,,NewID3,NewStoDir,19910203,20010405,
+TEST5_TestSystem1_daily_1.0,,NewID3,NewStoDir,19910203,20010405,

@@ -1,0 +1,83 @@
+<html>
+<head>
+        <title>Metric Report</title>
+        <style>body {font: 12px Tahoma}</style>
+
+<!-- include links to the script and stylesheet files -->
+        <script src="../runtime/lib/aw.js"></script>
+        <link href="../runtime/styles/aqua/aw.css" rel="stylesheet"></link>
+
+<style>
+        .aw-row-selector {text-align: center}
+        .aw-column-0 {width: 40px; text-align: right}
+        .aw-grid-cell {border-right: 1px solid threedlightshadow;}
+</style>
+</head>
+<body>
+<script>
+        var num = new AW.Formats.Number;
+        num.setTextFormat("#,###.##");
+
+        createGrid = function(id) {
+            var grid = new AW.Grid.Extended;
+            grid.setId(id);
+            grid.setSelectionMode("single-row");
+            grid.onHeaderClicked = function(e, i) { return true; }; // disable column sorting
+            return(grid);
+        }
+
+        createTable = function(fileName, title) {
+            var name = fileName.replace(/\./, "") + "Grid";
+            var grid = createGrid(name)
+            var table = new AW.CSV.Table;
+            table.grid = grid;
+            grid.setCellModel(table);
+            table.setURL("data/" + fileName + ".csv");
+            table.superResponse = table.response;
+            table.response = function(data) {
+                this.superResponse(data);
+                var colNames = [];
+                var colTypes = [new AW.Formats.String];
+                for(var i = 0; i < this._data[0].length; i++) {
+                    if (i > 0 && table.getData(i, 0) == "") continue;
+                    colNames.push(table.getData(i, 0));
+                    colTypes.push(num);
+                }
+                this._data.shift();
+                this.grid.setRowCount(this.grid.getRowCount() - 1);
+                this.grid.setHeaderText(colNames);
+                this.grid.setColumnCount(colNames.length);
+                this.grid.setCellFormat(colTypes);
+                this.grid.setFixedLeft(1);
+                for(var i = 0; i < this._data[0].length; i++) {
+                    this.grid.getCellTemplate(i).setStyle("text-align", "right");
+                    this.grid.getCellTemplate(i).setStyle("border-bottom", "1px solid #c3c3c3");
+                }
+                this.grid.setStyle("width", "100%")
+                this.grid.setStyle("height", "255px")
+                this.grid.refresh();
+            };
+            table.request();
+            var anchor = escape(title);
+            document.getElementById('#toc').innerHTML += '<li><a href="#' + anchor + '">' + title + '</a></li>';
+            document.getElementById('#content').innerHTML +=
+               '<br/><br/><b><a name="' + anchor + '">' + title + "</a></b><br/><br/>" +
+               '<table width="100%"><tr><td valign="top" width="50%">' + table.grid + '</td><td><img src="data/'+ fileName + '.png" /></td></table><hr/>';
+            return(table);
+        }
+        var main = new AW.CSV.Table;
+        main.setURL("data/byMetric.csv");
+        main.superResponse = main.response;
+        main.response = function(data) {
+            this.superResponse(data);
+            for(var i = 1; i < this.getCount(); i++) {
+                createTable(this.getData(0, i), this.getData(1, i))
+            }
+        }
+        main.request();
+
+</script>
+<div><ul id="#toc" /></div>
+<div id="#content" />
+</body>
+</html>

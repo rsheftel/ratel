@@ -1,0 +1,4 @@
+run,HalfLife,EntryLevel,ExitLevel,ATRLen,InitEquity,FixEquity,Risk,LeadBars
+1,4,10,60,100,1.00E+08,1,0.01,50
+2,6,10,60,100,1.00E+08,1,0.01,50
+3,8,10,60,100,1.00E+08,1,0.01,50
