@@ -1,0 +1,2 @@
+"time_series_name","ccy","instrument","quote_convention","quote_side","quote_type","tenor"
+"test_sit_rate_10y_mid","sit","test","rate","mid","close","10y"
