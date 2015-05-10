@@ -1,0 +1,7 @@
+XLODBC
+1
+DRIVER=SQL Server;SERVER=SQLPRODTS;UID=rsheftel;APP=Microsoft Office 2003;WSID=NYWS012;DATABASE=SystemDB;Network=DBMSSOCN;Address=SQLPRODTS,2433;Trusted_Connection=Yes
+use SystemDB;  select distinct STOid, STOdir, System, Version, Interval  from MSIVBacktest, MSIV  where MSIV_Name = MSIV.Name
+
+
+STOid	STOdir	System	Version	Interval
