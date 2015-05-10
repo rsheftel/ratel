@@ -1,0 +1,28 @@
+# Search Argument
+SA=
+# Data server
+DSN=SQLPRODTS
+# Target file directory
+FD=w:
+# Log file
+LF=c:\systematic\batch\log\loadIvyDBLogSQLPRODTS.txt
+# Script files
+SCR=c:\systematic\SQL
+# Ftp files from source server flag
+FTP=Y
+# Remove primary key flag
+RPM=N
+# Create primary key flag
+CPM=N
+# Ftp server
+SN=ftp.ivydb.com
+# Ftp server working directory 
+DIR=V2.5
+# Ftp server login id
+ID=fftw
+# Ftp server password
+PW=pinal812
+# Maximum number of retry attempts 
+R=24
+# Wait time between retrys (seconds)
+W=600

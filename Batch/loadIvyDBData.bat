@@ -1,0 +1,1 @@
+c:\perl\bin\perl.exe C:\systematic\Perl\loadIvyDBDriver.pl c:\systematic\Batch\propLoadIvyDB.txt

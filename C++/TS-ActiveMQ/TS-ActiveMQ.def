@@ -1,0 +1,9 @@
+LIBRARY	"TS-ActiveMQ"
+
+EXPORTS
+activeMQInitialize
+activeMQUnsubscribe
+activeMQGetString
+activeMQGetDouble
+activeMQSetString
+activeMQSetDouble

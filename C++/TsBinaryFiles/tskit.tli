@@ -1,0 +1,1084 @@
+// Created by Microsoft (R) C/C++ Compiler Version 12.00.8168.0 (da4294f0).
+//
+// tskit.tli
+//
+// Wrapper implementations for Win32 type library C:\Program Files\TradeStation 8.2 (Build 3896)\Program\tskit.dll
+// compiler-generated file created 09/27/07 at 18:42:54 - DO NOT EDIT!
+
+#pragma once
+
+//
+// interface IEasyLanguageObject wrapper method implementations
+//
+
+inline int IEasyLanguageObject::GetMaxBarsBack ( ) {
+    int _result;
+    HRESULT _hr = get_MaxBarsBack(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline int IEasyLanguageObject::GetCurrentBar ( enum EN_DATA_STREAM enDataStream ) {
+    int _result;
+    HRESULT _hr = get_CurrentBar(enDataStream, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline double IEasyLanguageObject::GetOpen ( int nBarsBack ) {
+    double _result;
+    HRESULT _hr = get_Open(nBarsBack, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline double IEasyLanguageObject::GetClose ( int nBarsBack ) {
+    double _result;
+    HRESULT _hr = get_Close(nBarsBack, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline double IEasyLanguageObject::GetLow ( int nBarsBack ) {
+    double _result;
+    HRESULT _hr = get_Low(nBarsBack, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline double IEasyLanguageObject::GetHigh ( int nBarsBack ) {
+    double _result;
+    HRESULT _hr = get_High(nBarsBack, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline IEasyLanguageVariablePtr IEasyLanguageObject::GetVariables ( const _variant_t & v ) {
+    struct IEasyLanguageVariable * _result;
+    HRESULT _hr = get_Variables(v, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IEasyLanguageVariablePtr(_result, false);
+}
+
+inline enum EN_DATA_STREAM IEasyLanguageObject::GetDataStream ( ) {
+    enum EN_DATA_STREAM _result;
+    HRESULT _hr = get_DataStream(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline int IEasyLanguageObject::GetVolume ( int nBarsBack ) {
+    int _result;
+    HRESULT _hr = get_Volume(nBarsBack, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline int IEasyLanguageObject::GetOpenInt ( int nBarsBack ) {
+    int _result;
+    HRESULT _hr = get_OpenInt(nBarsBack, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline IEasyLanguagePricePtr IEasyLanguageObject::GetOpenMD ( enum EN_DATA_STREAM enDataStream ) {
+    struct IEasyLanguagePrice * _result;
+    HRESULT _hr = get_OpenMD(enDataStream, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IEasyLanguagePricePtr(_result, false);
+}
+
+inline IEasyLanguagePricePtr IEasyLanguageObject::GetCloseMD ( enum EN_DATA_STREAM enDataStream ) {
+    struct IEasyLanguagePrice * _result;
+    HRESULT _hr = get_CloseMD(enDataStream, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IEasyLanguagePricePtr(_result, false);
+}
+
+inline IEasyLanguagePricePtr IEasyLanguageObject::GetHighMD ( enum EN_DATA_STREAM enDataStream ) {
+    struct IEasyLanguagePrice * _result;
+    HRESULT _hr = get_HighMD(enDataStream, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IEasyLanguagePricePtr(_result, false);
+}
+
+inline IEasyLanguagePricePtr IEasyLanguageObject::GetLowMD ( enum EN_DATA_STREAM enDataStream ) {
+    struct IEasyLanguagePrice * _result;
+    HRESULT _hr = get_LowMD(enDataStream, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IEasyLanguagePricePtr(_result, false);
+}
+
+inline IEasyLanguagePricePtr IEasyLanguageObject::GetVolumeMD ( enum EN_DATA_STREAM enDataStream ) {
+    struct IEasyLanguagePrice * _result;
+    HRESULT _hr = get_VolumeMD(enDataStream, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IEasyLanguagePricePtr(_result, false);
+}
+
+inline IEasyLanguagePricePtr IEasyLanguageObject::GetOpenIntMD ( enum EN_DATA_STREAM enDataStream ) {
+    struct IEasyLanguagePrice * _result;
+    HRESULT _hr = get_OpenIntMD(enDataStream, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IEasyLanguagePricePtr(_result, false);
+}
+
+inline IEasyLanguageDateTimePtr IEasyLanguageObject::GetDateTimeMD ( enum EN_DATA_STREAM enDataStream ) {
+    struct IEasyLanguageDateTime * _result;
+    HRESULT _hr = get_DateTimeMD(enDataStream, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IEasyLanguageDateTimePtr(_result, false);
+}
+
+inline IEasyLanguagePricePtr IEasyLanguageObject::GetUpTicksMD ( enum EN_DATA_STREAM enDataStream ) {
+    struct IEasyLanguagePrice * _result;
+    HRESULT _hr = get_UpTicksMD(enDataStream, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IEasyLanguagePricePtr(_result, false);
+}
+
+inline IEasyLanguagePricePtr IEasyLanguageObject::GetDownTicksMD ( enum EN_DATA_STREAM enDataStream ) {
+    struct IEasyLanguagePrice * _result;
+    HRESULT _hr = get_DownTicksMD(enDataStream, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IEasyLanguagePricePtr(_result, false);
+}
+
+inline double IEasyLanguageObject::GetDateTime ( int nBarsBack ) {
+    double _result;
+    HRESULT _hr = get_DateTime(nBarsBack, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline int IEasyLanguageObject::GetVariablesCount ( ) {
+    int _result;
+    HRESULT _hr = get_VariablesCount(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline int IEasyLanguageObject::GetTag ( ) {
+    int _result;
+    HRESULT _hr = get_Tag(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IEasyLanguageObject::PutTag ( int pVal ) {
+    HRESULT _hr = put_Tag(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline IEasyLanguagePropertiesPtr IEasyLanguageObject::GetProperties ( ) {
+    struct IEasyLanguageProperties * _result;
+    HRESULT _hr = get_Properties(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IEasyLanguagePropertiesPtr(_result, false);
+}
+
+inline ITradeStationPlatformPtr IEasyLanguageObject::GetPlatform ( ) {
+    struct ITradeStationPlatform * _result;
+    HRESULT _hr = get_Platform(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return ITradeStationPlatformPtr(_result, false);
+}
+
+inline IEasyLanguageErrorsPtr IEasyLanguageObject::GetErrors ( ) {
+    struct IEasyLanguageErrors * _result;
+    HRESULT _hr = get_Errors(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IEasyLanguageErrorsPtr(_result, false);
+}
+
+inline IEasyLanguageSystemPtr IEasyLanguageObject::GetSystem ( ) {
+    struct IEasyLanguageSystem * _result;
+    HRESULT _hr = get_System(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IEasyLanguageSystemPtr(_result, false);
+}
+
+inline IEasyLanguageServerFieldPtr IEasyLanguageObject::GetServerField ( _bstr_t sName, enum EN_DATA_STREAM enDataStream ) {
+    struct IEasyLanguageServerField * _result;
+    HRESULT _hr = get_ServerField(sName, enDataStream, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IEasyLanguageServerFieldPtr(_result, false);
+}
+
+//
+// interface IEasyLanguageVariable wrapper method implementations
+//
+
+inline enum EN_DATA_STREAM IEasyLanguageVariable::GetDataStream ( ) {
+    enum EN_DATA_STREAM _result;
+    HRESULT _hr = get_DataStream(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum enDataType IEasyLanguageVariable::GetDataType ( ) {
+    enum enDataType _result;
+    HRESULT _hr = get_DataType(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline int IEasyLanguageVariable::GetSize ( ) {
+    int _result;
+    HRESULT _hr = get_Size(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IEasyLanguageVariable::GetName ( ) {
+    BSTR _result;
+    HRESULT _hr = get_Name(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline long IEasyLanguageVariable::GetIsSeries ( ) {
+    long _result;
+    HRESULT _hr = get_IsSeries(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _variant_t IEasyLanguageVariable::GetValue ( int nBarsBack ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = get_Value(nBarsBack, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+inline void IEasyLanguageVariable::PutValue ( int nBarsBack, const _variant_t & pVal ) {
+    HRESULT _hr = put_Value(nBarsBack, pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline double IEasyLanguageVariable::GetMin ( ) {
+    double _result;
+    HRESULT _hr = get_Min(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline double IEasyLanguageVariable::GetMax ( ) {
+    double _result;
+    HRESULT _hr = get_Max(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline int IEasyLanguageVariable::GetAsInteger ( int nBarsBack ) {
+    int _result;
+    HRESULT _hr = get_AsInteger(nBarsBack, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IEasyLanguageVariable::PutAsInteger ( int nBarsBack, double pVal ) {
+    HRESULT _hr = put_AsInteger(nBarsBack, pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline double IEasyLanguageVariable::GetAsDouble ( int nBarsBack ) {
+    double _result;
+    HRESULT _hr = get_AsDouble(nBarsBack, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IEasyLanguageVariable::PutAsDouble ( int nBarsBack, double pVal ) {
+    HRESULT _hr = put_AsDouble(nBarsBack, pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline _bstr_t IEasyLanguageVariable::GetAsString ( int nBarsBack ) {
+    BSTR _result;
+    HRESULT _hr = get_AsString(nBarsBack, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline void IEasyLanguageVariable::PutAsString ( int nBarsBack, _bstr_t pVal ) {
+    HRESULT _hr = put_AsString(nBarsBack, pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long IEasyLanguageVariable::GetAsTrueFalse ( int nBarsBack ) {
+    long _result;
+    HRESULT _hr = get_AsTrueFalse(nBarsBack, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IEasyLanguageVariable::PutAsTrueFalse ( int nBarsBack, long pVal ) {
+    HRESULT _hr = put_AsTrueFalse(nBarsBack, pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline double IEasyLanguageVariable::GetAsDateTime ( int nBarsBack ) {
+    double _result;
+    HRESULT _hr = get_AsDateTime(nBarsBack, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IEasyLanguageVariable::PutAsDateTime ( int nBarsBack, double pVal ) {
+    HRESULT _hr = put_AsDateTime(nBarsBack, pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline int IEasyLanguageVariable::GetDimensions ( ) {
+    int _result;
+    HRESULT _hr = get_Dimensions(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline int IEasyLanguageVariable::GetSelectedIndex ( int nIndex ) {
+    int _result;
+    HRESULT _hr = get_SelectedIndex(nIndex, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IEasyLanguageVariable::PutSelectedIndex ( int nIndex, int pVal ) {
+    HRESULT _hr = put_SelectedIndex(nIndex, pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline int IEasyLanguageVariable::GetDimensionSize ( int nIndex ) {
+    int _result;
+    HRESULT _hr = get_DimensionSize(nIndex, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+//
+// interface IEasyLanguagePrice wrapper method implementations
+//
+
+inline enum EN_DATA_STREAM IEasyLanguagePrice::GetDataStream ( ) {
+    enum EN_DATA_STREAM _result;
+    HRESULT _hr = get_DataStream(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum enDataType IEasyLanguagePrice::GetDataType ( ) {
+    enum enDataType _result;
+    HRESULT _hr = get_DataType(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline int IEasyLanguagePrice::GetSize ( ) {
+    int _result;
+    HRESULT _hr = get_Size(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IEasyLanguagePrice::GetName ( ) {
+    BSTR _result;
+    HRESULT _hr = get_Name(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline long IEasyLanguagePrice::GetIsSeries ( ) {
+    long _result;
+    HRESULT _hr = get_IsSeries(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _variant_t IEasyLanguagePrice::GetValue ( int nBarsBack ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = get_Value(nBarsBack, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+inline double IEasyLanguagePrice::GetMin ( ) {
+    double _result;
+    HRESULT _hr = get_Min(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline double IEasyLanguagePrice::GetMax ( ) {
+    double _result;
+    HRESULT _hr = get_Max(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline int IEasyLanguagePrice::GetAsInteger ( int nBarsBack ) {
+    int _result;
+    HRESULT _hr = get_AsInteger(nBarsBack, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline double IEasyLanguagePrice::GetAsDouble ( int nBarsBack ) {
+    double _result;
+    HRESULT _hr = get_AsDouble(nBarsBack, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IEasyLanguagePrice::GetAsString ( int nBarsBack ) {
+    BSTR _result;
+    HRESULT _hr = get_AsString(nBarsBack, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline long IEasyLanguagePrice::GetAsTrueFalse ( int nBarsBack ) {
+    long _result;
+    HRESULT _hr = get_AsTrueFalse(nBarsBack, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline double IEasyLanguagePrice::GetAsDateTime ( int nBarsBack ) {
+    double _result;
+    HRESULT _hr = get_AsDateTime(nBarsBack, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline int IEasyLanguagePrice::GetBarsBack ( ) {
+    int _result;
+    HRESULT _hr = get_BarsBack(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+//
+// interface IEasyLanguageDateTime wrapper method implementations
+//
+
+inline double IEasyLanguageDateTime::GetAsDate ( int nBarsBack ) {
+    double _result;
+    HRESULT _hr = get_AsDate(nBarsBack, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline double IEasyLanguageDateTime::GetAsTime ( int nBarsBack ) {
+    double _result;
+    HRESULT _hr = get_AsTime(nBarsBack, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline double IEasyLanguageDateTime::GetAsDateTime ( int nBarsBack ) {
+    double _result;
+    HRESULT _hr = get_AsDateTime(nBarsBack, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline int IEasyLanguageDateTime::GetYear ( int nBarsBack ) {
+    int _result;
+    HRESULT _hr = get_Year(nBarsBack, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline int IEasyLanguageDateTime::GetMonth ( int nBarsBack ) {
+    int _result;
+    HRESULT _hr = get_Month(nBarsBack, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline int IEasyLanguageDateTime::GetDay ( int nBarsBack ) {
+    int _result;
+    HRESULT _hr = get_Day(nBarsBack, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline int IEasyLanguageDateTime::GetHour ( int nBarsBack ) {
+    int _result;
+    HRESULT _hr = get_Hour(nBarsBack, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline int IEasyLanguageDateTime::GetMinutes ( int nBarsBack ) {
+    int _result;
+    HRESULT _hr = get_Minutes(nBarsBack, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline int IEasyLanguageDateTime::GetSeconds ( int nBarsBack ) {
+    int _result;
+    HRESULT _hr = get_Seconds(nBarsBack, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline int IEasyLanguageDateTime::GetMilliseconds ( int nBarsBack ) {
+    int _result;
+    HRESULT _hr = get_Milliseconds(nBarsBack, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IEasyLanguageDateTime::GetAsString ( int nBarsBack ) {
+    BSTR _result;
+    HRESULT _hr = get_AsString(nBarsBack, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+//
+// interface IEasyLanguageProperties wrapper method implementations
+//
+
+inline _variant_t IEasyLanguageProperties::GetItems ( _bstr_t sPropertyName ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = get_Items(sPropertyName, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+inline void IEasyLanguageProperties::PutItems ( _bstr_t sPropertyName, const _variant_t & pVal ) {
+    HRESULT _hr = put_Items(sPropertyName, pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline _variant_t IEasyLanguageProperties::GetItemsByInteger ( int nPropertyId ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = get_ItemsByInteger(nPropertyId, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+inline void IEasyLanguageProperties::PutItemsByInteger ( int nPropertyId, const _variant_t & pVal ) {
+    HRESULT _hr = put_ItemsByInteger(nPropertyId, pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+//
+// interface ITradeStationPlatform wrapper method implementations
+//
+
+inline enum enPlatformType ITradeStationPlatform::GetPlatformType ( ) {
+    enum enPlatformType _result;
+    HRESULT _hr = get_PlatformType(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline int ITradeStationPlatform::GetCustomerID ( ) {
+    int _result;
+    HRESULT _hr = get_CustomerID(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline int ITradeStationPlatform::GetNetworkID ( ) {
+    int _result;
+    HRESULT _hr = get_NetworkID(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+//
+// interface IEasyLanguageErrors wrapper method implementations
+//
+
+inline int IEasyLanguageErrors::RegisterError ( struct TSRuntimeErrorItem * pErrorItem ) {
+    int _result;
+    HRESULT _hr = raw_RegisterError(pErrorItem, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline HRESULT IEasyLanguageErrors::RaiseRuntimeError ( int nErrorID ) {
+    HRESULT _hr = raw_RaiseRuntimeError(nErrorID);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IEasyLanguageErrors::RaiseRuntimeErrorEx ( int nErrorID, VARIANT * pvParameters ) {
+    HRESULT _hr = raw_RaiseRuntimeErrorEx(nErrorID, pvParameters);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline struct TSRuntimeErrorItem IEasyLanguageErrors::GetLastRuntimeError ( ) {
+    struct TSRuntimeErrorItem _result;
+    HRESULT _hr = get_LastRuntimeError(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+//
+// interface IEasyLanguageSystem wrapper method implementations
+//
+
+inline IELFrameworkArrayPtr IEasyLanguageSystem::GetArray ( ) {
+    struct IELFrameworkArray * _result;
+    HRESULT _hr = get_Array(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IELFrameworkArrayPtr(_result, false);
+}
+
+//
+// interface IELFrameworkArray wrapper method implementations
+//
+
+inline int IELFrameworkArray::New ( int nSize, const _variant_t & vDefaultValue ) {
+    int _result;
+    HRESULT _hr = raw_New(nSize, vDefaultValue, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline HRESULT IELFrameworkArray::SetValue ( int nHandle, int nIndex, const _variant_t & vValue ) {
+    HRESULT _hr = raw_SetValue(nHandle, nIndex, vValue);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline _variant_t IELFrameworkArray::GetValue ( int nHandle, int nIndex ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = raw_GetValue(nHandle, nIndex, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+inline HRESULT IELFrameworkArray::SetValueRange ( int nHandle, int nBegin, int nEnd, const _variant_t & vValue ) {
+    HRESULT _hr = raw_SetValueRange(nHandle, nBegin, nEnd, vValue);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IELFrameworkArray::Copy ( int nSourceHandle, int nDestHandle, int nSourceIndex, int nDestIndex, int nCount ) {
+    HRESULT _hr = raw_Copy(nSourceHandle, nDestHandle, nSourceIndex, nDestIndex, nCount);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline int IELFrameworkArray::Compare ( int nSourceHandle, int nDestHandle, int nSourceIndex, int nDestIndex, int nCount ) {
+    int _result;
+    HRESULT _hr = raw_Compare(nSourceHandle, nDestHandle, nSourceIndex, nDestIndex, nCount, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IELFrameworkArray::IsValidHandle ( int nHandle ) {
+    long _result;
+    HRESULT _hr = raw_IsValidHandle(nHandle, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline HRESULT IELFrameworkArray::Sort ( int nHandle, int nBegin, int nEnd, long bAscending ) {
+    HRESULT _hr = raw_Sort(nHandle, nBegin, nEnd, bAscending);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline double IELFrameworkArray::Sum ( int nHandle, int nBegin, int nEnd ) {
+    double _result;
+    HRESULT _hr = raw_Sum(nHandle, nBegin, nEnd, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum enDataType IELFrameworkArray::GetDataType ( int nHandle ) {
+    enum enDataType _result;
+    HRESULT _hr = get_DataType(nHandle, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline int IELFrameworkArray::GetCount ( int nHandle ) {
+    int _result;
+    HRESULT _hr = get_Count(nHandle, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline HRESULT IELFrameworkArray::Resize ( int nHandle, int nNewSize ) {
+    HRESULT _hr = raw_Resize(nHandle, nNewSize);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IELFrameworkArray::SetIntegerValue ( int nHandle, int nIndex, int nNewValue ) {
+    HRESULT _hr = raw_SetIntegerValue(nHandle, nIndex, nNewValue);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IELFrameworkArray::SetFloatValue ( int nHandle, int nIndex, double dNewValue ) {
+    HRESULT _hr = raw_SetFloatValue(nHandle, nIndex, dNewValue);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline int IELFrameworkArray::GetIntegerValue ( int nHandle, int nIndex ) {
+    int _result;
+    HRESULT _hr = raw_GetIntegerValue(nHandle, nIndex, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline double IELFrameworkArray::GetFloatValue ( int nHandle, int nIndex ) {
+    double _result;
+    HRESULT _hr = raw_GetFloatValue(nHandle, nIndex, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+//
+// interface IEasyLanguageServerField wrapper method implementations
+//
+
+inline enum EN_DATA_STREAM IEasyLanguageServerField::GetDataStream ( ) {
+    enum EN_DATA_STREAM _result;
+    HRESULT _hr = get_DataStream(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum enDataType IEasyLanguageServerField::GetDataType ( ) {
+    enum enDataType _result;
+    HRESULT _hr = get_DataType(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline int IEasyLanguageServerField::GetSize ( ) {
+    int _result;
+    HRESULT _hr = get_Size(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IEasyLanguageServerField::GetName ( ) {
+    BSTR _result;
+    HRESULT _hr = get_Name(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline long IEasyLanguageServerField::GetIsSeries ( ) {
+    long _result;
+    HRESULT _hr = get_IsSeries(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _variant_t IEasyLanguageServerField::GetValue ( int nBarsBack ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = get_Value(nBarsBack, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+inline double IEasyLanguageServerField::GetMin ( ) {
+    double _result;
+    HRESULT _hr = get_Min(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline double IEasyLanguageServerField::GetMax ( ) {
+    double _result;
+    HRESULT _hr = get_Max(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline int IEasyLanguageServerField::GetAsInteger ( int nBarsBack ) {
+    int _result;
+    HRESULT _hr = get_AsInteger(nBarsBack, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline double IEasyLanguageServerField::GetAsDouble ( int nBarsBack ) {
+    double _result;
+    HRESULT _hr = get_AsDouble(nBarsBack, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IEasyLanguageServerField::GetAsString ( int nBarsBack ) {
+    BSTR _result;
+    HRESULT _hr = get_AsString(nBarsBack, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline long IEasyLanguageServerField::GetAsTrueFalse ( int nBarsBack ) {
+    long _result;
+    HRESULT _hr = get_AsTrueFalse(nBarsBack, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline double IEasyLanguageServerField::GetAsDateTime ( int nBarsBack ) {
+    double _result;
+    HRESULT _hr = get_AsDateTime(nBarsBack, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline int IEasyLanguageServerField::GetBarsBack ( ) {
+    int _result;
+    HRESULT _hr = get_BarsBack(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+//
+// interface IEasyLanguageDataElement wrapper method implementations
+//
+
+inline enum EN_DATA_STREAM IEasyLanguageDataElement::GetDataStream ( ) {
+    enum EN_DATA_STREAM _result;
+    HRESULT _hr = get_DataStream(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum enDataType IEasyLanguageDataElement::GetDataType ( ) {
+    enum enDataType _result;
+    HRESULT _hr = get_DataType(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline int IEasyLanguageDataElement::GetSize ( ) {
+    int _result;
+    HRESULT _hr = get_Size(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IEasyLanguageDataElement::GetName ( ) {
+    BSTR _result;
+    HRESULT _hr = get_Name(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline long IEasyLanguageDataElement::GetIsSeries ( ) {
+    long _result;
+    HRESULT _hr = get_IsSeries(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+//
+// interface IEasyLanguageVector wrapper method implementations
+//
+
+inline _variant_t IEasyLanguageVector::GetValue ( int nBarsBack ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = get_Value(nBarsBack, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+inline void IEasyLanguageVector::PutValue ( int nBarsBack, const _variant_t & pVal ) {
+    HRESULT _hr = put_Value(nBarsBack, pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline double IEasyLanguageVector::GetMin ( ) {
+    double _result;
+    HRESULT _hr = get_Min(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline double IEasyLanguageVector::GetMax ( ) {
+    double _result;
+    HRESULT _hr = get_Max(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline int IEasyLanguageVector::GetAsInteger ( int nBarsBack ) {
+    int _result;
+    HRESULT _hr = get_AsInteger(nBarsBack, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IEasyLanguageVector::PutAsInteger ( int nBarsBack, double pVal ) {
+    HRESULT _hr = put_AsInteger(nBarsBack, pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline double IEasyLanguageVector::GetAsDouble ( int nBarsBack ) {
+    double _result;
+    HRESULT _hr = get_AsDouble(nBarsBack, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IEasyLanguageVector::PutAsDouble ( int nBarsBack, double pVal ) {
+    HRESULT _hr = put_AsDouble(nBarsBack, pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline _bstr_t IEasyLanguageVector::GetAsString ( int nBarsBack ) {
+    BSTR _result;
+    HRESULT _hr = get_AsString(nBarsBack, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline void IEasyLanguageVector::PutAsString ( int nBarsBack, _bstr_t pVal ) {
+    HRESULT _hr = put_AsString(nBarsBack, pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long IEasyLanguageVector::GetAsTrueFalse ( int nBarsBack ) {
+    long _result;
+    HRESULT _hr = get_AsTrueFalse(nBarsBack, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IEasyLanguageVector::PutAsTrueFalse ( int nBarsBack, long pVal ) {
+    HRESULT _hr = put_AsTrueFalse(nBarsBack, pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline double IEasyLanguageVector::GetAsDateTime ( int nBarsBack ) {
+    double _result;
+    HRESULT _hr = get_AsDateTime(nBarsBack, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IEasyLanguageVector::PutAsDateTime ( int nBarsBack, double pVal ) {
+    HRESULT _hr = put_AsDateTime(nBarsBack, pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+//
+// interface IEasyLanguageReadOnlyVector wrapper method implementations
+//
+
+inline _variant_t IEasyLanguageReadOnlyVector::GetValue ( int nBarsBack ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = get_Value(nBarsBack, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+inline double IEasyLanguageReadOnlyVector::GetMin ( ) {
+    double _result;
+    HRESULT _hr = get_Min(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline double IEasyLanguageReadOnlyVector::GetMax ( ) {
+    double _result;
+    HRESULT _hr = get_Max(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline int IEasyLanguageReadOnlyVector::GetAsInteger ( int nBarsBack ) {
+    int _result;
+    HRESULT _hr = get_AsInteger(nBarsBack, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline double IEasyLanguageReadOnlyVector::GetAsDouble ( int nBarsBack ) {
+    double _result;
+    HRESULT _hr = get_AsDouble(nBarsBack, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IEasyLanguageReadOnlyVector::GetAsString ( int nBarsBack ) {
+    BSTR _result;
+    HRESULT _hr = get_AsString(nBarsBack, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline long IEasyLanguageReadOnlyVector::GetAsTrueFalse ( int nBarsBack ) {
+    long _result;
+    HRESULT _hr = get_AsTrueFalse(nBarsBack, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline double IEasyLanguageReadOnlyVector::GetAsDateTime ( int nBarsBack ) {
+    double _result;
+    HRESULT _hr = get_AsDateTime(nBarsBack, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline int IEasyLanguageReadOnlyVector::GetBarsBack ( ) {
+    int _result;
+    HRESULT _hr = get_BarsBack(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+//
+// interface IEasyLanguageEvent wrapper method implementations
+//
+
+inline HRESULT IEasyLanguageEvent::AddDLLFunction ( _bstr_t bstrDLLName, _bstr_t bstrFunctionName ) {
+    HRESULT _hr = raw_AddDLLFunction(bstrDLLName, bstrFunctionName);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline int IEasyLanguageEvent::GetCount ( ) {
+    int _result;
+    HRESULT _hr = get_Count(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline HRESULT IEasyLanguageEvent::InvokeEvent ( int nIndex, VARIANT * pvParams, VARIANT * pvRet ) {
+    HRESULT _hr = raw_InvokeEvent(nIndex, pvParams, pvRet);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IEasyLanguageEvent::AddMethod ( int nObjectThis, int nMethodAddress ) {
+    HRESULT _hr = raw_AddMethod(nObjectThis, nMethodAddress);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IEasyLanguageEvent::Execute ( VARIANT * pvParams, VARIANT * pvRetVal ) {
+    HRESULT _hr = raw_Execute(pvParams, pvRetVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}

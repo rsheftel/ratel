@@ -1,0 +1,10 @@
+DESCRIPTION	'Demonstration DLL Code Library'
+
+
+EXPORTS		
+			writeToCurveFile
+			writeToTradeCurveFile
+			closeCurveFile
+
+		
+

@@ -1,0 +1,9 @@
+LIBRARY	"TS-Gissing"
+
+EXPORTS
+gissingInitialize
+gissingUnsubscribe
+gissingGetString
+gissingGetDouble
+gissingSetString
+gissingSetDouble

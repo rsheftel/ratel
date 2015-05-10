@@ -1,0 +1,23 @@
+HKCR
+{
+	TsTestSupplier.TestSupplier.1 = s 'TestSupplier Class'
+	{
+		CLSID = s '{1BD005FD-6FB8-41d1-BD29-72CBEBFE33B2}'
+	}
+	TsTestSupplier.TestSupplier = s 'TestSupplier Class'
+	{
+		CLSID = s '{1BD005FD-6FB8-41d1-BD29-72CBEBFE33B2}'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {1BD005FD-6FB8-41d1-BD29-72CBEBFE33B2} = s 'TestSupplier Class'
+		{
+			ProgID = s 'TsTestSupplier.TestSupplier.1'
+			VersionIndependentProgID = s 'TsTestSupplier.TestSupplier'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'both'
+			}
+		}
+	}
+}

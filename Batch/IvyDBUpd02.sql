@@ -1,0 +1,107 @@
+-------------------------------
+PRINT 'Updating SECURITY_PRICE'
+DELETE O FROM SECURITY_PRICE O
+WHERE EXISTS (SELECT 1 FROM SECURITY_PRICE_TEMP T
+    WHERE T.SecurityID = O.SecurityID
+    AND T.Date = O.Date 
+)
+
+INSERT SECURITY_PRICE
+SELECT * FROM SECURITY_PRICE_TEMP T
+WHERE NOT EXISTS (SELECT 1 FROM SECURITY_PRICE O
+    WHERE T.Date = O.Date and T.SecurityID = O.SecurityID)
+GO
+-------------------------------
+PRINT 'Updating OPTION_PRICE'
+DELETE O FROM OPTION_PRICE O
+WHERE EXISTS (SELECT 1 FROM OPTION_PRICE_TEMP T
+    WHERE T.Root = O.Root 
+    AND T.Date = O.Date 
+    and T.Suffix = O.Suffix)
+
+INSERT OPTION_PRICE
+SELECT * FROM OPTION_PRICE_TEMP T
+WHERE NOT EXISTS (SELECT 1 FROM OPTION_PRICE O
+    WHERE T.Date = O.Date and T.Root = O.Root and T.Suffix = O.Suffix)
+GO
+--------------------------------
+PRINT 'Updating STD_OPTION_PRICE'
+DELETE O FROM STD_OPTION_PRICE O
+WHERE EXISTS (SELECT 1 FROM STD_OPTION_PRICE_TEMP T
+    WHERE T.SecurityID = O.SecurityID
+    AND T.Date = O.Date 
+    and T.Days = O.Days
+    and T.CallPut = O.CallPut)
+
+INSERT STD_OPTION_PRICE
+SELECT * FROM STD_OPTION_PRICE_TEMP T
+WHERE NOT EXISTS (SELECT 1 FROM STD_OPTION_PRICE O
+    WHERE T.Date = O.Date and T.SecurityID = O.SecurityID and T.Days = O.Days
+    and T.CallPut = O.CallPut)
+GO
+--------------------------------
+PRINT 'Updating VOLATILITY_SURFACE'
+DELETE O FROM VOLATILITY_SURFACE O
+WHERE EXISTS (SELECT 1 FROM VOLATILITY_SURFACE_TEMP T
+    WHERE T.Date = O.Date 
+    and T.SecurityID = O.SecurityID
+    and T.Days = O.Days
+    and T.Delta = O.Delta)
+
+INSERT VOLATILITY_SURFACE
+SELECT * FROM VOLATILITY_SURFACE_TEMP T
+WHERE NOT EXISTS (SELECT 1 FROM VOLATILITY_SURFACE O
+    WHERE T.Date = O.Date and T.SecurityID = O.SecurityID
+         and T.Days = O.Days and T.Delta = O.Delta)
+GO
+--------------------------------
+PRINT 'Updating OPTION_VOLUME'
+DELETE O FROM OPTION_VOLUME O
+WHERE EXISTS (SELECT 1 FROM OPTION_VOLUME_TEMP T
+    WHERE T.SecurityID = O.SecurityID 
+    AND T.Date = O.Date 
+    and T.CallPut = O.CallPut)
+
+INSERT OPTION_VOLUME
+SELECT * FROM OPTION_VOLUME_TEMP T
+WHERE NOT EXISTS (SELECT 1 FROM OPTION_VOLUME O
+    WHERE T.SecurityID = O.SecurityID AND T.Date = O.Date and T.CallPut = O.CallPut)
+GO
+--------------------------------
+PRINT 'Updating HISTORICAL_VOLATILITY'
+DELETE O FROM HISTORICAL_VOLATILITY O
+WHERE EXISTS (SELECT 1 FROM HISTORICAL_VOLATILITY_TEMP T
+    WHERE T.Date = O.Date 
+    and T.SecurityID = O.SecurityID
+    and T.Days = O.Days)
+
+INSERT HISTORICAL_VOLATILITY
+SELECT * FROM HISTORICAL_VOLATILITY_TEMP T
+WHERE NOT EXISTS (SELECT 1 FROM HISTORICAL_VOLATILITY O
+    WHERE T.Date = O.Date and T.SecurityID = O.SecurityID
+         and T.Days = O.Days)
+GO
+--------------------------------
+PRINT 'Updating INDEX_DIVIDEND'
+DELETE O FROM INDEX_DIVIDEND O
+WHERE EXISTS (SELECT 1 FROM INDEX_DIVIDEND_TEMP T
+    WHERE T.Date = O.Date 
+    and T.SecurityID = O.SecurityID)
+
+INSERT INDEX_DIVIDEND
+SELECT * FROM INDEX_DIVIDEND_TEMP T
+WHERE NOT EXISTS (SELECT 1 FROM INDEX_DIVIDEND O
+    WHERE T.Date = O.Date and T.SecurityID = O.SecurityID)
+GO
+--------------------------------
+PRINT 'Updating ZERO_CURVE'
+DELETE O FROM ZERO_CURVE O
+WHERE EXISTS (SELECT 1 FROM ZERO_CURVE_TEMP T
+    WHERE T.Date = O.Date 
+    and T.Days = O.Days)
+
+INSERT ZERO_CURVE
+SELECT * FROM ZERO_CURVE_TEMP T
+WHERE NOT EXISTS (SELECT 1 FROM ZERO_CURVE O
+    WHERE T.Date = O.Date and T.Days = O.Days)
+GO

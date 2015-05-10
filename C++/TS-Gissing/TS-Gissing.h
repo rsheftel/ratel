@@ -1,0 +1,1 @@
+const char * __stdcall getGissingString(const char * templateName, const char * record, const char * field);
