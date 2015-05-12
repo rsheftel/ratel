@@ -1,6 +1,6 @@
 cat("\n\nTest cases for Utils module\n\n")
 
-library("Core")
+library("GSFCore")
 
 testArrayApply <- function() {
     target <- structure(c("a d g 1", "b d g 2", "c d g 3", "a e g 4", "b e g 5",

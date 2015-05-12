@@ -1,0 +1,59 @@
+Type=OleDll
+Reference=*\G{00020430-0000-0000-C000-000000000046}#2.0#0#..\WINDOWS\system32\stdole2.tlb#OLE Automation
+Reference=*\G{18C8B666-81A2-11D3-9254-00E09812F727}#1.0#0#..\Program Files\R\(D)COM Server\tlb\StatConnectorClnt.tlb#StatConnectorClnt 1.0 Type Library
+Reference=*\G{18C8B661-81A2-11D3-9254-00E09812F727}#1.1#0#..\Program Files\R\(D)COM Server\bin\StatConnectorSrv.exe#StatConnectorSrv 1.1 Type Library
+Reference=*\G{FF4BDFC0-C1F9-42F2-A0F8-6BADA08E8B98}#1.0#0#..\Program Files\vbAdvance\vbAdvance.tlb#vbAdvance Type Library
+Reference=*\G{7CEEB6F0-D59E-11D3-8394-00C04F7BDF10}#1.0#0#..\Program Files\TradeStation 8.2 (Build 3896)\Program\tskit.dll#tskit 1.0 Type Library
+Module=modExport; Modules\modExport.bas
+Module=modRuntime; Modules\modRuntime.bas
+Class=clsRuntime; Classes\clsRuntime.cls
+Module=modLogger; Modules\modLogger.bas
+Startup="(None)"
+HelpFile=""
+NoControlUpgrade=1
+Title="RDCOMInterface"
+ExeName32="RInterface.dll"
+Path32="..\WINDOWS\system32"
+Command32=""
+Name="RInterface"
+HelpContextID="0"
+CompatibleMode="0"
+CompatibleEXE32="exports.cmp"
+MajorVer=1
+MinorVer=0
+RevisionVer=0
+AutoIncrementVer=0
+ServerSupportFiles=0
+VersionCompanyName="Malbec Partners"
+CompilationType=0
+OptimizationType=0
+FavorPentiumPro(tm)=0
+CodeViewDebugInfo=0
+NoAliasing=0
+BoundsCheck=0
+OverflowCheck=0
+FlPointCheck=0
+FDIVCheck=0
+UnroundedFP=0
+StartMode=1
+Unattended=0
+Retained=0
+ThreadPerObject=0
+MaxNumberOfThreads=1
+DebugStartupOption=0
+
+[vbAdvance]
+Exports=R_Test=R_Test=True;R_CloseConnection=R_CloseConnection=True;R_GetSymbol=R_GetSymbol=True;R_SetSymbol=R_SetSymbol=True;R_EvaluateNoReturn=R_EvaluateNoReturn=True;R_Evaluate=R_Evaluate=True;R_OpenConnection=R_OpenConnection=True;DllMain=DllMain=True;
+IsConsole=0
+HasStubFile=0
+GenerateMap=0
+TSAware=0
+XPManifest=0
+ResBuildName=..\WINDOWS\system32\exports.dll
+ReplaceIcon=0
+SendCommandArgs=0
+SymbDbgPref=0
+RevisionVersion=0
+
+[MS Transaction Server]
+AutoRefresh=1

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<!-- Configuration for Fix Execution Router (FER) -->
+
+	<!-- Global (reused) configuration items first -->
+	<bean id="GlobalEmailSettings" class="malbec.util.EmailSettings">
+		<constructor-arg>
+			<props>
+				<prop key="mail.to">${mail.to}</prop>
+				<prop key="mail.from">${mail.from.ironhawk}</prop>
+				<prop key="mail.host">${mail.host}</prop>
+			</props>
+		</constructor-arg>
+	</bean>
+		
+</beans>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<!-- Configuration for Ferret Schedule -->
+
+	<bean id="FerretSchedule" class="malbec.fer.FerretSchedule">
+		<constructor-arg>
+			<props>
+				<prop key="ActiveModeStart">${ferret.schedule.activemodestart}</prop>
+				<prop key="ActiveModeEnd">${ferret.schedule.activemodeend}</prop>
+				<prop key="StagedModeStart">${ferret.schedule.stagedmodestart}</prop>
+				<prop key="StagedModeEnd">${ferret.schedule.stagedmodeend}</prop>
+				<prop key="TicketModeStart">${ferret.schedule.ticketmodestart}</prop>
+				<prop key="TicketModeEnd">${ferret.schedule.ticketmodeend}</prop>
+				<prop key="DMAModeStart">${ferret.schedule.dmamodestart}</prop>
+				<prop key="DMAModeEnd">${ferret.schedule.dmamodeend}</prop>
+			</props>
+		</constructor-arg>
+	</bean>
+</beans>

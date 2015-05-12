@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FixExecutionAddin", "FixExecutionAddin\FixExecutionAddin.csproj", "{0A9208C3-07DE-4826-A240-CA0B57E4F74D}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Feret Excel Setup", "Feret Excel Setup\Feret Excel Setup.vdproj", "{8644AAF3-C903-47DC-96CE-F2642D96C623}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0A9208C3-07DE-4826-A240-CA0B57E4F74D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A9208C3-07DE-4826-A240-CA0B57E4F74D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A9208C3-07DE-4826-A240-CA0B57E4F74D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A9208C3-07DE-4826-A240-CA0B57E4F74D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8644AAF3-C903-47DC-96CE-F2642D96C623}.Debug|Any CPU.ActiveCfg = Debug
+		{8644AAF3-C903-47DC-96CE-F2642D96C623}.Debug|Any CPU.Build.0 = Debug
+		{8644AAF3-C903-47DC-96CE-F2642D96C623}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

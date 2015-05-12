@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product Id="b37fc105-f546-4499-9141-57891b79e7f4" Name="RediToActiveMQSetup" Language="1033" Version="1.0.0.0" 
+			 Manufacturer="Malbec Partners" UpgradeCode="2d32a87a-5303-4284-8550-900fcaa9729c">
+		<Package InstallerVersion="200" Compressed="yes" />
+
+		<Media Id="1" Cabinet="media1.cab" EmbedCab="yes" />
+
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+				<Directory Id="INSTALLLOCATION" Name="RediToActiveMQ">
+					<!-- TODO: Remove the comments around this Component element and the ComponentRef 
+					below in order to add resources to this installer. -->
+					<Component Id="ProductComponent" Guid="2777f1d2-cd1f-46ce-90fd-5133ce9953d6">
+						<File Id="RediToActiveMQEXE" Name="RediToActiveMQ.exe" Source="..\RediToActiveMQ\bin\Debug\RediToActiveMQ.exe" >
+							<Shortcut Id="startmenuRediToActiveMQ" Directory="ProgramMenuDir" Name="RediToActiveMQ" 
+									  WorkingDirectory='INSTALLDIR' IconIndex="0" />
+							<!-- <Shortcut Id="desktopRediToActiveMQ" Directory="DesktopFolder" Name="RediToActiveMQ" 
+									  WorkingDirectory='INSTALLDIR' IconIndex="0" />-->
+						</File>
+					</Component>
+					<Component Id="RediToActiveMQConfig" Guid="BB8501FE-5EEA-48c3-83A2-D800A4A3A720">
+						<File Id="RediToActiveMQEXEConfig" Name="RediToActiveMQ.exe.config" 
+							  Source="..\RediToActiveMQ\bin\Debug\RediToActiveMQ.exe.config" />
+					</Component>
+					<Component Id="Log4NetLibrary" Guid="43AC048B-1561-4f26-9F77-56A11E97B792">
+						<File Id="Log4NetDLL" Name="log4net.dll" Source="..\RediToActiveMQ\bin\Debug\log4net.dll" />
+					</Component>
+					<Component Id="NmsLibrary" Guid="3FA883C2-4DDC-4c15-80CB-DBB05E208CF7">
+						<File Id="NmsDLL" Name="Apache.NMS.dll" Source="..\RediToActiveMQ\bin\Debug\Apache.NMS.dll" />
+					</Component>
+					<Component Id="NmsActiveMQLibrary" Guid="3F9A89E6-2616-4632-B8B8-3C79BD3E33C4">
+						<File Id="NmsActiveMQDLL" Name="Apache.NMS.ActiveMQ.dll" Source="..\RediToActiveMQ\bin\Debug\Apache.NMS.ActiveMQ.dll" />
+					</Component>
+					<Component Id="RediLibrary" Guid="B13D806B-E785-4837-8B85-00A575FC3770">
+						<File Id="RediDLL" Name="Interop.RediLib.dll" Source="..\RediToActiveMQ\bin\Debug\Interop.RediLib.dll" />
+					</Component>
+				</Directory>
+			</Directory>
+			<Directory Id="ProgramMenuFolder" Name="PMenu">
+				<Directory Id="ProgramMenuDir" Name='RediToActiveMQ' />
+			</Directory>
+			<Directory Id="DesktopFolder" Name="Desktop" />
+		</Directory>
+
+		<Feature Id="ProductFeature" Title="RediToActiveMQ" Level="1">
+			<!-- TODO: Remove the comments around this ComponentRef element and the Component above in order to add resources to this installer. -->
+			<ComponentRef Id="ProductComponent" />
+			<ComponentRef Id="RediToActiveMQConfig" />
+			<ComponentRef Id="Log4NetLibrary" />
+			<ComponentRef Id="NmsLibrary" />
+			<ComponentRef Id="NmsActiveMQLibrary" />
+			<ComponentRef Id="RediLibrary" />
+		</Feature>
+
+	</Product>
+</Wix>

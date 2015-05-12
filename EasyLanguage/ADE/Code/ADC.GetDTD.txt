@@ -1,0 +1,39 @@
+Inputs:
+	Sym(StringSimple),
+	Interval(NumericSimple),
+	BarID(NumericSimple),
+	vRichCheap(NumericRef),
+	vDTD(NumericRef);
+
+Vars:
+	LastSym(""),
+	LastInterval(-1),
+	Index(0),
+	DataMap(0),
+	BarList(0),
+	RichCheapList(0),
+	DTDList(0);
+
+if Sym <> LastSym or Interval <> LastInterval then begin
+	LastSym = Sym;
+	LastInterval = Interval;
+
+	DataMap = ADE.GetRequiredMap("DTD", Sym, Interval);
+	BarList = MapSC.Get(DataMap, ":Bar");
+
+	RichCheapList = MapSC.Get(DataMap, "RichCheap");
+	DTDList = MapSC.Get(DataMap, "DTD");
+end;
+
+if ListN.IsSorted(BarList) = false then
+	Value1 = ADE.SortDataMap(DataMap);
+
+if ListN.Lookup(BarList, BarID, Index) = false then
+	Index = Index - 1;
+
+if Index <> 0 then begin
+	vRichCheap = ListN.Get(RichCheapList, Index);
+	vDTD = ListN.Get(DTDList, Index);
+end;
+
+ADC.GetDTD = Index;

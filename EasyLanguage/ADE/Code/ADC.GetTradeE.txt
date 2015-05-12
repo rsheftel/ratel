@@ -1,0 +1,43 @@
+Inputs:
+	Sym(StringSimple),
+	Interval(NumericSimple),
+	BarID(NumericSimple),
+	vorderType(NumericRef),
+	vsize(NumericRef),
+	vcurrentPosition(NumericRef);
+
+Vars:
+	LastSym(""),
+	LastInterval(-1),
+	Index(0),
+	DataMap(0),
+	BarList(0),
+	orderTypeList(0),
+	sizeList(0),
+	currentPositionList(0);
+
+if Sym <> LastSym or Interval <> LastInterval then begin
+	LastSym = Sym;
+	LastInterval = Interval;
+
+	DataMap = ADE.GetRequiredMap("TradeE", Sym, Interval);
+	BarList = MapSC.Get(DataMap, ":Bar");
+
+	orderTypeList = MapSC.Get(DataMap, "orderType");
+	sizeList = MapSC.Get(DataMap, "size");
+	currentPositionList = MapSC.Get(DataMap, "currentPosition");
+end;
+
+if ListN.IsSorted(BarList) = false then
+	Value1 = ADE.SortDataMap(DataMap);
+
+if ListN.Lookup(BarList, BarID, Index) = false then
+	Index = Index - 1;
+
+if Index <> 0 then begin
+	vorderType = ListN.Get(orderTypeList, Index);
+	vsize = ListN.Get(sizeList, Index);
+	vcurrentPosition = ListN.Get(currentPositionList, Index);
+end;
+
+ADC.GetTradeE = Index;

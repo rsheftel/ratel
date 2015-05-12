@@ -1,0 +1,204 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                             "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:a="http://richfaces.org/a4j"
+                xmlns:rich="http://richfaces.org/rich"
+                template="layout/template.xhtml">
+                       
+<ui:define name="body">
+    
+    <h:messages globalOnly="true" styleClass="message" id="globalMessages"/>
+
+    <h:form id="futuresSymbolMapping" styleClass="edit">
+    
+        <rich:panel>
+            <f:facet name="header">#{futuresSymbolMappingHome.managed ? 'Edit' : 'Add'} FuturesSymbolMapping</f:facet>
+
+            <s:decorate id="idDecoration" template="layout/edit.xhtml">
+                <ui:define name="label">id</ui:define>
+                <h:inputText id="id"
+                       required="true"
+                       disabled="#{futuresSymbolMappingHome.managed}"
+                          value="#{futuresSymbolMappingHome.instance.id}">
+                    <a:support event="onblur" reRender="idDecoration" bypassUpdates="true"/>
+                </h:inputText>
+            </s:decorate>
+
+            <s:decorate id="platformSymbolDecoration" template="layout/edit.xhtml">
+                <ui:define name="label">platformSymbol</ui:define>
+                <h:inputText id="platformSymbol" 
+                       required="true"
+                           size="10"
+                      maxlength="10"
+                          value="#{futuresSymbolMappingHome.instance.platformSymbol}">
+                    <a:support event="onblur" reRender="platformSymbolDecoration" bypassUpdates="true"/>
+                </h:inputText>
+            </s:decorate>
+
+            <s:decorate id="bloombergSymbolDecoration" template="layout/edit.xhtml">
+                <ui:define name="label">bloombergSymbol</ui:define>
+                <h:inputText id="bloombergSymbol" 
+                       required="true"
+                           size="10"
+                      maxlength="10"
+                          value="#{futuresSymbolMappingHome.instance.bloombergSymbol}">
+                    <a:support event="onblur" reRender="bloombergSymbolDecoration" bypassUpdates="true"/>
+                </h:inputText>
+            </s:decorate>
+
+            <s:decorate id="multiplierDecoration" template="layout/edit.xhtml">
+                <ui:define name="label">multiplier</ui:define>
+                <h:inputText id="multiplier" 
+                       required="true"
+                          value="#{futuresSymbolMappingHome.instance.multiplier}"
+                           size="17">
+                    <a:support event="onblur" reRender="multiplierDecoration" bypassUpdates="true"/>
+                </h:inputText>
+            </s:decorate>
+
+            <s:decorate id="descriptionDecoration" template="layout/edit.xhtml">
+                <ui:define name="label">description</ui:define>
+                <h:inputText id="description" 
+                           size="50"
+                      maxlength="50"
+                          value="#{futuresSymbolMappingHome.instance.description}">
+                    <a:support event="onblur" reRender="descriptionDecoration" bypassUpdates="true"/>
+                </h:inputText>
+            </s:decorate>
+        
+            <div style="clear:both">
+                <span class="required">*</span> 
+                required fields
+            </div>
+            
+        </rich:panel>
+                
+        <div class="actionButtons">
+
+            <h:commandButton id="save" 
+                          value="Save" 
+                         action="#{futuresSymbolMappingHome.persist}"
+                       disabled="#{!futuresSymbolMappingHome.wired}"
+                       rendered="#{!futuresSymbolMappingHome.managed}"/>  
+                          			  
+            <h:commandButton id="update" 
+                          value="Save" 
+                         action="#{futuresSymbolMappingHome.update}"
+                       rendered="#{futuresSymbolMappingHome.managed}"/>
+                        			  
+            <h:commandButton id="delete" 
+                          value="Delete" 
+                         action="#{futuresSymbolMappingHome.remove}"
+                       rendered="#{futuresSymbolMappingHome.managed}"/>
+                    
+            <s:button id="done" 
+                   value="Done"
+             propagation="end"
+                    view="/FuturesSymbolMapping.xhtml"
+                rendered="#{futuresSymbolMappingHome.managed}"/>
+                
+            <s:button id="cancel" 
+                   value="Cancel"
+             propagation="end"
+                    view="/#{empty futuresSymbolMappingFrom ? 'FuturesSymbolMappingList' : futuresSymbolMappingFrom}.xhtml"
+                rendered="#{!futuresSymbolMappingHome.managed}"/>
+
+        </div>
+    </h:form>
+
+<rich:tabPanel switchType="ajax">
+    
+    <rich:tab label="productCode *" labelClass="required">
+    <div class="association" id="productCodeParent">
+    
+        <h:outputText value="No productCode" 
+                   rendered="#{futuresSymbolMappingHome.instance.productCode == null}"/>
+        
+        <rich:dataTable var="productCode" 
+                   value="#{futuresSymbolMappingHome.instance.productCode}" 
+                rendered="#{futuresSymbolMappingHome.instance.productCode != null}"
+              rowClasses="rvgRowOne,rvgRowTwo"
+                      id="productCodeTable">
+            <h:column>
+                <f:facet name="header">textCode</f:facet>
+                #{productCode.textCode}
+            </h:column>
+            <h:column>
+                <f:facet name="header">productCode</f:facet>
+                #{productCode.productCode}
+            </h:column>
+            <h:column>
+                <f:facet name="header">description</f:facet>
+                #{productCode.description}
+            </h:column>
+            <h:column>
+                <f:facet name="header">action</f:facet>
+                <s:link view="/ProductCode.xhtml" 
+                         id="viewproductCode" 
+                      value="View" 
+                propagation="none">
+                    <f:param name="productCodeTextCode" 
+                           value="#{productCode.textCode}"/>
+                </s:link>
+            </h:column>
+        </rich:dataTable>
+
+        <div class="actionButtons">
+            <s:button value="Select productCode"
+                       view="/ProductCodeList.xhtml">
+                <f:param name="from" value="FuturesSymbolMappingEdit"/>
+            </s:button>
+        </div>
+        
+    </div>
+    </rich:tab>
+    
+    <rich:tab label="platform *" labelClass="required">
+    <div class="association" id="platformParent">
+    
+        <h:outputText value="No platform" 
+                   rendered="#{futuresSymbolMappingHome.instance.platform == null}"/>
+        
+        <rich:dataTable var="platform" 
+                   value="#{futuresSymbolMappingHome.instance.platform}" 
+                rendered="#{futuresSymbolMappingHome.instance.platform != null}"
+              rowClasses="rvgRowOne,rvgRowTwo"
+                      id="platformTable">
+            <h:column>
+                <f:facet name="header">platformId</f:facet>
+                #{platform.platformId}
+            </h:column>
+            <h:column>
+                <f:facet name="header">description</f:facet>
+                #{platform.description}
+            </h:column>
+            <h:column>
+                <f:facet name="header">action</f:facet>
+                <s:link view="/Platform.xhtml" 
+                         id="viewplatform" 
+                      value="View" 
+                propagation="none">
+                    <f:param name="platformPlatformId" 
+                           value="#{platform.platformId}"/>
+                </s:link>
+            </h:column>
+        </rich:dataTable>
+
+        <div class="actionButtons">
+            <s:button value="Select platform"
+                       view="/PlatformList.xhtml">
+                <f:param name="from" value="FuturesSymbolMappingEdit"/>
+            </s:button>
+        </div>
+        
+    </div>
+    </rich:tab>
+</rich:tabPanel>
+</ui:define>
+
+</ui:composition>

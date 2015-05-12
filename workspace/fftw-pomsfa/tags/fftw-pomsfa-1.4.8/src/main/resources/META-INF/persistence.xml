@@ -1,0 +1,27 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
+   version="1.0">
+   <persistence-unit name="BADB">
+      <provider>org.hibernate.ejb.HibernatePersistence</provider>
+      <jar-file>malbec-fer-1.3.6.jar</jar-file>
+      <class>malbec.fer.mapping.PlatformStrategyAccount</class>
+      <class>malbec.fer.mapping.FuturesSymbol</class>
+      <class>malbec.fer.mapping.PlatformRouteAccount</class>
+      <class>malbec.fix.message.FixFill</class>
+      <class>malbec.fer.mapping.StrategyAccountMapper</class>
+<!--      <class>malbec.fer.mapping.FuturesSymbolMap</class>-->
+      <class>malbec.fer.mapping.ShortSellItem</class>
+      
+      <properties>
+         <property name="hibernate.archive.autodetection" value="class"/>
+         <property name="hibernate.show_sql" value="false"/>
+         <property name="hibernate.format_sql" value="true"/>
+         <property name="hibernate.connection.driver_class" value="${db.driver_class}"/>
+         <property name="hibernate.connection.url" value="${db.url}"/>
+         <property name="hibernate.connection.username" value="${db.user}"/>
+         <property name="hibernate.connection.password" value="${db.password}"/>
+         <property name="hibernate.dialect" value="${db.dialect}"/>
+      </properties>
+   </persistence-unit>
+</persistence>

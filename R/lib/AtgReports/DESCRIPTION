@@ -1,0 +1,12 @@
+Package: AtgReports
+Version: 0.0.1
+Date: 2010/10/29
+Title: Reporting Package
+Author: The Team <nobody@foo.com>
+Maintainer: The Team <nobody@foo.com>
+SaveImage: yes
+Depends: AtgData, AtgMath, STO, AtgPortfolio, hwriter
+Description: Reporting Package for ATG
+License: This code is owned by its author.  Usage by anyone else is
+        prohibited.
+Built: R 2.11.1; ; 2011-05-15 15:42:50.456 UTC; windows

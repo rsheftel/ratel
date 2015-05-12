@@ -1,0 +1,32 @@
+Inputs:
+	UseFile(ADE.UseFile);     // default UseFile is returned by ADE.UseFile function
+
+Vars:
+	Class("TradeE"),
+	WriteOk(true),
+	vorderType(0),
+	vsize(0),
+	vcurrentPosition(0);
+
+// If UseFile is true, load any previously stored data from the file on the first bar.
+if CurrentBar = 1 and UseFile then
+	Value1 = ADE.OpenMap(Class, GetSymbolName, ADE.BarInterval);
+
+// SET THE VARIABLES HERE
+vorderType = 0;
+vsize = 0;
+vcurrentPosition = 0;
+
+// Store the data for this symbol and bar interval
+Value1 = ADC.PutTradeE(GetSymbolName, ADE.BarInterval, ADE.BarID,
+	vorderType,
+	vsize,
+	vcurrentPosition);
+
+// If UseFile is true, save the data to the file on the last bar.
+if UseFile and WriteOk and LastBarOnChart and BarStatus(1) = 2 then begin
+	Value1 = ADE.SaveMap(Class, GetSymbolName, ADE.BarInterval);
+	WriteOk = false; // prevent repeated writes on new bars
+end;
+
+Plot1(0); // include a Plot statement so we can use this indicator in RadarScreen

@@ -1,0 +1,158 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                             "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:a="http://richfaces.org/a4j"
+                xmlns:rich="http://richfaces.org/rich"
+                template="layout/template.xhtml">
+                       
+<ui:define name="body">
+    
+    <h:messages globalOnly="true" styleClass="message" id="globalMessages"/>
+
+    <h:form id="productCode" styleClass="edit">
+    
+        <rich:panel>
+            <f:facet name="header">#{productCodeHome.managed ? 'Edit' : 'Add'} ProductCode</f:facet>
+
+            <s:decorate id="textCodeDecoration" template="layout/edit.xhtml">
+                <ui:define name="label">textCode</ui:define>
+                <h:inputText id="textCode" 
+                       disabled="#{productCodeHome.managed}"
+                       required="true"
+                           size="10"
+                      maxlength="10"
+                          value="#{productCodeHome.instance.textCode}">
+                    <a:support event="onblur" reRender="textCodeDecoration" bypassUpdates="true"/>
+                </h:inputText>
+            </s:decorate>
+
+            <s:decorate id="productCodeDecoration" template="layout/edit.xhtml">
+                <ui:define name="label">productCode</ui:define>
+                <h:inputText id="productCode"
+                       required="true"
+                          value="#{productCodeHome.instance.productCode}">
+                    <a:support event="onblur" reRender="productCodeDecoration" bypassUpdates="true"/>
+                </h:inputText>
+            </s:decorate>
+
+            <s:decorate id="descriptionDecoration" template="layout/edit.xhtml">
+                <ui:define name="label">description</ui:define>
+                <h:inputText id="description" 
+                       required="true"
+                           size="50"
+                      maxlength="50"
+                          value="#{productCodeHome.instance.description}">
+                    <a:support event="onblur" reRender="descriptionDecoration" bypassUpdates="true"/>
+                </h:inputText>
+            </s:decorate>
+        
+            <div style="clear:both">
+                <span class="required">*</span> 
+                required fields
+            </div>
+            
+        </rich:panel>
+                
+        <div class="actionButtons">
+
+            <h:commandButton id="save" 
+                          value="Save" 
+                         action="#{productCodeHome.persist}"
+                       disabled="#{!productCodeHome.wired}"
+                       rendered="#{!productCodeHome.managed}"/>  
+                          			  
+            <h:commandButton id="update" 
+                          value="Save" 
+                         action="#{productCodeHome.update}"
+                       rendered="#{productCodeHome.managed}"/>
+                        			  
+            <h:commandButton id="delete" 
+                          value="Delete" 
+                         action="#{productCodeHome.remove}"
+                       rendered="#{productCodeHome.managed}"/>
+                    
+            <s:button id="done" 
+                   value="Done"
+             propagation="end"
+                    view="/ProductCode.xhtml"
+                rendered="#{productCodeHome.managed}"/>
+                
+            <s:button id="cancel" 
+                   value="Cancel"
+             propagation="end"
+                    view="/#{empty productCodeFrom ? 'ProductCodeList' : productCodeFrom}.xhtml"
+                rendered="#{!productCodeHome.managed}"/>
+
+        </div>
+    </h:form>
+
+<rich:tabPanel switchType="ajax">
+
+    <rich:tab label="futuresSymbolMappings">
+        <div class="association" id="futuresSymbolMappingsChildren">
+        
+            <h:outputText value="No futuresSymbolMappings" 
+                       rendered="#{empty productCodeHome.futuresSymbolMappings}"/>
+        
+            <rich:dataTable value="#{productCodeHome.futuresSymbolMappings}" 
+                           var="futuresSymbolMapping" 
+                      rendered="#{not empty productCodeHome.futuresSymbolMappings}" 
+                    rowClasses="rvgRowOne,rvgRowTwo"
+                            id="futuresSymbolMappingsTable">
+                <h:column>
+                    <f:facet name="header">id</f:facet>
+                    <h:outputText value="#{futuresSymbolMapping.id}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">platformSymbol</f:facet>
+                    <h:outputText value="#{futuresSymbolMapping.platformSymbol}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">bloombergSymbol</f:facet>
+                    <h:outputText value="#{futuresSymbolMapping.bloombergSymbol}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">multiplier</f:facet>
+                    <h:outputText value="#{futuresSymbolMapping.multiplier}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">description</f:facet>
+                    <h:outputText value="#{futuresSymbolMapping.description}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">action</f:facet>
+                    <s:link view="/FuturesSymbolMapping.xhtml" 
+                              id="selectfuturesSymbolMapping" 
+                           value="Select"
+                     propagation="none">
+                        <f:param name="futuresSymbolMappingId" 
+                                value="#{futuresSymbolMapping.id}"/>
+                        <f:param name="futuresSymbolMappingFrom" value="ProductCode"/>
+                    </s:link>
+                </h:column>
+            </rich:dataTable>
+        
+        </div>
+          
+        <f:subview rendered="#{productCodeHome.managed}" id="futuresSymbolMappings">
+        <div class="actionButtons">
+            <s:button id="addfuturesSymbolMapping" 
+                   value="Add futuresSymbolMapping"
+                    view="/FuturesSymbolMappingEdit.xhtml"
+             propagation="none">
+                 <f:param name="productCodeTextCode" 
+                         value="#{productCodeHome.instance.textCode}"/>
+                 <f:param name="futuresSymbolMappingFrom" value="ProductCode"/>
+            </s:button>
+        </div>
+        </f:subview>
+    </rich:tab>
+</rich:tabPanel>
+</ui:define>
+
+</ui:composition>

@@ -1,0 +1,375 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                             "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:a="http://richfaces.org/a4j"
+                xmlns:rich="http://richfaces.org/rich"
+                template="layout/template.xhtml">
+                       
+<ui:define name="body">
+    
+    <h:messages globalOnly="true" styleClass="message" id="globalMessages"/>
+
+    <h:form id="tradeRecord" styleClass="edit">
+    
+        <rich:panel>
+            <f:facet name="header">#{tradeRecordHome.managed ? 'Edit' : 'Add'} TradeRecord</f:facet>
+
+            <s:decorate id="tradeRecordIdDecoration" template="layout/edit.xhtml">
+                <ui:define name="label">tradeRecordId</ui:define>
+                <h:inputText id="tradeRecordId"
+                       required="true"
+                       disabled="#{tradeRecordHome.managed}"
+                          value="#{tradeRecordHome.instance.tradeRecordId}">
+                    <a:support event="onblur" reRender="tradeRecordIdDecoration" bypassUpdates="true"/>
+                </h:inputText>
+            </s:decorate>
+
+            <s:decorate id="creationDateDecoration" template="layout/edit.xhtml">
+                <ui:define name="label">creationDate</ui:define>
+                <h:inputText id="creationDate" 
+                           size="16"
+                       required="true"
+                          value="#{tradeRecordHome.instance.creationDate}">
+                    <s:convertDateTime type="both" dateStyle="short"/>
+                    <a:support event="onblur" reRender="creationDateDecoration" bypassUpdates="true"/>
+                </h:inputText>
+            </s:decorate>
+
+            <s:decorate id="tradeSeqNumDecoration" template="layout/edit.xhtml">
+                <ui:define name="label">tradeSeqNum</ui:define>
+                <h:inputText id="tradeSeqNum"
+                       required="true"
+                          value="#{tradeRecordHome.instance.tradeSeqNum}">
+                    <a:support event="onblur" reRender="tradeSeqNumDecoration" bypassUpdates="true"/>
+                </h:inputText>
+            </s:decorate>
+
+            <s:decorate id="execIdDecoration" template="layout/edit.xhtml">
+                <ui:define name="label">execId</ui:define>
+                <h:inputText id="execId" 
+                       required="true"
+                           size="50"
+                      maxlength="50"
+                          value="#{tradeRecordHome.instance.execId}">
+                    <a:support event="onblur" reRender="execIdDecoration" bypassUpdates="true"/>
+                </h:inputText>
+            </s:decorate>
+
+            <s:decorate id="statusDecoration" template="layout/edit.xhtml">
+                <ui:define name="label">status</ui:define>
+                <h:inputText id="status"
+                       required="true"
+                          value="#{tradeRecordHome.instance.status}">
+                    <a:support event="onblur" reRender="statusDecoration" bypassUpdates="true"/>
+                </h:inputText>
+            </s:decorate>
+
+            <s:decorate id="securityIdFlagDecoration" template="layout/edit.xhtml">
+                <ui:define name="label">securityIdFlag</ui:define>
+                <h:inputText id="securityIdFlag"
+                       required="true"
+                          value="#{tradeRecordHome.instance.securityIdFlag}">
+                    <a:support event="onblur" reRender="securityIdFlagDecoration" bypassUpdates="true"/>
+                </h:inputText>
+            </s:decorate>
+
+            <s:decorate id="securityIdDecoration" template="layout/edit.xhtml">
+                <ui:define name="label">securityId</ui:define>
+                <h:inputText id="securityId" 
+                       required="true"
+                           size="24"
+                      maxlength="24"
+                          value="#{tradeRecordHome.instance.securityId}">
+                    <a:support event="onblur" reRender="securityIdDecoration" bypassUpdates="true"/>
+                </h:inputText>
+            </s:decorate>
+
+            <s:decorate id="traderNameDecoration" template="layout/edit.xhtml">
+                <ui:define name="label">traderName</ui:define>
+                <h:inputText id="traderName" 
+                           size="8"
+                      maxlength="8"
+                          value="#{tradeRecordHome.instance.traderName}">
+                    <a:support event="onblur" reRender="traderNameDecoration" bypassUpdates="true"/>
+                </h:inputText>
+            </s:decorate>
+
+            <s:decorate id="sideDecoration" template="layout/edit.xhtml">
+                <ui:define name="label">side</ui:define>
+                <h:inputText id="side"
+                       required="true"
+                          value="#{tradeRecordHome.instance.side}">
+                    <a:support event="onblur" reRender="sideDecoration" bypassUpdates="true"/>
+                </h:inputText>
+            </s:decorate>
+
+            <s:decorate id="quantityDecoration" template="layout/edit.xhtml">
+                <ui:define name="label">quantity</ui:define>
+                <h:inputText id="quantity" 
+                       required="true"
+                          value="#{tradeRecordHome.instance.quantity}"
+                           size="27">
+                    <a:support event="onblur" reRender="quantityDecoration" bypassUpdates="true"/>
+                </h:inputText>
+            </s:decorate>
+
+            <s:decorate id="priceDisplayDecoration" template="layout/edit.xhtml">
+                <ui:define name="label">priceDisplay</ui:define>
+                <h:inputText id="priceDisplay"
+                       required="true"
+                          value="#{tradeRecordHome.instance.priceDisplay}">
+                    <a:support event="onblur" reRender="priceDisplayDecoration" bypassUpdates="true"/>
+                </h:inputText>
+            </s:decorate>
+
+            <s:decorate id="priceDecoration" template="layout/edit.xhtml">
+                <ui:define name="label">price</ui:define>
+                <h:inputText id="price" 
+                       required="true"
+                          value="#{tradeRecordHome.instance.price}"
+                           size="22">
+                    <a:support event="onblur" reRender="priceDecoration" bypassUpdates="true"/>
+                </h:inputText>
+            </s:decorate>
+
+            <s:decorate id="settleDateDecoration" template="layout/edit.xhtml">
+                <ui:define name="label">settleDate</ui:define>
+                <h:inputText id="settleDate" 
+                           size="16"
+                       required="true"
+                          value="#{tradeRecordHome.instance.settleDate}">
+                    <s:convertDateTime type="both" dateStyle="short"/>
+                    <a:support event="onblur" reRender="settleDateDecoration" bypassUpdates="true"/>
+                </h:inputText>
+            </s:decorate>
+
+            <s:decorate id="accountDecoration" template="layout/edit.xhtml">
+                <ui:define name="label">account</ui:define>
+                <h:inputText id="account" 
+                       required="true"
+                           size="10"
+                      maxlength="10"
+                          value="#{tradeRecordHome.instance.account}">
+                    <a:support event="onblur" reRender="accountDecoration" bypassUpdates="true"/>
+                </h:inputText>
+            </s:decorate>
+
+            <s:decorate id="productCodeDecoration" template="layout/edit.xhtml">
+                <ui:define name="label">productCode</ui:define>
+                <h:inputText id="productCode"
+                       required="true"
+                          value="#{tradeRecordHome.instance.productCode}">
+                    <a:support event="onblur" reRender="productCodeDecoration" bypassUpdates="true"/>
+                </h:inputText>
+            </s:decorate>
+
+            <s:decorate id="sourceCodeDecoration" template="layout/edit.xhtml">
+                <ui:define name="label">sourceCode</ui:define>
+                <h:inputText id="sourceCode"
+                       required="true"
+                          value="#{tradeRecordHome.instance.sourceCode}">
+                    <a:support event="onblur" reRender="sourceCodeDecoration" bypassUpdates="true"/>
+                </h:inputText>
+            </s:decorate>
+
+            <s:decorate id="brokerDecoration" template="layout/edit.xhtml">
+                <ui:define name="label">broker</ui:define>
+                <h:inputText id="broker" 
+                       required="true"
+                           size="50"
+                      maxlength="50"
+                          value="#{tradeRecordHome.instance.broker}">
+                    <a:support event="onblur" reRender="brokerDecoration" bypassUpdates="true"/>
+                </h:inputText>
+            </s:decorate>
+
+            <s:decorate id="primeBrokerDecoration" template="layout/edit.xhtml">
+                <ui:define name="label">primeBroker</ui:define>
+                <h:inputText id="primeBroker" 
+                       required="true"
+                           size="10"
+                      maxlength="10"
+                          value="#{tradeRecordHome.instance.primeBroker}">
+                    <a:support event="onblur" reRender="primeBrokerDecoration" bypassUpdates="true"/>
+                </h:inputText>
+            </s:decorate>
+
+            <s:decorate id="ticketNumberDecoration" template="layout/edit.xhtml">
+                <ui:define name="label">ticketNumber</ui:define>
+                <h:inputText id="ticketNumber"
+                       required="true"
+                          value="#{tradeRecordHome.instance.ticketNumber}">
+                    <a:support event="onblur" reRender="ticketNumberDecoration" bypassUpdates="true"/>
+                </h:inputText>
+            </s:decorate>
+
+            <s:decorate id="returnCodeDecoration" template="layout/edit.xhtml">
+                <ui:define name="label">returnCode</ui:define>
+                <h:inputText id="returnCode"
+                          value="#{tradeRecordHome.instance.returnCode}">
+                    <a:support event="onblur" reRender="returnCodeDecoration" bypassUpdates="true"/>
+                </h:inputText>
+            </s:decorate>
+
+            <s:decorate id="errorMsgDecoration" template="layout/edit.xhtml">
+                <ui:define name="label">errorMsg</ui:define>
+                <h:inputText id="errorMsg" 
+                           size="50"
+                      maxlength="50"
+                          value="#{tradeRecordHome.instance.errorMsg}">
+                    <a:support event="onblur" reRender="errorMsgDecoration" bypassUpdates="true"/>
+                </h:inputText>
+            </s:decorate>
+
+            <s:decorate id="ackReceivedDecoration" template="layout/edit.xhtml">
+                <ui:define name="label">ackReceived</ui:define>
+                <h:inputText id="ackReceived" 
+                           size="16"
+                          value="#{tradeRecordHome.instance.ackReceived}">
+                    <s:convertDateTime type="both" dateStyle="short"/>
+                    <a:support event="onblur" reRender="ackReceivedDecoration" bypassUpdates="true"/>
+                </h:inputText>
+            </s:decorate>
+
+            <s:decorate id="acceptRejectReceivedDecoration" template="layout/edit.xhtml">
+                <ui:define name="label">acceptRejectReceived</ui:define>
+                <h:inputText id="acceptRejectReceived" 
+                           size="16"
+                          value="#{tradeRecordHome.instance.acceptRejectReceived}">
+                    <s:convertDateTime type="both" dateStyle="short"/>
+                    <a:support event="onblur" reRender="acceptRejectReceivedDecoration" bypassUpdates="true"/>
+                </h:inputText>
+            </s:decorate>
+
+            <s:decorate id="processingStatusDecoration" template="layout/edit.xhtml">
+                <ui:define name="label">processingStatus</ui:define>
+                <h:inputText id="processingStatus" 
+                           size="30"
+                      maxlength="30"
+                          value="#{tradeRecordHome.instance.processingStatus}">
+                    <a:support event="onblur" reRender="processingStatusDecoration" bypassUpdates="true"/>
+                </h:inputText>
+            </s:decorate>
+
+            <s:decorate id="tradingStrategyDecoration" template="layout/edit.xhtml">
+                <ui:define name="label">tradingStrategy</ui:define>
+                <h:inputText id="tradingStrategy" 
+                           size="50"
+                      maxlength="50"
+                          value="#{tradeRecordHome.instance.tradingStrategy}">
+                    <a:support event="onblur" reRender="tradingStrategyDecoration" bypassUpdates="true"/>
+                </h:inputText>
+            </s:decorate>
+
+            <s:decorate id="transCodeDecoration" template="layout/edit.xhtml">
+                <ui:define name="label">transCode</ui:define>
+                <h:inputText id="transCode" 
+                           size="1"
+                      maxlength="1"
+                          value="#{tradeRecordHome.instance.transCode}">
+                    <a:support event="onblur" reRender="transCodeDecoration" bypassUpdates="true"/>
+                </h:inputText>
+            </s:decorate>
+
+            <s:decorate id="lastUpdatedDecoration" template="layout/edit.xhtml">
+                <ui:define name="label">lastUpdated</ui:define>
+                <h:inputText id="lastUpdated" 
+                           size="16"
+                       required="true"
+                          value="#{tradeRecordHome.instance.lastUpdated}">
+                    <s:convertDateTime type="both" dateStyle="short"/>
+                    <a:support event="onblur" reRender="lastUpdatedDecoration" bypassUpdates="true"/>
+                </h:inputText>
+            </s:decorate>
+        
+            <div style="clear:both">
+                <span class="required">*</span> 
+                required fields
+            </div>
+            
+        </rich:panel>
+                
+        <div class="actionButtons">
+
+            <h:commandButton id="save" 
+                          value="Save" 
+                         action="#{tradeRecordHome.persist}"
+                       disabled="#{!tradeRecordHome.wired}"
+                       rendered="#{!tradeRecordHome.managed}"/>  
+                          			  
+            <h:commandButton id="update" 
+                          value="Save" 
+                         action="#{tradeRecordHome.update}"
+                       rendered="#{tradeRecordHome.managed}"/>
+                        			  
+            <h:commandButton id="delete" 
+                          value="Delete" 
+                         action="#{tradeRecordHome.remove}"
+                       rendered="#{tradeRecordHome.managed}"/>
+                    
+            <s:button id="done" 
+                   value="Done"
+             propagation="end"
+                    view="/TradeRecord.xhtml"
+                rendered="#{tradeRecordHome.managed}"/>
+                
+            <s:button id="cancel" 
+                   value="Cancel"
+             propagation="end"
+                    view="/#{empty tradeRecordFrom ? 'TradeRecordList' : tradeRecordFrom}.xhtml"
+                rendered="#{!tradeRecordHome.managed}"/>
+
+        </div>
+    </h:form>
+
+<rich:tabPanel switchType="ajax">
+    
+    <rich:tab label="platform *" labelClass="required">
+    <div class="association" id="platformParent">
+    
+        <h:outputText value="No platform" 
+                   rendered="#{tradeRecordHome.instance.platform == null}"/>
+        
+        <rich:dataTable var="platform" 
+                   value="#{tradeRecordHome.instance.platform}" 
+                rendered="#{tradeRecordHome.instance.platform != null}"
+              rowClasses="rvgRowOne,rvgRowTwo"
+                      id="platformTable">
+            <h:column>
+                <f:facet name="header">platformId</f:facet>
+                #{platform.platformId}
+            </h:column>
+            <h:column>
+                <f:facet name="header">description</f:facet>
+                #{platform.description}
+            </h:column>
+            <h:column>
+                <f:facet name="header">action</f:facet>
+                <s:link view="/Platform.xhtml" 
+                         id="viewplatform" 
+                      value="View" 
+                propagation="none">
+                    <f:param name="platformPlatformId" 
+                           value="#{platform.platformId}"/>
+                </s:link>
+            </h:column>
+        </rich:dataTable>
+
+        <div class="actionButtons">
+            <s:button value="Select platform"
+                       view="/PlatformList.xhtml">
+                <f:param name="from" value="TradeRecordEdit"/>
+            </s:button>
+        </div>
+        
+    </div>
+    </rich:tab>
+</rich:tabPanel>
+</ui:define>
+
+</ui:composition>

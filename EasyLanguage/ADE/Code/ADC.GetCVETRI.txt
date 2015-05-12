@@ -1,0 +1,35 @@
+Inputs:
+	Sym(StringSimple),
+	Interval(NumericSimple),
+	BarID(NumericSimple),
+	vTRI(NumericRef);
+
+Vars:
+	LastSym(""),
+	LastInterval(-1),
+	Index(0),
+	DataMap(0),
+	BarList(0),
+	TRIList(0);
+
+if Sym <> LastSym or Interval <> LastInterval then begin
+	LastSym = Sym;
+	LastInterval = Interval;
+
+	DataMap = ADE.GetRequiredMap("CVETRI", Sym, Interval);
+	BarList = MapSC.Get(DataMap, ":Bar");
+
+	TRIList = MapSC.Get(DataMap, "TRI");
+end;
+
+if ListN.IsSorted(BarList) = false then
+	Value1 = ADE.SortDataMap(DataMap);
+
+if ListN.Lookup(BarList, BarID, Index) = false then
+	Index = Index - 1;
+
+if Index <> 0 then begin
+	vTRI = ListN.Get(TRIList, Index);
+end;
+
+ADC.GetCVETRI = Index;

@@ -1,0 +1,55 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text.RegularExpressions;
+
+namespace ActiveMQExcel
+{
+    static class TextMessageUtils
+    {
+        private static readonly log4net.ILog log = log4net.LogManager.GetLogger("PublisherApp.Logging");
+        static readonly Regex _pairRegex = new Regex(@"\|");
+        static readonly Regex _keyValueRegex = new Regex(@"=");
+
+
+        public static string TopicKeyValue 
+        { 
+            get { return "MSTopicName"; } 
+        }
+
+        /// <summary>
+        /// Parse a string that is the following format.
+        /// fieldName1=fieldValue1|fieldName2=fieldValue2
+        /// </summary>
+        /// <param name="rawString"></param>
+        /// <returns></returns>
+        public static IDictionary<string, string> ExtractRecord(string rawString)
+        {
+         
+            var parts = _pairRegex.Split(rawString);
+
+            IDictionary<string, string> record = new Dictionary<string,string>();
+
+            foreach (var token in parts) {
+                try {
+                    // a token is a key/value pair separated by '='
+                    // Take each token and split into the key/value
+                    var keyValue = _keyValueRegex.Split(token);
+                    if (!record.ContainsKey(keyValue[0])) {
+                        record.Add(keyValue[0], keyValue[1]);
+                    } else {
+                        record[keyValue[0]] = keyValue[1];
+                    }
+
+                } catch (Exception e) {
+                    // ignore, and just return what we have
+                   log.Error("Error parsing string " + rawString, e);
+                }
+            }
+            return record;
+        }
+
+        public static string ExtractTopicValue(IDictionary<string, string> messageRecord) {
+            return messageRecord.ContainsKey(TopicKeyValue) ? messageRecord[TopicKeyValue] : "";
+        }
+    }
+}

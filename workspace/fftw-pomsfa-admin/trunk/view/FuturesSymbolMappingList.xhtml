@@ -1,0 +1,178 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                             "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+                template="layout/template.xhtml">
+                       
+<ui:define name="body">
+    
+    <h:messages globalOnly="true" styleClass="message" id="globalMessages"/>
+    
+    <h:form id="futuresSymbolMappingSearch" styleClass="edit">
+    
+        <rich:simpleTogglePanel label="FuturesSymbolMapping search parameters" switchType="ajax">
+        
+            <s:decorate template="layout/display.xhtml">
+                <ui:define name="label">platformSymbol</ui:define>
+                <h:inputText id="platformSymbol" value="#{futuresSymbolMappingList.futuresSymbolMapping.platformSymbol}"/>
+            </s:decorate>
+
+            <s:decorate template="layout/display.xhtml">
+                <ui:define name="label">bloombergSymbol</ui:define>
+                <h:inputText id="bloombergSymbol" value="#{futuresSymbolMappingList.futuresSymbolMapping.bloombergSymbol}"/>
+            </s:decorate>
+
+            <s:decorate template="layout/display.xhtml">
+                <ui:define name="label">description</ui:define>
+                <h:inputText id="description" value="#{futuresSymbolMappingList.futuresSymbolMapping.description}"/>
+            </s:decorate>
+
+        
+        </rich:simpleTogglePanel>
+        
+        <div class="actionButtons">
+            <h:commandButton id="search" value="Search" action="/FuturesSymbolMappingList.xhtml"/>
+        </div>
+        
+    </h:form>
+    
+    <rich:panel>
+        <f:facet name="header">FuturesSymbolMapping search results</f:facet>
+    <div class="results" id="futuresSymbolMappingList">
+
+    <h:outputText value="No futuresSymbolMapping exists" 
+               rendered="#{empty futuresSymbolMappingList.resultList}"/>
+               
+    <rich:dataTable id="futuresSymbolMappingList" 
+                var="futuresSymbolMapping"
+              value="#{futuresSymbolMappingList.resultList}" 
+           rendered="#{not empty futuresSymbolMappingList.resultList}">
+        <h:column>
+            <f:facet name="header">
+                <s:link styleClass="columnHeader"
+                             value="id #{futuresSymbolMappingList.order=='id asc' ? messages.down : ( futuresSymbolMappingList.order=='id desc' ? messages.up : '' )}">
+                    <f:param name="order" value="#{futuresSymbolMappingList.order=='id asc' ? 'id desc' : 'id asc'}"/>
+                </s:link>
+            </f:facet>
+            #{futuresSymbolMapping.id}
+        </h:column>
+        <h:column>
+            <f:facet name="header">
+                <s:link styleClass="columnHeader"
+                             value="productCode textCode #{futuresSymbolMappingList.order=='productCode.textCode asc' ? messages.down : ( futuresSymbolMappingList.order=='productCode.textCode desc' ? messages.up : '' )}">
+                    <f:param name="order" value="#{futuresSymbolMappingList.order=='productCode.textCode asc' ? 'productCode.textCode desc' : 'productCode.textCode asc'}"/>
+                </s:link>
+            </f:facet>
+            #{futuresSymbolMapping.productCode.textCode}
+        </h:column>
+        <h:column>
+            <f:facet name="header">
+                <s:link styleClass="columnHeader"
+                             value="platform platformId #{futuresSymbolMappingList.order=='platform.platformId asc' ? messages.down : ( futuresSymbolMappingList.order=='platform.platformId desc' ? messages.up : '' )}">
+                    <f:param name="order" value="#{futuresSymbolMappingList.order=='platform.platformId asc' ? 'platform.platformId desc' : 'platform.platformId asc'}"/>
+                </s:link>
+            </f:facet>
+            #{futuresSymbolMapping.platform.platformId}
+        </h:column>
+        <h:column>
+            <f:facet name="header">
+                <s:link styleClass="columnHeader"
+                             value="platformSymbol #{futuresSymbolMappingList.order=='platformSymbol asc' ? messages.down : ( futuresSymbolMappingList.order=='platformSymbol desc' ? messages.up : '' )}">
+                    <f:param name="order" value="#{futuresSymbolMappingList.order=='platformSymbol asc' ? 'platformSymbol desc' : 'platformSymbol asc'}"/>
+                </s:link>
+            </f:facet>
+            #{futuresSymbolMapping.platformSymbol}
+        </h:column>
+        <h:column>
+            <f:facet name="header">
+                <s:link styleClass="columnHeader"
+                             value="bloombergSymbol #{futuresSymbolMappingList.order=='bloombergSymbol asc' ? messages.down : ( futuresSymbolMappingList.order=='bloombergSymbol desc' ? messages.up : '' )}">
+                    <f:param name="order" value="#{futuresSymbolMappingList.order=='bloombergSymbol asc' ? 'bloombergSymbol desc' : 'bloombergSymbol asc'}"/>
+                </s:link>
+            </f:facet>
+            #{futuresSymbolMapping.bloombergSymbol}
+        </h:column>
+        <h:column>
+            <f:facet name="header">
+                <s:link styleClass="columnHeader"
+                             value="multiplier #{futuresSymbolMappingList.order=='multiplier asc' ? messages.down : ( futuresSymbolMappingList.order=='multiplier desc' ? messages.up : '' )}">
+                    <f:param name="order" value="#{futuresSymbolMappingList.order=='multiplier asc' ? 'multiplier desc' : 'multiplier asc'}"/>
+                </s:link>
+            </f:facet>
+            #{futuresSymbolMapping.multiplier}
+        </h:column>
+        <h:column>
+            <f:facet name="header">
+                <s:link styleClass="columnHeader"
+                             value="description #{futuresSymbolMappingList.order=='description asc' ? messages.down : ( futuresSymbolMappingList.order=='description desc' ? messages.up : '' )}">
+                    <f:param name="order" value="#{futuresSymbolMappingList.order=='description asc' ? 'description desc' : 'description asc'}"/>
+                </s:link>
+            </f:facet>
+            #{futuresSymbolMapping.description}
+        </h:column>
+        <h:column>
+            <f:facet name="header">action</f:facet>
+            <s:link view="/#{empty from ? 'FuturesSymbolMapping' : from}.xhtml" 
+                   value="Select" 
+                      id="futuresSymbolMapping">
+                <f:param name="futuresSymbolMappingId" 
+                        value="#{futuresSymbolMapping.id}"/>
+            </s:link>
+        </h:column>
+    </rich:dataTable>
+
+    </div>
+    </rich:panel>
+    
+    <div class="tableControl">
+      
+        <s:link view="/FuturesSymbolMappingList.xhtml" 
+            rendered="#{futuresSymbolMappingList.previousExists}" 
+               value="#{messages.left}#{messages.left} First Page"
+                  id="firstPage">
+          <f:param name="firstResult" value="0"/>
+        </s:link>
+        
+        <s:link view="/FuturesSymbolMappingList.xhtml" 
+            rendered="#{futuresSymbolMappingList.previousExists}" 
+               value="#{messages.left} Previous Page"
+                  id="previousPage">
+            <f:param name="firstResult" 
+                    value="#{futuresSymbolMappingList.previousFirstResult}"/>
+        </s:link>
+        
+        <s:link view="/FuturesSymbolMappingList.xhtml" 
+            rendered="#{futuresSymbolMappingList.nextExists}" 
+               value="Next Page #{messages.right}"
+                  id="nextPage">
+            <f:param name="firstResult" 
+                    value="#{futuresSymbolMappingList.nextFirstResult}"/>
+        </s:link>
+        
+        <s:link view="/FuturesSymbolMappingList.xhtml" 
+            rendered="#{futuresSymbolMappingList.nextExists}" 
+               value="Last Page #{messages.right}#{messages.right}"
+                  id="lastPage">
+            <f:param name="firstResult" 
+                    value="#{futuresSymbolMappingList.lastFirstResult}"/>
+        </s:link>
+        
+    </div>
+    
+    <s:div styleClass="actionButtons" rendered="#{empty from}">
+        <s:button view="/FuturesSymbolMappingEdit.xhtml"
+                    id="create" 
+                 value="Create futuresSymbolMapping">
+            <f:param name="futuresSymbolMappingId"/>
+        </s:button>
+    </s:div>
+    
+</ui:define>
+
+</ui:composition>
+

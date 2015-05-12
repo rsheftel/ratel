@@ -1,0 +1,26 @@
+{
+	Indicator:	'ADC Plot DTD'
+}
+{ Source Template:  'ADE Template - Plot.txt', by Progster 11/2004 	}
+
+Inputs:
+	Interval(ADE.Daily),    // number of minutes, or ADE.Daily, ADE.Weekly, ADE.Monthly
+	UseFile(ADE.UseFile);   // default UseFile is returned by ADE.UseFile function
+
+Vars:
+	Class("DTD"),
+	vRichCheap(0),
+	vDTD(0);
+
+
+// If UseFile is true, load any previously stored data from the file on the first bar.
+if CurrentBar = 1 and UseFile then
+	Value1 = ADE.OpenMap(Class, GetSymbolName, Interval);
+
+// Retrieve the Class data for this symbol and bar interval.
+Value1 = ADC.GetDTD(GetSymbolName, Interval, ADE.BarID, 
+	vRichCheap,	
+	vDTD);	
+
+Plot1(vRichCheap, "RichCheap");
+Plot2(vDTD, "DTD");

@@ -1,0 +1,5 @@
+Inputs:
+	<PARAM_NAME>(NumericSimple)<SEP=,|;>
+
+ADC.<CLASS>PD = "#" +
+	NumToStr(<PARAM_NAME>, <PARAM_DEC>)<SEP= + "," +|;>

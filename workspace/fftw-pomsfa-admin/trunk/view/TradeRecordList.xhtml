@@ -1,0 +1,402 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                             "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+                template="layout/template.xhtml">
+                       
+<ui:define name="body">
+    
+    <h:messages globalOnly="true" styleClass="message" id="globalMessages"/>
+    
+    <h:form id="tradeRecordSearch" styleClass="edit">
+    
+        <rich:simpleTogglePanel label="TradeRecord search parameters" switchType="ajax">
+        
+            <s:decorate template="layout/display.xhtml">
+                <ui:define name="label">execId</ui:define>
+                <h:inputText id="execId" value="#{tradeRecordList.tradeRecord.execId}"/>
+            </s:decorate>
+
+            <s:decorate template="layout/display.xhtml">
+                <ui:define name="label">securityId</ui:define>
+                <h:inputText id="securityId" value="#{tradeRecordList.tradeRecord.securityId}"/>
+            </s:decorate>
+
+            <s:decorate template="layout/display.xhtml">
+                <ui:define name="label">traderName</ui:define>
+                <h:inputText id="traderName" value="#{tradeRecordList.tradeRecord.traderName}"/>
+            </s:decorate>
+
+            <s:decorate template="layout/display.xhtml">
+                <ui:define name="label">account</ui:define>
+                <h:inputText id="account" value="#{tradeRecordList.tradeRecord.account}"/>
+            </s:decorate>
+
+            <s:decorate template="layout/display.xhtml">
+                <ui:define name="label">broker</ui:define>
+                <h:inputText id="broker" value="#{tradeRecordList.tradeRecord.broker}"/>
+            </s:decorate>
+
+            <s:decorate template="layout/display.xhtml">
+                <ui:define name="label">primeBroker</ui:define>
+                <h:inputText id="primeBroker" value="#{tradeRecordList.tradeRecord.primeBroker}"/>
+            </s:decorate>
+
+            <s:decorate template="layout/display.xhtml">
+                <ui:define name="label">errorMsg</ui:define>
+                <h:inputText id="errorMsg" value="#{tradeRecordList.tradeRecord.errorMsg}"/>
+            </s:decorate>
+
+            <s:decorate template="layout/display.xhtml">
+                <ui:define name="label">processingStatus</ui:define>
+                <h:inputText id="processingStatus" value="#{tradeRecordList.tradeRecord.processingStatus}"/>
+            </s:decorate>
+
+            <s:decorate template="layout/display.xhtml">
+                <ui:define name="label">tradingStrategy</ui:define>
+                <h:inputText id="tradingStrategy" value="#{tradeRecordList.tradeRecord.tradingStrategy}"/>
+            </s:decorate>
+
+            <s:decorate template="layout/display.xhtml">
+                <ui:define name="label">transCode</ui:define>
+                <h:inputText id="transCode" value="#{tradeRecordList.tradeRecord.transCode}"/>
+            </s:decorate>
+
+        
+        </rich:simpleTogglePanel>
+        
+        <div class="actionButtons">
+            <h:commandButton id="search" value="Search" action="/TradeRecordList.xhtml"/>
+        </div>
+        
+    </h:form>
+    
+    <rich:panel>
+        <f:facet name="header">TradeRecord search results</f:facet>
+    <div class="results" id="tradeRecordList">
+
+    <h:outputText value="No tradeRecord exists" 
+               rendered="#{empty tradeRecordList.resultList}"/>
+               
+    <rich:dataTable id="tradeRecordList" 
+                var="tradeRecord"
+              value="#{tradeRecordList.resultList}" 
+           rendered="#{not empty tradeRecordList.resultList}">
+        <h:column>
+            <f:facet name="header">
+                <s:link styleClass="columnHeader"
+                             value="tradeRecordId #{tradeRecordList.order=='tradeRecordId asc' ? messages.down : ( tradeRecordList.order=='tradeRecordId desc' ? messages.up : '' )}">
+                    <f:param name="order" value="#{tradeRecordList.order=='tradeRecordId asc' ? 'tradeRecordId desc' : 'tradeRecordId asc'}"/>
+                </s:link>
+            </f:facet>
+            #{tradeRecord.tradeRecordId}
+        </h:column>
+        <h:column>
+            <f:facet name="header">
+                <s:link styleClass="columnHeader"
+                             value="platform platformId #{tradeRecordList.order=='platform.platformId asc' ? messages.down : ( tradeRecordList.order=='platform.platformId desc' ? messages.up : '' )}">
+                    <f:param name="order" value="#{tradeRecordList.order=='platform.platformId asc' ? 'platform.platformId desc' : 'platform.platformId asc'}"/>
+                </s:link>
+            </f:facet>
+            #{tradeRecord.platform.platformId}
+        </h:column>
+        <h:column>
+            <f:facet name="header">
+                <s:link styleClass="columnHeader"
+                             value="creationDate #{tradeRecordList.order=='creationDate asc' ? messages.down : ( tradeRecordList.order=='creationDate desc' ? messages.up : '' )}">
+                    <f:param name="order" value="#{tradeRecordList.order=='creationDate asc' ? 'creationDate desc' : 'creationDate asc'}"/>
+                </s:link>
+            </f:facet>
+            #{tradeRecord.creationDate}
+        </h:column>
+        <h:column>
+            <f:facet name="header">
+                <s:link styleClass="columnHeader"
+                             value="tradeSeqNum #{tradeRecordList.order=='tradeSeqNum asc' ? messages.down : ( tradeRecordList.order=='tradeSeqNum desc' ? messages.up : '' )}">
+                    <f:param name="order" value="#{tradeRecordList.order=='tradeSeqNum asc' ? 'tradeSeqNum desc' : 'tradeSeqNum asc'}"/>
+                </s:link>
+            </f:facet>
+            #{tradeRecord.tradeSeqNum}
+        </h:column>
+        <h:column>
+            <f:facet name="header">
+                <s:link styleClass="columnHeader"
+                             value="execId #{tradeRecordList.order=='execId asc' ? messages.down : ( tradeRecordList.order=='execId desc' ? messages.up : '' )}">
+                    <f:param name="order" value="#{tradeRecordList.order=='execId asc' ? 'execId desc' : 'execId asc'}"/>
+                </s:link>
+            </f:facet>
+            #{tradeRecord.execId}
+        </h:column>
+        <h:column>
+            <f:facet name="header">
+                <s:link styleClass="columnHeader"
+                             value="status #{tradeRecordList.order=='status asc' ? messages.down : ( tradeRecordList.order=='status desc' ? messages.up : '' )}">
+                    <f:param name="order" value="#{tradeRecordList.order=='status asc' ? 'status desc' : 'status asc'}"/>
+                </s:link>
+            </f:facet>
+            #{tradeRecord.status}
+        </h:column>
+        <h:column>
+            <f:facet name="header">
+                <s:link styleClass="columnHeader"
+                             value="securityIdFlag #{tradeRecordList.order=='securityIdFlag asc' ? messages.down : ( tradeRecordList.order=='securityIdFlag desc' ? messages.up : '' )}">
+                    <f:param name="order" value="#{tradeRecordList.order=='securityIdFlag asc' ? 'securityIdFlag desc' : 'securityIdFlag asc'}"/>
+                </s:link>
+            </f:facet>
+            #{tradeRecord.securityIdFlag}
+        </h:column>
+        <h:column>
+            <f:facet name="header">
+                <s:link styleClass="columnHeader"
+                             value="securityId #{tradeRecordList.order=='securityId asc' ? messages.down : ( tradeRecordList.order=='securityId desc' ? messages.up : '' )}">
+                    <f:param name="order" value="#{tradeRecordList.order=='securityId asc' ? 'securityId desc' : 'securityId asc'}"/>
+                </s:link>
+            </f:facet>
+            #{tradeRecord.securityId}
+        </h:column>
+        <h:column>
+            <f:facet name="header">
+                <s:link styleClass="columnHeader"
+                             value="traderName #{tradeRecordList.order=='traderName asc' ? messages.down : ( tradeRecordList.order=='traderName desc' ? messages.up : '' )}">
+                    <f:param name="order" value="#{tradeRecordList.order=='traderName asc' ? 'traderName desc' : 'traderName asc'}"/>
+                </s:link>
+            </f:facet>
+            #{tradeRecord.traderName}
+        </h:column>
+        <h:column>
+            <f:facet name="header">
+                <s:link styleClass="columnHeader"
+                             value="side #{tradeRecordList.order=='side asc' ? messages.down : ( tradeRecordList.order=='side desc' ? messages.up : '' )}">
+                    <f:param name="order" value="#{tradeRecordList.order=='side asc' ? 'side desc' : 'side asc'}"/>
+                </s:link>
+            </f:facet>
+            #{tradeRecord.side}
+        </h:column>
+        <h:column>
+            <f:facet name="header">
+                <s:link styleClass="columnHeader"
+                             value="quantity #{tradeRecordList.order=='quantity asc' ? messages.down : ( tradeRecordList.order=='quantity desc' ? messages.up : '' )}">
+                    <f:param name="order" value="#{tradeRecordList.order=='quantity asc' ? 'quantity desc' : 'quantity asc'}"/>
+                </s:link>
+            </f:facet>
+            #{tradeRecord.quantity}
+        </h:column>
+        <h:column>
+            <f:facet name="header">
+                <s:link styleClass="columnHeader"
+                             value="priceDisplay #{tradeRecordList.order=='priceDisplay asc' ? messages.down : ( tradeRecordList.order=='priceDisplay desc' ? messages.up : '' )}">
+                    <f:param name="order" value="#{tradeRecordList.order=='priceDisplay asc' ? 'priceDisplay desc' : 'priceDisplay asc'}"/>
+                </s:link>
+            </f:facet>
+            #{tradeRecord.priceDisplay}
+        </h:column>
+        <h:column>
+            <f:facet name="header">
+                <s:link styleClass="columnHeader"
+                             value="price #{tradeRecordList.order=='price asc' ? messages.down : ( tradeRecordList.order=='price desc' ? messages.up : '' )}">
+                    <f:param name="order" value="#{tradeRecordList.order=='price asc' ? 'price desc' : 'price asc'}"/>
+                </s:link>
+            </f:facet>
+            #{tradeRecord.price}
+        </h:column>
+        <h:column>
+            <f:facet name="header">
+                <s:link styleClass="columnHeader"
+                             value="settleDate #{tradeRecordList.order=='settleDate asc' ? messages.down : ( tradeRecordList.order=='settleDate desc' ? messages.up : '' )}">
+                    <f:param name="order" value="#{tradeRecordList.order=='settleDate asc' ? 'settleDate desc' : 'settleDate asc'}"/>
+                </s:link>
+            </f:facet>
+            #{tradeRecord.settleDate}
+        </h:column>
+        <h:column>
+            <f:facet name="header">
+                <s:link styleClass="columnHeader"
+                             value="account #{tradeRecordList.order=='account asc' ? messages.down : ( tradeRecordList.order=='account desc' ? messages.up : '' )}">
+                    <f:param name="order" value="#{tradeRecordList.order=='account asc' ? 'account desc' : 'account asc'}"/>
+                </s:link>
+            </f:facet>
+            #{tradeRecord.account}
+        </h:column>
+        <h:column>
+            <f:facet name="header">
+                <s:link styleClass="columnHeader"
+                             value="productCode #{tradeRecordList.order=='productCode asc' ? messages.down : ( tradeRecordList.order=='productCode desc' ? messages.up : '' )}">
+                    <f:param name="order" value="#{tradeRecordList.order=='productCode asc' ? 'productCode desc' : 'productCode asc'}"/>
+                </s:link>
+            </f:facet>
+            #{tradeRecord.productCode}
+        </h:column>
+        <h:column>
+            <f:facet name="header">
+                <s:link styleClass="columnHeader"
+                             value="sourceCode #{tradeRecordList.order=='sourceCode asc' ? messages.down : ( tradeRecordList.order=='sourceCode desc' ? messages.up : '' )}">
+                    <f:param name="order" value="#{tradeRecordList.order=='sourceCode asc' ? 'sourceCode desc' : 'sourceCode asc'}"/>
+                </s:link>
+            </f:facet>
+            #{tradeRecord.sourceCode}
+        </h:column>
+        <h:column>
+            <f:facet name="header">
+                <s:link styleClass="columnHeader"
+                             value="broker #{tradeRecordList.order=='broker asc' ? messages.down : ( tradeRecordList.order=='broker desc' ? messages.up : '' )}">
+                    <f:param name="order" value="#{tradeRecordList.order=='broker asc' ? 'broker desc' : 'broker asc'}"/>
+                </s:link>
+            </f:facet>
+            #{tradeRecord.broker}
+        </h:column>
+        <h:column>
+            <f:facet name="header">
+                <s:link styleClass="columnHeader"
+                             value="primeBroker #{tradeRecordList.order=='primeBroker asc' ? messages.down : ( tradeRecordList.order=='primeBroker desc' ? messages.up : '' )}">
+                    <f:param name="order" value="#{tradeRecordList.order=='primeBroker asc' ? 'primeBroker desc' : 'primeBroker asc'}"/>
+                </s:link>
+            </f:facet>
+            #{tradeRecord.primeBroker}
+        </h:column>
+        <h:column>
+            <f:facet name="header">
+                <s:link styleClass="columnHeader"
+                             value="ticketNumber #{tradeRecordList.order=='ticketNumber asc' ? messages.down : ( tradeRecordList.order=='ticketNumber desc' ? messages.up : '' )}">
+                    <f:param name="order" value="#{tradeRecordList.order=='ticketNumber asc' ? 'ticketNumber desc' : 'ticketNumber asc'}"/>
+                </s:link>
+            </f:facet>
+            #{tradeRecord.ticketNumber}
+        </h:column>
+        <h:column>
+            <f:facet name="header">
+                <s:link styleClass="columnHeader"
+                             value="returnCode #{tradeRecordList.order=='returnCode asc' ? messages.down : ( tradeRecordList.order=='returnCode desc' ? messages.up : '' )}">
+                    <f:param name="order" value="#{tradeRecordList.order=='returnCode asc' ? 'returnCode desc' : 'returnCode asc'}"/>
+                </s:link>
+            </f:facet>
+            #{tradeRecord.returnCode}
+        </h:column>
+        <h:column>
+            <f:facet name="header">
+                <s:link styleClass="columnHeader"
+                             value="errorMsg #{tradeRecordList.order=='errorMsg asc' ? messages.down : ( tradeRecordList.order=='errorMsg desc' ? messages.up : '' )}">
+                    <f:param name="order" value="#{tradeRecordList.order=='errorMsg asc' ? 'errorMsg desc' : 'errorMsg asc'}"/>
+                </s:link>
+            </f:facet>
+            #{tradeRecord.errorMsg}
+        </h:column>
+        <h:column>
+            <f:facet name="header">
+                <s:link styleClass="columnHeader"
+                             value="ackReceived #{tradeRecordList.order=='ackReceived asc' ? messages.down : ( tradeRecordList.order=='ackReceived desc' ? messages.up : '' )}">
+                    <f:param name="order" value="#{tradeRecordList.order=='ackReceived asc' ? 'ackReceived desc' : 'ackReceived asc'}"/>
+                </s:link>
+            </f:facet>
+            #{tradeRecord.ackReceived}
+        </h:column>
+        <h:column>
+            <f:facet name="header">
+                <s:link styleClass="columnHeader"
+                             value="acceptRejectReceived #{tradeRecordList.order=='acceptRejectReceived asc' ? messages.down : ( tradeRecordList.order=='acceptRejectReceived desc' ? messages.up : '' )}">
+                    <f:param name="order" value="#{tradeRecordList.order=='acceptRejectReceived asc' ? 'acceptRejectReceived desc' : 'acceptRejectReceived asc'}"/>
+                </s:link>
+            </f:facet>
+            #{tradeRecord.acceptRejectReceived}
+        </h:column>
+        <h:column>
+            <f:facet name="header">
+                <s:link styleClass="columnHeader"
+                             value="processingStatus #{tradeRecordList.order=='processingStatus asc' ? messages.down : ( tradeRecordList.order=='processingStatus desc' ? messages.up : '' )}">
+                    <f:param name="order" value="#{tradeRecordList.order=='processingStatus asc' ? 'processingStatus desc' : 'processingStatus asc'}"/>
+                </s:link>
+            </f:facet>
+            #{tradeRecord.processingStatus}
+        </h:column>
+        <h:column>
+            <f:facet name="header">
+                <s:link styleClass="columnHeader"
+                             value="tradingStrategy #{tradeRecordList.order=='tradingStrategy asc' ? messages.down : ( tradeRecordList.order=='tradingStrategy desc' ? messages.up : '' )}">
+                    <f:param name="order" value="#{tradeRecordList.order=='tradingStrategy asc' ? 'tradingStrategy desc' : 'tradingStrategy asc'}"/>
+                </s:link>
+            </f:facet>
+            #{tradeRecord.tradingStrategy}
+        </h:column>
+        <h:column>
+            <f:facet name="header">
+                <s:link styleClass="columnHeader"
+                             value="transCode #{tradeRecordList.order=='transCode asc' ? messages.down : ( tradeRecordList.order=='transCode desc' ? messages.up : '' )}">
+                    <f:param name="order" value="#{tradeRecordList.order=='transCode asc' ? 'transCode desc' : 'transCode asc'}"/>
+                </s:link>
+            </f:facet>
+            #{tradeRecord.transCode}
+        </h:column>
+        <h:column>
+            <f:facet name="header">
+                <s:link styleClass="columnHeader"
+                             value="lastUpdated #{tradeRecordList.order=='lastUpdated asc' ? messages.down : ( tradeRecordList.order=='lastUpdated desc' ? messages.up : '' )}">
+                    <f:param name="order" value="#{tradeRecordList.order=='lastUpdated asc' ? 'lastUpdated desc' : 'lastUpdated asc'}"/>
+                </s:link>
+            </f:facet>
+            #{tradeRecord.lastUpdated}
+        </h:column>
+        <h:column>
+            <f:facet name="header">action</f:facet>
+            <s:link view="/#{empty from ? 'TradeRecord' : from}.xhtml" 
+                   value="Select" 
+                      id="tradeRecord">
+                <f:param name="tradeRecordTradeRecordId" 
+                        value="#{tradeRecord.tradeRecordId}"/>
+            </s:link>
+        </h:column>
+    </rich:dataTable>
+
+    </div>
+    </rich:panel>
+    
+    <div class="tableControl">
+      
+        <s:link view="/TradeRecordList.xhtml" 
+            rendered="#{tradeRecordList.previousExists}" 
+               value="#{messages.left}#{messages.left} First Page"
+                  id="firstPage">
+          <f:param name="firstResult" value="0"/>
+        </s:link>
+        
+        <s:link view="/TradeRecordList.xhtml" 
+            rendered="#{tradeRecordList.previousExists}" 
+               value="#{messages.left} Previous Page"
+                  id="previousPage">
+            <f:param name="firstResult" 
+                    value="#{tradeRecordList.previousFirstResult}"/>
+        </s:link>
+        
+        <s:link view="/TradeRecordList.xhtml" 
+            rendered="#{tradeRecordList.nextExists}" 
+               value="Next Page #{messages.right}"
+                  id="nextPage">
+            <f:param name="firstResult" 
+                    value="#{tradeRecordList.nextFirstResult}"/>
+        </s:link>
+        
+        <s:link view="/TradeRecordList.xhtml" 
+            rendered="#{tradeRecordList.nextExists}" 
+               value="Last Page #{messages.right}#{messages.right}"
+                  id="lastPage">
+            <f:param name="firstResult" 
+                    value="#{tradeRecordList.lastFirstResult}"/>
+        </s:link>
+        
+    </div>
+    
+    <s:div styleClass="actionButtons" rendered="#{empty from}">
+        <s:button view="/TradeRecordEdit.xhtml"
+                    id="create" 
+                 value="Create tradeRecord">
+            <f:param name="tradeRecordTradeRecordId"/>
+        </s:button>
+    </s:div>
+    
+</ui:define>
+
+</ui:composition>
+

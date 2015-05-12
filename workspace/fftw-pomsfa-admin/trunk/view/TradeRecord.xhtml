@@ -1,0 +1,221 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                             "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+                template="layout/template.xhtml">
+                       
+<ui:define name="body">
+    
+    <h:messages globalOnly="true" styleClass="message" id="globalMessages"/>
+    
+    <rich:panel>
+        <f:facet name="header">TradeRecord</f:facet>
+
+        <s:decorate id="tradeRecordId" template="layout/display.xhtml">
+            <ui:define name="label">tradeRecordId</ui:define>
+            #{tradeRecordHome.instance.tradeRecordId}
+        </s:decorate>
+
+        <s:decorate id="creationDate" template="layout/display.xhtml">
+            <ui:define name="label">creationDate</ui:define>
+            <h:outputText value="#{tradeRecordHome.instance.creationDate}">
+                <s:convertDateTime type="both" dateStyle="short"/>
+            </h:outputText>
+        </s:decorate>
+
+        <s:decorate id="tradeSeqNum" template="layout/display.xhtml">
+            <ui:define name="label">tradeSeqNum</ui:define>
+            #{tradeRecordHome.instance.tradeSeqNum}
+        </s:decorate>
+
+        <s:decorate id="execId" template="layout/display.xhtml">
+            <ui:define name="label">execId</ui:define>
+            #{tradeRecordHome.instance.execId}
+        </s:decorate>
+
+        <s:decorate id="status" template="layout/display.xhtml">
+            <ui:define name="label">status</ui:define>
+            #{tradeRecordHome.instance.status}
+        </s:decorate>
+
+        <s:decorate id="securityIdFlag" template="layout/display.xhtml">
+            <ui:define name="label">securityIdFlag</ui:define>
+            #{tradeRecordHome.instance.securityIdFlag}
+        </s:decorate>
+
+        <s:decorate id="securityId" template="layout/display.xhtml">
+            <ui:define name="label">securityId</ui:define>
+            #{tradeRecordHome.instance.securityId}
+        </s:decorate>
+
+        <s:decorate id="traderName" template="layout/display.xhtml">
+            <ui:define name="label">traderName</ui:define>
+            #{tradeRecordHome.instance.traderName}
+        </s:decorate>
+
+        <s:decorate id="side" template="layout/display.xhtml">
+            <ui:define name="label">side</ui:define>
+            #{tradeRecordHome.instance.side}
+        </s:decorate>
+
+        <s:decorate id="quantity" template="layout/display.xhtml">
+            <ui:define name="label">quantity</ui:define>
+            <h:outputText value="#{tradeRecordHome.instance.quantity}">
+                <f:convertNumber/>
+            </h:outputText>
+        </s:decorate>
+
+        <s:decorate id="priceDisplay" template="layout/display.xhtml">
+            <ui:define name="label">priceDisplay</ui:define>
+            #{tradeRecordHome.instance.priceDisplay}
+        </s:decorate>
+
+        <s:decorate id="price" template="layout/display.xhtml">
+            <ui:define name="label">price</ui:define>
+            <h:outputText value="#{tradeRecordHome.instance.price}">
+                <f:convertNumber/>
+            </h:outputText>
+        </s:decorate>
+
+        <s:decorate id="settleDate" template="layout/display.xhtml">
+            <ui:define name="label">settleDate</ui:define>
+            <h:outputText value="#{tradeRecordHome.instance.settleDate}">
+                <s:convertDateTime type="both" dateStyle="short"/>
+            </h:outputText>
+        </s:decorate>
+
+        <s:decorate id="account" template="layout/display.xhtml">
+            <ui:define name="label">account</ui:define>
+            #{tradeRecordHome.instance.account}
+        </s:decorate>
+
+        <s:decorate id="productCode" template="layout/display.xhtml">
+            <ui:define name="label">productCode</ui:define>
+            #{tradeRecordHome.instance.productCode}
+        </s:decorate>
+
+        <s:decorate id="sourceCode" template="layout/display.xhtml">
+            <ui:define name="label">sourceCode</ui:define>
+            #{tradeRecordHome.instance.sourceCode}
+        </s:decorate>
+
+        <s:decorate id="broker" template="layout/display.xhtml">
+            <ui:define name="label">broker</ui:define>
+            #{tradeRecordHome.instance.broker}
+        </s:decorate>
+
+        <s:decorate id="primeBroker" template="layout/display.xhtml">
+            <ui:define name="label">primeBroker</ui:define>
+            #{tradeRecordHome.instance.primeBroker}
+        </s:decorate>
+
+        <s:decorate id="ticketNumber" template="layout/display.xhtml">
+            <ui:define name="label">ticketNumber</ui:define>
+            #{tradeRecordHome.instance.ticketNumber}
+        </s:decorate>
+
+        <s:decorate id="returnCode" template="layout/display.xhtml">
+            <ui:define name="label">returnCode</ui:define>
+            #{tradeRecordHome.instance.returnCode}
+        </s:decorate>
+
+        <s:decorate id="errorMsg" template="layout/display.xhtml">
+            <ui:define name="label">errorMsg</ui:define>
+            #{tradeRecordHome.instance.errorMsg}
+        </s:decorate>
+
+        <s:decorate id="ackReceived" template="layout/display.xhtml">
+            <ui:define name="label">ackReceived</ui:define>
+            <h:outputText value="#{tradeRecordHome.instance.ackReceived}">
+                <s:convertDateTime type="both" dateStyle="short"/>
+            </h:outputText>
+        </s:decorate>
+
+        <s:decorate id="acceptRejectReceived" template="layout/display.xhtml">
+            <ui:define name="label">acceptRejectReceived</ui:define>
+            <h:outputText value="#{tradeRecordHome.instance.acceptRejectReceived}">
+                <s:convertDateTime type="both" dateStyle="short"/>
+            </h:outputText>
+        </s:decorate>
+
+        <s:decorate id="processingStatus" template="layout/display.xhtml">
+            <ui:define name="label">processingStatus</ui:define>
+            #{tradeRecordHome.instance.processingStatus}
+        </s:decorate>
+
+        <s:decorate id="tradingStrategy" template="layout/display.xhtml">
+            <ui:define name="label">tradingStrategy</ui:define>
+            #{tradeRecordHome.instance.tradingStrategy}
+        </s:decorate>
+
+        <s:decorate id="transCode" template="layout/display.xhtml">
+            <ui:define name="label">transCode</ui:define>
+            #{tradeRecordHome.instance.transCode}
+        </s:decorate>
+
+        <s:decorate id="lastUpdated" template="layout/display.xhtml">
+            <ui:define name="label">lastUpdated</ui:define>
+            <h:outputText value="#{tradeRecordHome.instance.lastUpdated}">
+                <s:convertDateTime type="both" dateStyle="short"/>
+            </h:outputText>
+        </s:decorate>
+
+        <div style="clear:both"/>
+        
+    </rich:panel>
+    
+    <div class="actionButtons">      
+
+        <s:button view="/TradeRecordEdit.xhtml" 
+                    id="edit" 
+                 value="Edit"/>
+
+        <s:button view="/#{empty tradeRecordFrom ? 'TradeRecordList' : tradeRecordFrom}.xhtml"
+                    id="done"
+                 value="Done"/>
+
+    </div>
+
+    <rich:tabPanel switchType="ajax">
+
+    <rich:tab label="platform">
+    <div class="association" id="platformParent">
+        
+        <h:outputText value="No platform" 
+                   rendered="#{tradeRecordHome.instance.platform == null}"/>
+        
+        <rich:dataTable var="platform" 
+                   value="#{tradeRecordHome.instance.platform}" 
+                rendered="#{tradeRecordHome.instance.platform != null}"
+              rowClasses="rvgRowOne,rvgRowTwo"
+                      id="platformTable">
+            <h:column>
+                <f:facet name="header">platformId</f:facet>
+                #{platform.platformId}
+            </h:column>
+            <h:column>
+                <f:facet name="header">description</f:facet>
+                #{platform.description}
+            </h:column>
+            <h:column>
+                <f:facet name="header">action</f:facet>
+                <s:link id="viewplatform" 
+                     value="View" 
+                      view="/Platform.xhtml">
+                    <f:param name="platformPlatformId" 
+                           value="#{platform.platformId}"/>
+                </s:link>
+            </h:column>
+        </rich:dataTable>
+        
+    </div>
+    </rich:tab>
+</rich:tabPanel>
+</ui:define>
+
+</ui:composition>

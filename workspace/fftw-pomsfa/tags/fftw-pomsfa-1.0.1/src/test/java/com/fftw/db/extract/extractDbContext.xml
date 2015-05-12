@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName">
+			<value>net.sourceforge.jtds.jdbc.Driver</value>
+		</property>
+		<property name="url">
+			<value>jdbc:jtds:sqlserver://SQLDEVTS:2433/BADB</value>
+		</property>
+		<property name="username">
+			<value>sim</value>
+		</property>
+		<property name="password">
+			<value>Sim5878</value>
+		</property>
+	</bean>
+
+	<bean id="dbUnitDataExtractor"
+		class="com.fftw.db.extract.DBUnitDataExtractor">
+		<property name="dataSource" ref="dataSource" />
+		<property name="dataSetName" value="dbunit-dataset.xml" />
+		<property name="tableList">
+			<list>
+				<value>FUTURES_SYMBOL_MAPPING</value>
+				<value>MARKET_CALENDAR</value>
+				<value>PLATFORM</value>
+				<value>PRODUCT_CODE</value>
+				<value>TRADING_STRATEGY</value>
+			</list>
+		</property>
+		<!--
+			<property name="queryList">
+			<list>
+			<value>select * from bon_app_ext.person where first_name = 'Bill'</value>
+			</list>
+			</property>
+		-->
+	</bean>
+</beans>

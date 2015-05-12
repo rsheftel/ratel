@@ -1,4 +1,4 @@
-library("Core")
+library("GSFCore")
 
 testRObjectConstructor <- function() {
     obj <- SimpleTestClass(123)
@@ -55,5 +55,5 @@ testEqualsWithNestedClass <- function() {
 }
 
 testEqualsClassMismatch <- function() {
-    checkFalse(equals(RObject(), Object()))
+    checkFalse(equals(Object(), RObject()))
 }

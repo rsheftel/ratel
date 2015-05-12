@@ -1,0 +1,16 @@
+,ADEName,tsdbName,tsdbSource,gissingTemplate,gissingRecord,gissingField
+F5045ACT,F5045ACT,fncl_5.0_4.5_45d_price,internal,MARKETDATA,fncl_5.0_4.5_45d_price_actual,LastPrice
+F5550ACT,F5550ACT,fncl_5.5_5.0_45d_price,internal,MARKETDATA,fncl_5.5_5.0_45d_price_actual,LastPrice
+F6055ACT,F6055ACT,fncl_6.0_5.5_45d_price,internal,MARKETDATA,fncl_6.0_5.5_45d_price_actual,LastPrice
+F6560ACT,F6560ACT,fncl_6.5_6.0_45d_price,internal,MARKETDATA,fncl_6.5_6.0_45d_price_actual,LastPrice
+F7065ACT,F7065ACT,fncl_7.0_6.5_45d_price,internal,MARKETDATA,fncl_7.0_6.5_45d_price_actual,LastPrice
+F5045MDL,F5045MDL,fncl_5.0_4.5_45d_price,qfmodel_couponSwapModel_1.0,MARKETDATA,fncl_5.0_4.5_45d_price_model,LastPrice
+F5550MDL,F5550MDL,fncl_5.5_5.0_45d_price,qfmodel_couponSwapModel_1.0,MARKETDATA,fncl_5.5_5.0_45d_price_model,LastPrice
+F6055MDL,F6055MDL,fncl_6.0_5.5_45d_price,qfmodel_couponSwapModel_1.0,MARKETDATA,fncl_6.0_5.5_45d_price_model,LastPrice
+F6560MDL,F6560MDL,fncl_6.5_6.0_45d_price,qfmodel_couponSwapModel_1.0,MARKETDATA,fncl_6.5_6.0_45d_price_model,LastPrice
+F7065MDL,F7065MDL,fncl_7.0_6.5_45d_price,qfmodel_couponSwapModel_1.0,MARKETDATA,fncl_7.0_6.5_45d_price_model,LastPrice
+F5045WRL,F5045WRL,fncl_5.0_4.5_1n_weighted_roll,qfmodel_couponSwapModel_1.0,MARKETDATA,fncl_5.0_4.5_1n_weighted_roll,LastPrice
+F5550WRL,F5550WRL,fncl_5.5_5.0_1n_weighted_roll,qfmodel_couponSwapModel_1.0,MARKETDATA,fncl_5.5_5.0_1n_weighted_roll,LastPrice
+F6055WRL,F6055WRL,fncl_6.0_5.5_1n_weighted_roll,qfmodel_couponSwapModel_1.0,MARKETDATA,fncl_6.0_5.5_1n_weighted_roll,LastPrice
+F6560WRL,F6560WRL,fncl_6.5_6.0_1n_weighted_roll,qfmodel_couponSwapModel_1.0,MARKETDATA,fncl_6.5_6.0_1n_weighted_roll,LastPrice
+F7065WRL,F7065WRL,fncl_7.0_6.5_1n_weighted_roll,qfmodel_couponSwapModel_1.0,MARKETDATA,fncl_7.0_6.5_1n_weighted_roll,LastPrice

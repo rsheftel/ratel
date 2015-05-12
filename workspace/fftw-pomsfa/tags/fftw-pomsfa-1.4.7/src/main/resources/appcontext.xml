@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<!-- This configures the components that are used within the application.  The FIX/CMF
+		configuration is separate. The Mule configuration is also in a separate file. -->
+	<!-- This replaces parameters from system properties -->
+	<bean
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+	</bean>
+
+	<bean id="tradeRecordDao"
+		class="com.fftw.bloomberg.cmfp.dao.CmfAimTradeRecordJdbcDAO">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<bean id="marketCalendars"
+		class="com.fftw.util.settlement.calendar.MarketCalendar"
+		init-method="initializeCalendars">
+	</bean>
+
+	<bean id="fix2CmfMapper" class="com.fftw.bloomberg.util.Fix2CmfUtil"
+		init-method="initializeMaps">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<!-- enable the configuration of transactional behavior based on annotations -->
+	<!--	<tx:annotation-driven transaction-manager="txManager" />-->
+
+	<!-- the DataSource (parameterized for configuration via a PropertyPlaceHolderConfigurer) -->
+	<bean id="dataSource" destroy-method="close"
+		class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="${db.driver_class}" />
+		<property name="url" value="${db.url}" />
+		<property name="username" value="${db.user}" />
+		<property name="password" value="${db.password}" />
+	</bean>
+
+	<bean id="txManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<bean id="ApplicationDriver"
+		class="com.fftw.bloomberg.aggregator.AggregatorDriver">
+		<constructor-arg>
+			<ref bean="TradeStationReceiver" />
+		</constructor-arg>
+		<constructor-arg>
+			<ref bean="SessionSettings" />
+		</constructor-arg>
+		<constructor-arg>
+			<ref bean="PomsSender" />
+		</constructor-arg>
+		<constructor-arg>
+			<ref bean="CmfSessionSettings" />
+		</constructor-arg>
+		<constructor-arg>
+			<ref bean="DBM" />
+		</constructor-arg>
+		<property name="fixClients">
+			<list>
+				<ref bean="TradingScreen" />
+				<ref bean="Redi" />
+				<ref bean="TradeWeb" />
+				<ref bean="EMSX" />
+			</list>
+		</property>
+	</bean>
+
+	<!-- Initialize emailer -->
+	<bean id="emailSender" class="com.fftw.util.Emailer">
+		<constructor-arg>
+			<props>
+				<prop key="mail.host">${mail.host}</prop>
+				<prop key="mail.from">${mail.from}</prop>
+				<prop key="mail.to">${mail.to}</prop>
+				<prop key="mail.it.to">${mail.it.to},${mail.to}</prop>
+			</props>
+		</constructor-arg>
+	</bean>
+	<!-- Export via JMX -->
+
+	<bean id="ApplicationDriverUMO"
+		class="org.mule.impl.MuleDescriptor">
+		<property name="implementation">
+			<value>ApplicationDriver</value>
+		</property>
+	</bean>
+
+	<!-- this bean must not be lazily initialized if the exporting is to happen -->
+	<bean id="exporter"
+		class="org.springframework.jmx.export.MBeanExporter"
+		lazy-init="false">
+		<property name="beans">
+			<map>
+				<entry key="bean:name=fix2CmfMapper"
+					value-ref="fix2CmfMapper" />
+				<entry key="bean:name=ApplicationAggregator"
+					value-ref="TradeStationReceiver" />
+			</map>
+		</property>
+	</bean>
+</beans>

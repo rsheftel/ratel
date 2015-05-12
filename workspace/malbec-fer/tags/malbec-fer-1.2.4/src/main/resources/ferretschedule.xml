@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<!-- Configuration for Ferret Schedule -->
+
+	<bean id="FerretSchedule" class="malbec.fer.FerretSchedule">
+		<constructor-arg>
+			<props>
+				<prop key="StagedModeStart">04:30</prop>
+				<prop key="StagedModeEnd">20:00</prop>
+				<prop key="TicketModeStart">06:00</prop>
+				<prop key="TicketModeEnd">16:30</prop>
+				<prop key="DMAModeStart">07:00:00</prop>
+				<prop key="DMAModeEnd">07:00:01</prop>
+			</props>
+		</constructor-arg>
+	</bean>
+</beans>

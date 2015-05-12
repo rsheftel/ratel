@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+    <classpathentry kind="src" output="classes/action" path="src/action" />
+    <classpathentry kind="src" output="classes/model" path="src/model" />
+    <classpathentry kind="src" output="classes/test" path="src/test" />
+    <classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER" />
+    <classpathentry kind="lib" path="bootstrap" />
+    <classpathentry kind="lib" path="lib/hibernate-validator.jar" />
+    <classpathentry kind="lib" path="lib/hibernate.jar" />
+    <classpathentry kind="lib" path="lib/hibernate-annotations.jar" />
+    <classpathentry kind="lib" path="lib/hibernate-commons-annotations.jar" />
+    <classpathentry kind="lib" path="lib/hibernate-entitymanager.jar" />
+    <classpathentry kind="lib" path="lib/jboss-seam.jar" exported="true" />
+    <classpathentry kind="lib" path="lib/jboss-seam-debug.jar" exported="true" />
+    <classpathentry kind="lib" path="lib/jboss-cache.jar" />
+    <classpathentry kind="lib" path="lib/jbpm-jpdl.jar" />
+    <classpathentry kind="lib" path="lib/antlr.jar" />
+    <classpathentry kind="lib" path="lib/jgroups.jar" />
+    <classpathentry kind="lib" path="lib/jsf-facelets.jar" exported="true" />
+    <classpathentry kind="lib" path="lib/jstl.jar" />
+    <classpathentry kind="lib" path="lib/jsf-api.jar" />
+    <classpathentry kind="lib" path="lib/servlet-api.jar" />
+    <classpathentry kind="lib" path="lib/testng.jar" />
+    <classpathentry kind="lib" path="lib/jboss-el.jar" />
+    <classpathentry kind="lib" path="lib/el-api.jar" />
+    <classpathentry kind="lib" path="lib/mvel14.jar" />
+    <classpathentry kind="lib" path="lib/drools-core.jar" />
+    <classpathentry kind="lib" path="lib/drools-compiler.jar" />
+    <classpathentry kind="lib" path="lib/janino.jar" />
+    <classpathentry kind="lib" path="lib/antlr-runtime.jar" />
+    <classpathentry kind="lib" path="lib/mail.jar" />
+    <classpathentry kind="lib" path="lib/persistence-api.jar" />
+    <classpathentry kind="lib" path="lib/ejb-api.jar" />
+    <classpathentry kind="lib" path="lib/jsr250-api.jar" />
+    <classpathentry kind="lib" path="lib/jta.jar" />
+    <classpathentry kind="lib" path="lib/core.jar" />
+    <classpathentry kind="lib" path="lib/jboss-embedded-api.jar" />
+    <classpathentry kind="lib" path="lib/hibernate-search.jar" />
+    <classpathentry kind="lib" path="lib/richfaces-api.jar" exported="true" />
+    <classpathentry kind="lib" path="lib/jtds-1.2.jar" />
+    <classpathentry kind="lib" path="lib/lucene-core.jar" />
+    <classpathentry kind="var" path="APPLICATION_HOME_DIR/lib/javaee.jar" />
+    <classpathentry kind="var" path="APPLICATION_HOME_DIR/lib/j2ee.jar" />
+    <classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/hibernate3" />
+    <classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/jTDS" />
+    <classpathentry kind="lib" path="lib/commons-digester.jar" exported="true" />
+    <classpathentry kind="lib" path="lib/jboss-seam-gen.jar" exported="true" />
+    <classpathentry kind="lib" path="lib/commons-beanutils.jar" exported="true" />
+    <classpathentry kind="lib" path="lib/richfaces-impl.jar" exported="true" />
+    <classpathentry kind="lib" path="lib/richfaces-ui.jar" exported="true" />
+    <classpathentry kind="lib" path="lib/jboss-seam-ioc.jar" exported="true" />
+    <classpathentry kind="lib" path="lib/jboss-seam-pdf.jar" exported="true" />
+    <classpathentry kind="lib" path="lib/jboss-seam-mail.jar" exported="true" />
+    <classpathentry kind="lib" path="lib/jboss-seam-ui.jar" exported="true" />
+    <classpathentry kind="lib" path="lib/jboss-seam-remoting.jar" exported="true" />
+    <classpathentry kind="output" path="test-build" />
+</classpath>
+

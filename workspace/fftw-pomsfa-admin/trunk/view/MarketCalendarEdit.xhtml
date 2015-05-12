@@ -1,0 +1,106 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                             "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:a="http://richfaces.org/a4j"
+                xmlns:rich="http://richfaces.org/rich"
+                template="layout/template.xhtml">
+                       
+<ui:define name="body">
+    
+    <h:messages globalOnly="true" styleClass="message" id="globalMessages"/>
+
+    <h:form id="marketCalendar" styleClass="edit">
+    
+        <rich:panel>
+            <f:facet name="header">#{marketCalendarHome.managed ? 'Edit' : 'Add'} MarketCalendar</f:facet>
+
+            <s:decorate id="idDecoration" template="layout/edit.xhtml">
+                <ui:define name="label">id</ui:define>
+                <h:inputText id="id"
+                       required="true"
+                       disabled="#{marketCalendarHome.managed}"
+                          value="#{marketCalendarHome.instance.id}">
+                    <a:support event="onblur" reRender="idDecoration" bypassUpdates="true"/>
+                </h:inputText>
+            </s:decorate>
+
+            <s:decorate id="marketIdDecoration" template="layout/edit.xhtml">
+                <ui:define name="label">marketId</ui:define>
+                <h:inputText id="marketId" 
+                       required="true"
+                           size="10"
+                      maxlength="10"
+                          value="#{marketCalendarHome.instance.marketId}">
+                    <a:support event="onblur" reRender="marketIdDecoration" bypassUpdates="true"/>
+                </h:inputText>
+            </s:decorate>
+
+            <s:decorate id="closedOnDecoration" template="layout/edit.xhtml">
+                <ui:define name="label">closedOn</ui:define>
+                <h:inputText id="closedOn" 
+                           size="16"
+                       required="true"
+                          value="#{marketCalendarHome.instance.closedOn}">
+                    <s:convertDateTime type="both" dateStyle="short"/>
+                    <a:support event="onblur" reRender="closedOnDecoration" bypassUpdates="true"/>
+                </h:inputText>
+            </s:decorate>
+
+            <s:decorate id="descriptionDecoration" template="layout/edit.xhtml">
+                <ui:define name="label">description</ui:define>
+                <h:inputText id="description" 
+                           size="50"
+                      maxlength="50"
+                          value="#{marketCalendarHome.instance.description}">
+                    <a:support event="onblur" reRender="descriptionDecoration" bypassUpdates="true"/>
+                </h:inputText>
+            </s:decorate>
+        
+            <div style="clear:both">
+                <span class="required">*</span> 
+                required fields
+            </div>
+            
+        </rich:panel>
+                
+        <div class="actionButtons">
+
+            <h:commandButton id="save" 
+                          value="Save" 
+                         action="#{marketCalendarHome.persist}"
+                       disabled="#{!marketCalendarHome.wired}"
+                       rendered="#{!marketCalendarHome.managed}"/>  
+                          			  
+            <h:commandButton id="update" 
+                          value="Save" 
+                         action="#{marketCalendarHome.update}"
+                       rendered="#{marketCalendarHome.managed}"/>
+                        			  
+            <h:commandButton id="delete" 
+                          value="Delete" 
+                         action="#{marketCalendarHome.remove}"
+                       rendered="#{marketCalendarHome.managed}"/>
+                    
+            <s:button id="done" 
+                   value="Done"
+             propagation="end"
+                    view="/MarketCalendar.xhtml"
+                rendered="#{marketCalendarHome.managed}"/>
+                
+            <s:button id="cancel" 
+                   value="Cancel"
+             propagation="end"
+                    view="/#{empty marketCalendarFrom ? 'MarketCalendarList' : marketCalendarFrom}.xhtml"
+                rendered="#{!marketCalendarHome.managed}"/>
+
+        </div>
+    </h:form>
+
+</ui:define>
+
+</ui:composition>

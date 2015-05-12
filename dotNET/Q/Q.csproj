@@ -1,0 +1,465 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{77D22C12-4AD9-4FED-98F3-623062247C4F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Q</RootNamespace>
+    <AssemblyName>Q</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="HamsterDb-dotnet, Version=0.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\HamsterDb-dotnet.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Corba, Version=0.40.0.1, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\IKVM.OpenJDK.Corba.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Core, Version=0.40.0.1, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\IKVM.OpenJDK.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Jdbc, Version=0.40.0.1, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\IKVM.OpenJDK.Jdbc.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Management, Version=0.40.0.1, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\IKVM.OpenJDK.Management.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Misc, Version=0.40.0.1, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\IKVM.OpenJDK.Misc.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Security, Version=0.40.0.1, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\IKVM.OpenJDK.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.SwingAWT, Version=0.40.0.1, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\IKVM.OpenJDK.SwingAWT.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Text, Version=0.40.0.1, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\IKVM.OpenJDK.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Util, Version=0.40.0.1, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\IKVM.OpenJDK.Util.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML, Version=0.40.0.1, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\IKVM.OpenJDK.XML.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.Runtime, Version=0.40.0.1, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\IKVM.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.Runtime.JNI, Version=0.40.0.1, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\IKVM.Runtime.JNI.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.4.7.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="systematic, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\systematic.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Amazon\Bootstrap.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Amazon\CloudSTOTracker.cs" />
+    <Compile Include="Amazon\FastDestroyBucket.cs" />
+    <Compile Include="Amazon\FetchSTOParameters.cs" />
+    <Compile Include="Amazon\Runner.cs" />
+    <Compile Include="Amazon\RunTonsOfRun.cs" />
+    <Compile Include="Amazon\STOClient.cs" />
+    <Compile Include="Amazon\STOMetricsWriter.cs" />
+    <Compile Include="Amazon\STORequest.cs" />
+    <Compile Include="Amazon\STOServer.cs" />
+    <Compile Include="Amazon\TestCloudSTOTracker.cs" />
+    <Compile Include="Amazon\TestSTORequest.cs" />
+    <Compile Include="Amazon\WaitForever.cs" />
+    <Compile Include="Local\Bootstrap.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Local\ServerControl.cs" />
+    <Compile Include="Local\STOClient.cs" />
+    <Compile Include="Local\STOServer.cs" />
+    <Compile Include="Local\TestSTOServer.cs" />
+    <Compile Include="Messaging\Channel.cs" />
+    <Compile Include="Messaging\PublishCounter.cs" />
+    <Compile Include="Messaging\Queue.cs" />
+    <Compile Include="Messaging\TestTopic.cs" />
+    <Compile Include="Messaging\Topic.cs" />
+    <Compile Include="Recon\FerretControl.cs" />
+    <Compile Include="Recon\LiveWatcher.cs" />
+    <Compile Include="Recon\PositionTracker.cs" />
+    <Compile Include="Recon\QGUI.cs" />
+    <Compile Include="Recon\QNode.cs" />
+    <Compile Include="Recon\StatusTreeMap.cs" />
+    <Compile Include="Recon\TestFerretControl.cs" />
+    <Compile Include="Recon\TestLiveWatcher.cs" />
+    <Compile Include="Recon\TestPositionTracker.cs" />
+    <Compile Include="Recon\TestStatusTracker.cs" />
+    <Compile Include="Recon\FakeOrderTrackerGUI.cs" />
+    <Compile Include="Recon\FakeTick.cs" />
+    <Compile Include="Recon\OrderTable.cs" />
+    <Compile Include="Recon\OrderTracker.cs" />
+    <Compile Include="Recon\OrderTrackerGUI.cs" />
+    <Compile Include="Recon\StatusTracker.cs" />
+    <Compile Include="Recon\StatusTrackerGUI.cs" />
+    <Compile Include="Recon\TestOrderTracker.cs" />
+    <Compile Include="Recon\TestOrderTable.cs" />
+    <Compile Include="Recon\TestStatusTreeMap.cs" />
+    <Compile Include="Recon\TickTracker.cs" />
+    <Compile Include="Recon\TreeMapModel.cs" />
+    <Compile Include="Recon\WatcherGui.cs" />
+    <Compile Include="Research\FakeResearchGUI.cs" />
+    <Compile Include="Research\QDataTable.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Research\Researcher.cs" />
+    <Compile Include="Research\ResearchGUI.cs" />
+    <Compile Include="Research\SystemRunInfo.cs" />
+    <Compile Include="Research\TestResearch.cs" />
+    <Compile Include="Simulator\BarLoader.cs" />
+    <Compile Include="Simulator\Live.cs" />
+    <Compile Include="Simulator\LiveLauncher.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Simulator\MultiSymbolRun.cs" />
+    <Compile Include="Simulator\PortfolioDaily.cs" />
+    <Compile Include="Simulator\Portfolio.cs" />
+    <Compile Include="Simulator\STO.cs" />
+    <Compile Include="Simulator\Simulator.cs" />
+    <Compile Include="Simulator\FakeBarLoader.cs" />
+    <Compile Include="Simulator\TestLiveLauncher.cs" />
+    <Compile Include="Simulator\TestPaperBroker.cs" />
+    <Compile Include="Simulator\TestResearchMode.cs" />
+    <Compile Include="Simulator\TestSimulator.cs" />
+    <Compile Include="Spuds\Core\BarCounter.cs" />
+    <Compile Include="Spuds\Core\IntervalSpud.cs" />
+    <Compile Include="Spuds\Core\TestIntervalSpud.cs" />
+    <Compile Include="Spuds\Core\TestOperators.cs" />
+    <Compile Include="Spuds\Core\Operators.cs" />
+    <Compile Include="Spuds\Core\CrossOverSpud.cs" />
+    <Compile Include="Spuds\Core\RootSpud.cs" />
+    <Compile Include="Spuds\Core\SymbolSpud.cs" />
+    <Compile Include="Spuds\Core\TestCrossOver.cs" />
+    <Compile Include="Spuds\Core\TestSpudDependencyTree.cs" />
+    <Compile Include="Spuds\Core\TestSpudObserver.cs" />
+    <Compile Include="Spuds\Core\TestSymbolSpud.cs" />
+    <Compile Include="Spuds\Indicators\AggregatorSpud.cs" />
+    <Compile Include="Spuds\Indicators\Average.cs" />
+    <Compile Include="Spuds\Indicators\AverageTrueRange.cs" />
+    <Compile Include="Spuds\Indicators\AverageTrueRangeEW.cs" />
+    <Compile Include="Spuds\Core\ComparableSpud.cs" />
+    <Compile Include="Spuds\Core\Spud.cs" />
+    <Compile Include="Spuds\Core\SpudBase.cs" />
+    <Compile Include="Spuds\Core\SpudManager.cs" />
+    <Compile Include="Spuds\Indicators\BollingerBand.cs" />
+    <Compile Include="Spuds\Indicators\Max.cs" />
+    <Compile Include="Spuds\Indicators\Min.cs" />
+    <Compile Include="Spuds\Indicators\SpudTestCase.cs" />
+    <Compile Include="Spuds\Indicators\StandardDeviation.cs" />
+    <Compile Include="Spuds\Indicators\StdDeviation.cs" />
+    <Compile Include="Spuds\Indicators\StdDeviationOfPopulation.cs" />
+    <Compile Include="Spuds\Indicators\StdDeviationOfSample.cs" />
+    <Compile Include="Spuds\Indicators\Sum.cs" />
+    <Compile Include="Spuds\Indicators\TestKalman.cs" />
+    <Compile Include="Spuds\Indicators\Kalman.cs" />
+    <Compile Include="Spuds\Indicators\TDSetup.cs" />
+    <Compile Include="Spuds\Indicators\TestQRegression.cs" />
+    <Compile Include="Spuds\Indicators\QRegression.cs" />
+    <Compile Include="Spuds\Indicators\Fibonacci.cs" />
+    <Compile Include="Spuds\Indicators\KAMA.cs" />
+    <Compile Include="Spuds\Indicators\RSI.cs" />
+    <Compile Include="Spuds\Indicators\TestEWAcf.cs" />
+    <Compile Include="Spuds\Indicators\EWMA.cs" />
+    <Compile Include="Spuds\Indicators\TestEWMA.cs" />
+    <Compile Include="Spuds\Indicators\TestFibonacci.cs" />
+    <Compile Include="Spuds\Indicators\TestKama.cs" />
+    <Compile Include="Spuds\Indicators\TestMinMax.cs" />
+    <Compile Include="Spuds\Indicators\TestRSI.cs" />
+    <Compile Include="Spuds\Indicators\TestTDSetup.cs" />
+    <Compile Include="Spuds\Indicators\TestZScore.cs" />
+    <Compile Include="Spuds\Indicators\TestTrueRange.cs" />
+    <Compile Include="Spuds\Indicators\TestStandardDeviation.cs" />
+    <Compile Include="Spuds\Indicators\StatisticsSpud.cs" />
+    <Compile Include="Spuds\Indicators\TestSimpleAverage.cs" />
+    <Compile Include="Spuds\Indicators\TestAverageTrueRangeEW.cs" />
+    <Compile Include="Spuds\Core\TestSpud.cs" />
+    <Compile Include="Spuds\Indicators\TestBollingerBand.cs" />
+    <Compile Include="Spuds\Indicators\TrueRange.cs" />
+    <Compile Include="Spuds\Indicators\Window.cs" />
+    <Compile Include="Spuds\Indicators\ZScoreSpud.cs" />
+    <Compile Include="Systems\AbstractFXCommodityCloseTest.cs" />
+    <Compile Include="Systems\AbstractTrendingCloseTest.cs" />
+    <Compile Include="Systems\BuySellAndHold.cs" />
+    <Compile Include="Systems\ReverseDTD.cs" />
+    <Compile Include="Systems\OneSymbolSystemTestReverseDTD.cs" />
+    <Compile Include="Systems\TestReverseDTDATRSizing.cs" />
+    <Compile Include="Systems\TestReverseDTDBase.cs" />
+    <Compile Include="Systems\TestReverseDTDMain.cs" />
+    <Compile Include="Systems\TestReverseDTDMinPrice.cs" />
+    <Compile Include="Systems\TestReverseDTDTrailingStop.cs" />
+    <Compile Include="Systems\TestITrend.cs" />
+    <Compile Include="Systems\ITrend.cs" />
+    <Compile Include="Systems\Examples\TestPriceTrailingStop.cs" />
+    <Compile Include="Systems\SwingMA.cs" />
+    <Compile Include="Systems\TestSwingMA.cs" />
+    <Compile Include="Systems\NBarBreakMA.cs" />
+    <Compile Include="Systems\NDayBreak.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Systems\TestNBarBreakMA.cs" />
+    <Compile Include="Systems\Examples\TestMaxBars.cs" />
+    <Compile Include="Systems\MultiPairSystems\CommodityCarryMaxTradesPerContract.cs" />
+    <Compile Include="Systems\MultiPairSystems\MaxTradesManager.cs" />
+    <Compile Include="Systems\MultiPairSystems\TestCommodityCarryMaxTradesPerContract.cs" />
+    <Compile Include="Systems\MultiSymbolSystems\DTDPortfolioMatchedPairs.cs" />
+    <Compile Include="Systems\MultiSymbolSystems\TestDTDPortfolioMatchedPairs.cs" />
+    <Compile Include="Systems\Examples\TestPairSystem.cs" />
+    <Compile Include="Systems\PairSystems\CommodityCarry.cs" />
+    <Compile Include="Systems\PairSystems\OnePairSystemTest.cs" />
+    <Compile Include="Systems\PairSystems\TestCommodityCarry.cs" />
+    <Compile Include="Systems\SystemSystems\SectorRotationShort.cs" />
+    <Compile Include="Systems\SystemSystems\TestSectorRotationShort.cs" />
+    <Compile Include="Systems\TestFaderCloseObjective.cs" />
+    <Compile Include="Systems\FaderCloseObjective.cs" />
+    <Compile Include="Systems\DTDRichCheapv2.cs" />
+    <Compile Include="Systems\Examples\TestObjectiveExit.cs" />
+    <Compile Include="Systems\FadeWeekEndPush.cs" />
+    <Compile Include="Systems\FadeWeekEndPushClose.cs" />
+    <Compile Include="Systems\FXCarry.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Systems\FXCarryV2.cs" />
+    <Compile Include="Systems\FXCommodityClose.cs" />
+    <Compile Include="Systems\MultiSymbolSystems\DTDPortfolioMultiSymbolBase.cs" />
+    <Compile Include="Systems\MultiSymbolSystems\DTDPortfolioPositionLimits.cs" />
+    <Compile Include="Systems\MultiSymbolSystems\TestDTDPortfolioPositionLimits.cs" />
+    <Compile Include="Systems\NBarFade.cs" />
+    <Compile Include="Systems\OneSymbolSystemTestCDS.cs" />
+    <Compile Include="Systems\TestDTDRichCheapV2Base.cs" />
+    <Compile Include="Systems\TestDTDRichCheapV2Main.cs" />
+    <Compile Include="Systems\TestDTDRichCheapV2ProfitObjective.cs" />
+    <Compile Include="Systems\TestDTDRichCheapV2TrailingStop.cs" />
+    <Compile Include="Systems\TestFadeWeekEndPush.cs" />
+    <Compile Include="Systems\TestFadeWeekEndPushClose.cs" />
+    <Compile Include="Systems\TestFXCarry.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Systems\TestFXCarryV2.cs" />
+    <Compile Include="Systems\TestFXCommodityClose.cs" />
+    <Compile Include="Systems\TestFXCommodityCloseReversed.cs" />
+    <Compile Include="Systems\TestNBarFade.cs" />
+    <Compile Include="Systems\TDSequential.cs" />
+    <Compile Include="Systems\Examples\TestDollarTrailingStop.cs" />
+    <Compile Include="Systems\FaderClose.cs" />
+    <Compile Include="Systems\LiqInjT.cs" />
+    <Compile Include="Systems\TestFaderClose.cs" />
+    <Compile Include="Systems\CouponSwap.cs" />
+    <Compile Include="Systems\Examples\TestLeadBarsSymbolSystem.cs" />
+    <Compile Include="Systems\Examples\TestSameLookingPositionCanGetFilledTwice.cs" />
+    <Compile Include="Systems\Examples\TestSymbolSystemSpudDates.cs" />
+    <Compile Include="Systems\Examples\TestSystemDeactivation.cs" />
+    <Compile Include="Systems\Examples\TestSystemUpdatesTicks.cs" />
+    <Compile Include="Systems\FadeMonthEndPush.cs" />
+    <Compile Include="Systems\FadeMonthEndPushStopLoss.cs" />
+    <Compile Include="Systems\LiqInj.cs" />
+    <Compile Include="Systems\NDayBreakCloseMinVol.cs" />
+    <Compile Include="Systems\RSITargets.cs" />
+    <Compile Include="Systems\TestBuySellAndHold.cs" />
+    <Compile Include="Systems\TestCouponSwap.cs" />
+    <Compile Include="Systems\TestFadeMonthEndPush.cs" />
+    <Compile Include="Systems\TestLiqInj.cs" />
+    <Compile Include="Systems\TestLiqInjT.cs" />
+    <Compile Include="Systems\TestNDayBreakCloseMinVol.cs" />
+    <Compile Include="Systems\Examples\Benchmark.cs" />
+    <Compile Include="Systems\Examples\MultipleSymbolsExample.cs" />
+    <Compile Include="Systems\Examples\OnCloseExample.cs" />
+    <Compile Include="Systems\DTDRichCheap.cs" />
+    <Compile Include="Systems\Examples\TestMultipleSymbolsExample.cs" />
+    <Compile Include="Systems\NDayBreakBase.cs" />
+    <Compile Include="Systems\TestDTDRichCheap.cs" />
+    <Compile Include="Systems\Examples\TestOnClose.cs" />
+    <Compile Include="Systems\Examples\TestOrderSubmitter.cs" />
+    <Compile Include="Systems\Examples\TestSystemWithUnplacedObjects.cs" />
+    <Compile Include="Systems\Examples\TestSpudsGetRealizedNoMatterWhat.cs" />
+    <Compile Include="Systems\OneSystemTest.cs" />
+    <Compile Include="Systems\Examples\TestOrderDuration.cs" />
+    <Compile Include="Systems\OneSymbolSystemTest.cs" />
+    <Compile Include="Systems\TestNDayBreak.cs" />
+    <Compile Include="Systems\Examples\TestExampleSymbolSystem.cs" />
+    <Compile Include="Systems\TestRSITargets.cs" />
+    <Compile Include="Systems\TestTDSequential.cs" />
+    <Compile Include="Systems\TestTrendingMABar.cs" />
+    <Compile Include="Systems\TestTrendingMAClose.cs" />
+    <Compile Include="Systems\TestTrendingMAPriceBar.cs" />
+    <Compile Include="Systems\TestTrendingMAPriceClose.cs" />
+    <Compile Include="Systems\TrendingMABar.cs" />
+    <Compile Include="Systems\TrendingMAClose.cs" />
+    <Compile Include="Systems\TrendingMAPriceBar.cs" />
+    <Compile Include="Systems\TrendingMABase.cs" />
+    <Compile Include="Systems\TrendingMAPriceClose.cs" />
+    <Compile Include="Trading\AbortBar.cs" />
+    <Compile Include="Trading\Bar.cs" />
+    <Compile Include="Trading\BarSpud.cs" />
+    <Compile Include="Trading\Currency.cs" />
+    <Compile Include="Trading\IndependentPairSystems.cs" />
+    <Compile Include="Trading\DollarTrailingStop.cs" />
+    <Compile Include="Trading\MaxBarsExit.cs" />
+    <Compile Include="Trading\MultiPairSystem.cs" />
+    <Compile Include="Trading\SingleSystem.cs" />
+    <Compile Include="Trading\SystemHeartbeat.cs" />
+    <Compile Include="Trading\MultiSymbolSystem.cs" />
+    <Compile Include="Trading\MultiSystem.cs" />
+    <Compile Include="Trading\ObjectiveExit.cs" />
+    <Compile Include="Trading\Pair.cs" />
+    <Compile Include="Trading\PairGenerator.cs" />
+    <Compile Include="Trading\PairSystem.cs" />
+    <Compile Include="Trading\ParabolicStop.cs" />
+    <Compile Include="Trading\Results\Collectible.cs" />
+    <Compile Include="Trading\Results\RunMetrics.cs" />
+    <Compile Include="Trading\Results\STOMetricResults.cs" />
+    <Compile Include="Trading\Results\CurveFiles.cs" />
+    <Compile Include="Trading\Results\MetricFiles.cs" />
+    <Compile Include="Trading\Results\MetricResults.cs" />
+    <Compile Include="Trading\Results\Metrics.cs" />
+    <Compile Include="Trading\Results\Portfolio.cs" />
+    <Compile Include="Trading\Results\StatisticsCollector.cs" />
+    <Compile Include="Trading\Results\TestCurveFiles.cs" />
+    <Compile Include="Trading\Results\TestMetricFiles.cs" />
+    <Compile Include="Trading\Results\TestMetrics.cs" />
+    <Compile Include="Trading\Results\TestPortfolioMetrics.cs" />
+    <Compile Include="Trading\Results\TestStatisticsCollector.cs" />
+    <Compile Include="Trading\Results\TestSTOMetricResults.cs" />
+    <Compile Include="Trading\Results\TradeTracker.cs" />
+    <Compile Include="Trading\Results\StatisticsManager.cs" />
+    <Compile Include="Trading\Slippage\CdsSlippage.cs" />
+    <Compile Include="Trading\Slippage\CdsSlippageTable.cs" />
+    <Compile Include="Trading\Slippage\Fixed.cs" />
+    <Compile Include="Trading\Slippage\SlippageCalculator.cs" />
+    <Compile Include="Trading\Slippage\SlippageTestSystem.cs" />
+    <Compile Include="Trading\Slippage\TestCdsSlippage.cs" />
+    <Compile Include="Trading\Slippage\TestCdsSlippageTable.cs" />
+    <Compile Include="Trading\Slippage\TestSlippageOverride.cs" />
+    <Compile Include="Trading\Slippage\TestTimeVaryingSlippage.cs" />
+    <Compile Include="Trading\Slippage\TestTimeVaryingSlippageBase.cs" />
+    <Compile Include="Trading\Slippage\TimesTwo.cs" />
+    <Compile Include="Trading\SystemKey.cs" />
+    <Compile Include="Trading\Direction.cs" />
+    <Compile Include="Trading\LiveTradeMonitor.cs" />
+    <Compile Include="Trading\IndependentSymbolSystems.cs" />
+    <Compile Include="Trading\Order.cs" />
+    <Compile Include="Trading\OrderDetails.cs" />
+    <Compile Include="Trading\OrderDuration.cs" />
+    <Compile Include="Trading\Parameters.cs" />
+    <Compile Include="Trading\Position.cs" />
+    <Compile Include="Trading\PositionMonitor.cs" />
+    <Compile Include="Trading\QREBridge.cs" />
+    <Compile Include="Trading\RunMode.cs" />
+    <Compile Include="Trading\Symbol.cs" />
+    <Compile Include="Trading\SymbolSystem.cs" />
+    <Compile Include="Trading\System.cs" />
+    <Compile Include="Trading\SystemArguments.cs" />
+    <Compile Include="Trading\TestBar.cs" />
+    <Compile Include="Trading\TestOrderDetails.cs" />
+    <Compile Include="Trading\TestParameters.cs" />
+    <Compile Include="Trading\TestPosition.cs" />
+    <Compile Include="Trading\TestPositionMonitor.cs" />
+    <Compile Include="Trading\TestSymbol.cs" />
+    <Compile Include="Trading\TestSymbolTick.cs" />
+    <Compile Include="Trading\TestParabolicStop.cs" />
+    <Compile Include="Trading\TestSystemHeartbeat.cs" />
+    <Compile Include="Trading\Tick.cs" />
+    <Compile Include="Trading\Trade.cs" />
+    <Compile Include="Trading\OrderSubmitter.cs" />
+    <Compile Include="Trading\PriceTrailingStop.cs" />
+    <Compile Include="Trading\DynamicExit.cs" />
+    <Compile Include="Util\Action.cs" />
+    <Compile Include="Util\Heartbeat.cs" />
+    <Compile Include="Util\LazyDictionary.cs" />
+    <Compile Include="Util\TestBomb.cs" />
+    <Compile Include="Util\Lazy.cs" />
+    <Compile Include="Util\TestHeartbeat.cs" />
+    <Compile Include="Util\TestLazy.cs" />
+    <Compile Include="Util\TestLogC.cs" />
+    <Compile Include="Util\LogC.cs" />
+    <Compile Include="Util\Env.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Systems\Examples\ExampleSymbolSystem.cs" />
+    <Compile Include="Systems\Examples\ExampleSystem.cs" />
+    <Compile Include="Util\Bomb.cs" />
+    <Compile Include="Util\DbTestCase.cs" />
+    <Compile Include="Util\Objects.cs" />
+    <Compile Include="Util\TestQAsserts.cs" />
+    <Compile Include="Util\QAsserts.cs" />
+    <Compile Include="Util\TestEach.cs" />
+    <Compile Include="Util\TestJBomb.cs" />
+    <Compile Include="Util\TestObjects.cs" />
+    <Compile Include="Util\TestTimers.cs" />
+    <Compile Include="Util\TestWeakRef.cs" />
+    <Compile Include="Util\Stopwatch.cs" />
+    <Compile Include="Util\TimerManager.cs" />
+    <Compile Include="Util\Timers.cs" />
+    <Compile Include="Util\TimerSequence.cs" />
+    <Compile Include="Util\WeakRef.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Systems\Sleeping\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

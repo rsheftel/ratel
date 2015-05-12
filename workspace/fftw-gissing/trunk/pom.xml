@@ -1,0 +1,105 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <parent>
+        <groupId>com.fftw</groupId>
+        <artifactId>fftw-parentpom</artifactId>
+        <version>1.9</version>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.fftw</groupId>
+    <artifactId>fftw-gissing</artifactId>
+    <packaging>jar</packaging>
+    <version>1.1</version>
+    <name>Gissing</name>
+    <description>Easy Language to Gissing</description>
+
+    <issueManagement>
+        <url>http://jira.fftw.com/browse/MALBEC</url>
+    </issueManagement>
+
+    <scm><!--  source configuration management system  -->
+        <connection>scm:svn:http://scm.fftw.com/svn/active/workspace/fftw-gissing/tags/fftw-gissing-1.1</connection>
+        <url>http://scm.fftw.com/svn/active/workspace/fftw-gissing/tags/fftw-gissing-1.1</url>
+    </scm>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>systematic</groupId>
+            <artifactId>systematic</artifactId>
+            <version>2008-07-23</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fftw</groupId>
+            <artifactId>malbec-metadb</artifactId>
+            <version>1.6</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.5.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.5.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.gissing.contex</groupId>
+            <artifactId>ContextTcpWrapper</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fftw.prism</groupId>
+            <artifactId>fftw-stp</artifactId>
+            <version>3.9</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>javax.jms</groupId>
+                    <artifactId>jms</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>src/resources</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                    <include>**/*.properties</include>
+                </includes>
+            </resource>
+        </resources>
+    </build>
+
+    <repositories>
+        <repository>
+            <id>FFTW-project-snapshot-repository</id>
+            <name>FFTW Snapshot Repository</name>
+            <url>
+                http://scm.fftw.com:8081/artifactory/libs-snapshots
+            </url>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>FFTW-project-release-repository</id>
+            <name>FFTW Release Repository</name>
+            <url>
+                http://scm.fftw.com:8081/artifactory/libs-releases
+            </url>
+        </repository>
+    </repositories>
+    <distributionManagement>
+        <site>
+            <id>FFTW-site</id>
+            <name>FFTW Maven Site</name>
+            <url>file:////scm.fftw.com/maven/sites/${pom.artifactId}/${pom.version}</url>
+        </site>
+    </distributionManagement>
+</project>

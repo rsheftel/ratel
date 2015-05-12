@@ -1,0 +1,130 @@
+# User specific aliases and functions
+# export PS1="\e[31;40m\u@\h \w \!> "
+
+
+if [ ! -f ~/.vimrc ]; then
+    cp $svn/sh/vimrc ~/.vimrc
+fi
+
+
+export s=$svn/R/scripts
+export main=$svn
+
+name=`hostname`
+
+echo " $name "
+
+
+export PS1="\e[37;40m\u@\h \w \!> " 
+
+set -o vi
+
+alias eenv='vim ~/.bashrc; . ~/.bashrc'
+alias resource='. ~/.bashrc'
+alias lep=eenv
+alias rp=resource
+alias ep='vim $svn/sh/common_bashrc; rp'
+
+export LS_COLORS='no=00:fi=00:di=01;35:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.gz=01;31:*.bz2=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.avi=01;35:*.fli=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.ogg=01;35:*.mp3=01;35:*.wav=01;35:';
+
+export http_proxy=http://proxy.fftw.com:8080/
+export ODBC_INCLUDE=/tp/odbcdriver/easysoft/unixODBC/include
+export ODBC_LIBS=/tp/odbcdriver/easysoft/unixODBC/lib
+
+export PATH=${PATH}:/tp/R/R-2.5.0/bin:/tp/bin:$svn/Perl/scripts
+
+export VISUAL=vim
+
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/java/default/jre/lib/amd64/server:/tp/fincad/lib:/tp/R/R-2.5.0/library/SJava/libs:/lib:/usr/lib:/usr/local/lib:/usr/local/freetds/lib:/usr/lib64:/tp/R/R-2.5.0/lib
+export SYBASE=/usr/local/freetds
+export R_HOME=/tp/R/R-2.5.0
+export MAIN=$svn
+
+export JAVA_HOME=/usr/java/jdk1.6.0_02/
+export RCMD="R --no-site-file --no-init-file"
+export src="$svn/R/src"
+export lib="$svn/R/lib"
+export core="$src/GSFCore"
+export scr="$svn/R/scripts"
+alias l='ls -lAF'
+alias lr='ls -lrt'
+alias r='lr -a'
+alias ff="find . | grep -v svn | egrep -v '/\\.'| egrep"
+alias f="find . | grep -v svn | egrep -v '/\\.'| xargs egrep"
+echo "using $svn for svn"
+export R_LIBS=$svn/R/lib:/tp/R/R-2.5.0/library/
+alias b='$RCMD CMD INSTALL . '
+alias br='b && R'
+alias bt='b && $svn/R/scripts/run_tests.r '
+alias abt='(cd $src; ab && $svn/R/scripts/run_all_tests.r)'
+alias ab='(cd $src; cat build.order | xargs R CMD INSTALL)'
+alias psme='ps -ef | grep `whoami`'
+set -o emacs
+alias src='cd $src'
+alias lib='cd $lib'
+alias scr='cd $scr'
+alias main='cd $svn'
+alias core='cd $core'
+alias supercore='src; cd Core'
+alias bcore='(core; b)'
+alias sto='src; cd STO'
+alias j='src; cd Java'
+alias ju='src; cd JavaUtils'
+alias jlib='cd $svn/Java/systematic/lib'
+alias live='src; cd Live'
+alias port='src; cd QFPortfolio'
+alias an='src; cd GSFAnalytics'
+alias runit='src; cd RUnit'
+alias rj='src; cd RJDBC'
+alias up='(cd $svn; svn update)'
+alias uabt='up && abt'
+alias add='(cd $svn; svn add doesntworkyet)'
+alias ci='(cd $svn; svn ci)'
+alias st="(cd $svn; svn status | grep -v '\.swp')"
+alias dest='rm -rf'
+alias log='svn log -v --limit=20 '
+alias logsome='svn log -v --limit='
+
+export R_PROFILE=$svn/R/scripts/Rprofile_common
+alias erp='vi $R_PROFILE'
+alias lerp='vi ~/.Rprofile'
+alias LAST='history | tail -50'
+alias sidediff='svn diff --diff-cmd diff -x "-y  --left-column -W 200" '
+alias stod='sto; cd inst/testdata'
+export stod=$src/STO/inst/testdata
+alias create='screen -h 32000 -a -S '
+alias join='screen -h 32000 -a -x '
+alias screens='screen -list  | cut -f 2 -d . | perl -pe "s/\s+.*//" | sort | grep -v "There"'
+alias wipe='$svn/Perl/scripts/wipe.pl'
+
+alias columns='perl -e "chomp(\$f = <>); chomp(\$s = <>); @f = split(/,/, \$f); @s = split(/,/, \$s); print qq#\$f[\$_]\t\$s[\$_]\n# foreach 0..\$#f"'
+alias sys='cd $svn/Java/systematic'
+alias report='cd ~/ReportSTO/html/report'
+alias s='screens'
+
+export perldir=$svn/Perl
+alias fnd='ls -ltr'
+alias methods='$perldir/scripts/rmethods.pl '
+alias functions='methods'
+alias fun='methods'
+alias F='tail -f'
+alias dtdlog='cd /logs/LiveTransformation; F DTDRichCheap.log'
+alias logs='cd /logs'
+alias slog='logs; cd Scheduler'
+alias cronlog='F /var/log/cron'
+alias trackup='perl -e "while (1) { system(qq#uptime#); sleep(10); }"'
+alias t='cd tests'
+alias tsdbUpload='Rscript $svn/R/scripts/Jobs/tsdb_upload.r'
+alias jrun="java -classpath ${svn}Java/systematic/lib/\* "
+alias restart="jrun schedule.RestartJob"
+alias upload="jrun db.DataUpload"
+alias dependency='jrun schedule.dependency.Dependency'
+alias series="jrun tsdb.TimeSeries"
+alias group="jrun tsdb.TimeSeriesGroupStatus"
+alias attributes="jrun tsdb.Attribute"
+alias duhast="du -skh * | perl -ne '@foo = split; print qq#\$foo[0] \$foo[1]\n# if \$foo[0] !~ /K$/; '"
+alias keepalive="perl -e 'print qq#keepalive#; while (1) { print qq#.\n#; sleep 5; }'"
+alias sup="echo `whoami` = simdata?; crontab -l; psme; "
+alias sum='perl -ne "\$s+=\$_;END{print qq#\$s\n#}"'
+alias ignore='$svn/Perl/scripts/ignore.pl'
+alias killservers='/usr/bin/pkill -KILL -f RTransformationLoader'

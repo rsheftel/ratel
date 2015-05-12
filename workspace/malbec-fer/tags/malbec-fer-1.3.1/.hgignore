@@ -1,0 +1,9 @@
+syntax: glob
+target
+logs
+visualstudio/FixExecutionAddin/_ReSharper.FixExecutionAddin
+*.svn*
+visualstudio/FixExecutionAddin/Feret Excel Setup/Debug
+test-output
+output
+activemq-data

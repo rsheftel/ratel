@@ -1,0 +1,146 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                             "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+                template="layout/template.xhtml">
+                       
+<ui:define name="body">
+    
+    <h:messages globalOnly="true" styleClass="message" id="globalMessages"/>
+    
+    <h:form id="marketCalendarSearch" styleClass="edit">
+    
+        <rich:simpleTogglePanel label="MarketCalendar search parameters" switchType="ajax">
+        
+            <s:decorate template="layout/display.xhtml">
+                <ui:define name="label">marketId</ui:define>
+                <h:inputText id="marketId" value="#{marketCalendarList.marketCalendar.marketId}"/>
+            </s:decorate>
+
+            <s:decorate template="layout/display.xhtml">
+                <ui:define name="label">description</ui:define>
+                <h:inputText id="description" value="#{marketCalendarList.marketCalendar.description}"/>
+            </s:decorate>
+
+        
+        </rich:simpleTogglePanel>
+        
+        <div class="actionButtons">
+            <h:commandButton id="search" value="Search" action="/MarketCalendarList.xhtml"/>
+        </div>
+        
+    </h:form>
+    
+    <rich:panel>
+        <f:facet name="header">MarketCalendar search results</f:facet>
+    <div class="results" id="marketCalendarList">
+
+    <h:outputText value="No marketCalendar exists" 
+               rendered="#{empty marketCalendarList.resultList}"/>
+               
+    <rich:dataTable id="marketCalendarList" 
+                var="marketCalendar"
+              value="#{marketCalendarList.resultList}" 
+           rendered="#{not empty marketCalendarList.resultList}">
+        <h:column>
+            <f:facet name="header">
+                <s:link styleClass="columnHeader"
+                             value="id #{marketCalendarList.order=='id asc' ? messages.down : ( marketCalendarList.order=='id desc' ? messages.up : '' )}">
+                    <f:param name="order" value="#{marketCalendarList.order=='id asc' ? 'id desc' : 'id asc'}"/>
+                </s:link>
+            </f:facet>
+            #{marketCalendar.id}
+        </h:column>
+        <h:column>
+            <f:facet name="header">
+                <s:link styleClass="columnHeader"
+                             value="marketId #{marketCalendarList.order=='marketId asc' ? messages.down : ( marketCalendarList.order=='marketId desc' ? messages.up : '' )}">
+                    <f:param name="order" value="#{marketCalendarList.order=='marketId asc' ? 'marketId desc' : 'marketId asc'}"/>
+                </s:link>
+            </f:facet>
+            #{marketCalendar.marketId}
+        </h:column>
+        <h:column>
+            <f:facet name="header">
+                <s:link styleClass="columnHeader"
+                             value="closedOn #{marketCalendarList.order=='closedOn asc' ? messages.down : ( marketCalendarList.order=='closedOn desc' ? messages.up : '' )}">
+                    <f:param name="order" value="#{marketCalendarList.order=='closedOn asc' ? 'closedOn desc' : 'closedOn asc'}"/>
+                </s:link>
+            </f:facet>
+            #{marketCalendar.closedOn}
+        </h:column>
+        <h:column>
+            <f:facet name="header">
+                <s:link styleClass="columnHeader"
+                             value="description #{marketCalendarList.order=='description asc' ? messages.down : ( marketCalendarList.order=='description desc' ? messages.up : '' )}">
+                    <f:param name="order" value="#{marketCalendarList.order=='description asc' ? 'description desc' : 'description asc'}"/>
+                </s:link>
+            </f:facet>
+            #{marketCalendar.description}
+        </h:column>
+        <h:column>
+            <f:facet name="header">action</f:facet>
+            <s:link view="/#{empty from ? 'MarketCalendar' : from}.xhtml" 
+                   value="Select" 
+                      id="marketCalendar">
+                <f:param name="marketCalendarId" 
+                        value="#{marketCalendar.id}"/>
+            </s:link>
+        </h:column>
+    </rich:dataTable>
+
+    </div>
+    </rich:panel>
+    
+    <div class="tableControl">
+      
+        <s:link view="/MarketCalendarList.xhtml" 
+            rendered="#{marketCalendarList.previousExists}" 
+               value="#{messages.left}#{messages.left} First Page"
+                  id="firstPage">
+          <f:param name="firstResult" value="0"/>
+        </s:link>
+        
+        <s:link view="/MarketCalendarList.xhtml" 
+            rendered="#{marketCalendarList.previousExists}" 
+               value="#{messages.left} Previous Page"
+                  id="previousPage">
+            <f:param name="firstResult" 
+                    value="#{marketCalendarList.previousFirstResult}"/>
+        </s:link>
+        
+        <s:link view="/MarketCalendarList.xhtml" 
+            rendered="#{marketCalendarList.nextExists}" 
+               value="Next Page #{messages.right}"
+                  id="nextPage">
+            <f:param name="firstResult" 
+                    value="#{marketCalendarList.nextFirstResult}"/>
+        </s:link>
+        
+        <s:link view="/MarketCalendarList.xhtml" 
+            rendered="#{marketCalendarList.nextExists}" 
+               value="Last Page #{messages.right}#{messages.right}"
+                  id="lastPage">
+            <f:param name="firstResult" 
+                    value="#{marketCalendarList.lastFirstResult}"/>
+        </s:link>
+        
+    </div>
+    
+    <s:div styleClass="actionButtons" rendered="#{empty from}">
+        <s:button view="/MarketCalendarEdit.xhtml"
+                    id="create" 
+                 value="Create marketCalendar">
+            <f:param name="marketCalendarId"/>
+        </s:button>
+    </s:div>
+    
+</ui:define>
+
+</ui:composition>
+

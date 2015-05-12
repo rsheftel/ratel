@@ -1,0 +1,7 @@
+,ADEName,ADEClass,ADEVariable,TSDBName,TSDBSource,StartD
+DTD10.ABC5X,DTD10.ABC5X,Signal,LastDTD,tri.abc5X_dtd_1.0_dtd,internal,2006-06-01
+DTD10.ABS5M,DTD10.ABS5M,Signal,LastDTD,tri.abs5M_dtd_1.0_dtd,internal,2006-06-01
+DTD10.ABT5M,DTD10.ABT5M,Signal,LastDTD,tri.abt5M_dtd_1.0_dtd,internal,2006-06-01
+DRC10.ABC5X,DRC10.ABC5X,Signal,LastRC,tri.abc5X_dtd_1.0_drc,internal,2006-06-01
+DRC10.ABS5M,DRC10.ABS5M,Signal,LastRC,tri.abs5M_dtd_1.0_drc,internal,2006-06-01
+DRC10.ABT5M,DRC10.ABT5M,Signal,LastRC,tri.abt5M_dtd_1.0_drc,internal,2006-06-01

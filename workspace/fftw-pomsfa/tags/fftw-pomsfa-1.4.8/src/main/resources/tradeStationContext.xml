@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<!-- QuickFix/J Configuration -->
+
+	<bean id="TradeStationReceiver"
+		class="com.fftw.bloomberg.aggregator.AggregatorApplication">
+		<property name="dao" ref="tradeRecordDao" />
+		<property name="mailer" ref="emailSender" />
+		<property name="destinationUri">
+			<value>${poms.queue.uri}</value>
+		</property>
+		<property name="useThreadedProcessing"><value>false</value></property>
+	</bean>
+
+	<bean id="SessionSettings" class="quickfix.SessionSettings">
+		<constructor-arg>
+			<value>aggregator.cfg</value>
+		</constructor-arg>
+	</bean>
+</beans>

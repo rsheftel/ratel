@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns="http://jboss.com/products/seam/pages"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://jboss.com/products/seam/pages http://jboss.com/products/seam/pages-2.0.xsd"
+      no-conversation-view-id="/TradeRecordList.xhtml"
+      login-required="true">
+   
+   <begin-conversation join="true"/>
+   
+   <action execute="#{tradeRecordHome.wire}"/>
+   
+   <param name="tradeRecordFrom"/>
+   <param name="tradeRecordTradeRecordId" value="#{tradeRecordHome.tradeRecordTradeRecordId}"/>
+   <param name="platformFrom"/>
+   <param name="platformPlatformId" value="#{platformHome.platformPlatformId}"/>
+
+
+
+   <navigation from-action="#{tradeRecordHome.persist}">
+       <end-conversation/>
+       <redirect view-id="/TradeRecord.xhtml"/>
+   </navigation>
+   
+   <navigation from-action="#{tradeRecordHome.update}">
+       <end-conversation/>
+       <redirect view-id="/TradeRecord.xhtml"/>
+   </navigation>
+   
+   <navigation from-action="#{tradeRecordHome.remove}">
+       <end-conversation/>
+       <redirect view-id="/TradeRecordList.xhtml"/>
+   </navigation>
+   
+</page>

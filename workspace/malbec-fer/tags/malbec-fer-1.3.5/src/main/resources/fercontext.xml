@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<!-- Configuration for Fix Execution Router (FER) -->
+
+	<!-- Global (reused) configuration items first -->
+	<bean id="GlobalEmailSettings" class="malbec.util.EmailSettings">
+		<constructor-arg>
+			<props>
+				<prop key="mail.to">${mail.to}</prop>
+				<prop key="mail.from">${mail.from}</prop>
+				<prop key="mail.host">${mail.host}</prop>
+			</props>
+		</constructor-arg>
+	</bean>
+	
+	<!-- Each FIX Connection/Destinations -->
+		<bean id="BloombergFixConnection" class="malbec.fer.fix.BloombergEmsxDestination">
+		<!-- Bloomberg does not handle futures, so no need to connect Sunday night -->
+		<constructor-arg>
+			<value>${bloomberg.platformname}</value>
+		</constructor-arg>
+		<constructor-arg>
+			<props>
+				<prop key="BeginString">FIX.4.2</prop>
+				<prop key="TargetCompID">BLP</prop>
+				<prop key="SenderCompID">MALBEC</prop>
+				<prop key="SocketConnectHost">${bloomberg.host1}</prop>
+				<prop key="SocketConnectPort">${bloomberg.port1}</prop>
+				<prop key="ConnectionType">initiator</prop>
+				<prop key="HeartBtInt">30</prop>
+				<prop key="FileStorePath">${log4j.base}logs/fix</prop>
+				<prop key="ClientStartDay">Monday</prop>
+				<prop key="ClientStartTime">05:00:00</prop>
+				<prop key="ClientEndDay">Friday</prop>
+				<prop key="ClientEndTime">20:30:00</prop>
+				<prop key="StartTime">05:05:00</prop>
+				<prop key="EndTime">20:29:00</prop>
+				<prop key="TimeZone">US/Eastern</prop>
+				<prop key="UserID">${bloomberg.userid}</prop>
+				<prop key="ValidateUserDefinedFields">N</prop>
+				<prop key="UseDataDictionary">N</prop>
+			</props>
+		</constructor-arg>
+		<constructor-arg>
+			<ref local="GlobalEmailSettings" />
+		</constructor-arg>
+		<constructor-arg>
+			<ref local="DBM" /> 
+		</constructor-arg>
+	</bean>
+	
+	<bean id="TradeStationFixConnection" class="malbec.fer.fix.TradeStationDestination">
+		<constructor-arg>
+			<value>${tradestation.platformname}</value>
+		</constructor-arg>
+		<constructor-arg>
+			<props>
+				<prop key="BeginString">FIX.4.4</prop>
+				<prop key="TargetCompID">TRAD</prop>
+				<prop key="SenderCompID">1447938</prop>
+				<prop key="SocketConnectHost">${tradestation.host1}</prop>
+				<prop key="SocketConnectPort">${tradestation.port1}</prop>
+				<prop key="ConnectionType">initiator</prop>
+				<prop key="HeartBtInt">30</prop>
+				<prop key="FileStorePath">${log4j.base}logs/fix</prop>
+<!--				<prop key="ClientStartDay">Monday</prop>-->
+				<prop key="ClientStartTime">06:30:00</prop>
+<!--				<prop key="ClientEndDay">Friday</prop>-->
+				<prop key="ClientEndTime">18:00:00</prop>
+				<prop key="StartDay">Monday</prop>
+				<prop key="EndDay">Friday</prop>
+				<prop key="StartTime">06:50:00</prop>
+				<prop key="EndTime">17:52:00</prop>
+				<prop key="TimeZone">US/Eastern</prop>
+				<prop key="ValidateUserDefinedFields">N</prop>
+				<prop key="UseDataDictionary">N</prop>
+				<!-- <prop key="UserID">${tradestation.userid}</prop> -->
+				<prop key="RequiresLogon">true</prop>
+				<prop key="Password">${tradestation.password}</prop>
+			</props>
+		</constructor-arg>
+		<constructor-arg>
+			<ref local="GlobalEmailSettings" />
+		</constructor-arg>
+		<constructor-arg>
+			<ref local="DBM" /> 
+		</constructor-arg>
+	</bean>
+
+	<bean id="RediFixConnection" class="malbec.fer.fix.GoldmanSachsDestination">
+		<constructor-arg>
+			<value>${redifix.platformname}</value>
+		</constructor-arg>
+		<constructor-arg>
+			<props>
+				<prop key="BeginString">FIX.4.4</prop>
+				<prop key="TargetCompID">REDI</prop>
+				<prop key="SenderCompID">MALBEC</prop>
+				<prop key="SocketConnectHost">${redifix.host}</prop>
+				<prop key="SocketConnectPort">${redifix.port}</prop>
+				<prop key="SocketConnectHost1">${redifix.host1}</prop>
+				<prop key="SocketConnectPort1">${redifix.port1}</prop>
+				<prop key="ConnectionType">initiator</prop>
+				<prop key="HeartBtInt">30</prop>
+				<prop key="FileStorePath">${log4j.base}logs/fix</prop>
+				<prop key="ClientStartDay">Sunday</prop>
+				<prop key="ClientStartTime">18:05:00</prop>
+				<prop key="ClientEndDay">Friday</prop>
+				<prop key="ClientEndTime">17:28:00</prop>
+				<prop key="StartTime">18:00:00</prop>
+				<prop key="EndTime">17:30:00</prop>
+				<prop key="TimeZone">US/Eastern</prop>
+				<prop key="ValidateUserDefinedFields">N</prop>
+				<prop key="UseDataDictionary">N</prop>
+				<prop key="UserID">${redifix.userid}</prop>
+			</props>
+		</constructor-arg>
+		<constructor-arg>
+			<ref local="GlobalEmailSettings" />
+		</constructor-arg>
+		<constructor-arg>
+			<ref local="DBM" /> 
+		</constructor-arg>
+	</bean>
+	
+	<!-- COM Clients/Destinations -->
+	<bean id="RediPlusAPI"
+		class="malbec.fer.rediplus.RediPlusDestination">
+		<constructor-arg>
+			<value>${rp.platformname}</value>
+		</constructor-arg>
+		<constructor-arg>
+			<props>
+				<prop key="userID">${rp.userid}</prop>
+				<prop key="password">${rp.password}</prop>
+				<prop key="forceToTicket">true</prop>
+			</props>
+		</constructor-arg>
+		<constructor-arg>
+			<ref local="GlobalEmailSettings" />
+		</constructor-arg>
+	</bean>
+	
+	<!-- Create the JMS listener -->
+	<bean id="JmsServerApp" class="malbec.fer.jms.JmsServerSessionApp">
+		<constructor-arg>
+			<value>JmsServer</value>
+		</constructor-arg>
+		<constructor-arg>
+			<ref local="GlobalEmailSettings" />
+		</constructor-arg>
+		<constructor-arg>
+			<props>
+				<prop key="jms.brokerurl">${jms.brokerurl}</prop>
+				<prop key="jms.command.queue">FER.Command</prop>
+				<prop key="jms.response.topic.prefix">FER.Order.Response</prop>
+			</props>
+		</constructor-arg>
+	</bean>
+
+	<!-- ** The Core application ** -->
+	<!-- Strategy mappings -->
+	<bean id="DBM" class="malbec.fer.mapping.DatabaseMapper">
+		<constructor-arg>
+			<value>true</value>
+		</constructor-arg>
+	</bean>
+	
+	<bean id="FerRouter" class="malbec.fer.FerretRouter"
+		init-method="start">
+		<constructor-arg>
+			<ref local="GlobalEmailSettings" />
+		</constructor-arg>
+		<constructor-arg>
+			<ref local="DBM" />
+		</constructor-arg>
+		
+		<property name="orderDestinations">
+			<list>
+				<!--<ref local="RediPlusAPI"/>-->
+				<!--<ref local="TradeStationFixConnection"/>-->
+				<ref local="RediFixConnection"/>
+				<!--<ref local="BloombergFixConnection"/> -->
+			</list>
+		</property>
+		<property name="jmsConnections">
+			<list>
+				<ref local="JmsServerApp" />
+			</list>
+		</property>
+		<property name="schedule">
+			<ref bean="FerretSchedule" />
+		</property>
+	    <property name="positionBrokerUrl">
+			<value>${position.brokerurl}</value>
+		</property>
+	    <property name="equityPrimeBroker">
+			<value>${position.equity.primebroker}</value>
+		</property>
+	</bean>
+
+</beans>

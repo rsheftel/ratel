@@ -1,0 +1,137 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                             "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+                template="layout/template.xhtml">
+                       
+<ui:define name="body">
+    
+    <h:messages globalOnly="true" styleClass="message" id="globalMessages"/>
+    
+    <h:form id="productCodeSearch" styleClass="edit">
+    
+        <rich:simpleTogglePanel label="ProductCode search parameters" switchType="ajax">
+        
+            <s:decorate template="layout/display.xhtml">
+                <ui:define name="label">textCode</ui:define>
+                <h:inputText id="textCode" value="#{productCodeList.productCode.textCode}"/>
+            </s:decorate>
+
+            <s:decorate template="layout/display.xhtml">
+                <ui:define name="label">description</ui:define>
+                <h:inputText id="description" value="#{productCodeList.productCode.description}"/>
+            </s:decorate>
+
+        
+        </rich:simpleTogglePanel>
+        
+        <div class="actionButtons">
+            <h:commandButton id="search" value="Search" action="/ProductCodeList.xhtml"/>
+        </div>
+        
+    </h:form>
+    
+    <rich:panel>
+        <f:facet name="header">ProductCode search results</f:facet>
+    <div class="results" id="productCodeList">
+
+    <h:outputText value="No productCode exists" 
+               rendered="#{empty productCodeList.resultList}"/>
+               
+    <rich:dataTable id="productCodeList" 
+                var="productCode"
+              value="#{productCodeList.resultList}" 
+           rendered="#{not empty productCodeList.resultList}">
+        <h:column>
+            <f:facet name="header">
+                <s:link styleClass="columnHeader"
+                             value="textCode #{productCodeList.order=='textCode asc' ? messages.down : ( productCodeList.order=='textCode desc' ? messages.up : '' )}">
+                    <f:param name="order" value="#{productCodeList.order=='textCode asc' ? 'textCode desc' : 'textCode asc'}"/>
+                </s:link>
+            </f:facet>
+            #{productCode.textCode}
+        </h:column>
+        <h:column>
+            <f:facet name="header">
+                <s:link styleClass="columnHeader"
+                             value="productCode #{productCodeList.order=='productCode asc' ? messages.down : ( productCodeList.order=='productCode desc' ? messages.up : '' )}">
+                    <f:param name="order" value="#{productCodeList.order=='productCode asc' ? 'productCode desc' : 'productCode asc'}"/>
+                </s:link>
+            </f:facet>
+            #{productCode.productCode}
+        </h:column>
+        <h:column>
+            <f:facet name="header">
+                <s:link styleClass="columnHeader"
+                             value="description #{productCodeList.order=='description asc' ? messages.down : ( productCodeList.order=='description desc' ? messages.up : '' )}">
+                    <f:param name="order" value="#{productCodeList.order=='description asc' ? 'description desc' : 'description asc'}"/>
+                </s:link>
+            </f:facet>
+            #{productCode.description}
+        </h:column>
+        <h:column>
+            <f:facet name="header">action</f:facet>
+            <s:link view="/#{empty from ? 'ProductCode' : from}.xhtml" 
+                   value="Select" 
+                      id="productCode">
+                <f:param name="productCodeTextCode" 
+                        value="#{productCode.textCode}"/>
+            </s:link>
+        </h:column>
+    </rich:dataTable>
+
+    </div>
+    </rich:panel>
+    
+    <div class="tableControl">
+      
+        <s:link view="/ProductCodeList.xhtml" 
+            rendered="#{productCodeList.previousExists}" 
+               value="#{messages.left}#{messages.left} First Page"
+                  id="firstPage">
+          <f:param name="firstResult" value="0"/>
+        </s:link>
+        
+        <s:link view="/ProductCodeList.xhtml" 
+            rendered="#{productCodeList.previousExists}" 
+               value="#{messages.left} Previous Page"
+                  id="previousPage">
+            <f:param name="firstResult" 
+                    value="#{productCodeList.previousFirstResult}"/>
+        </s:link>
+        
+        <s:link view="/ProductCodeList.xhtml" 
+            rendered="#{productCodeList.nextExists}" 
+               value="Next Page #{messages.right}"
+                  id="nextPage">
+            <f:param name="firstResult" 
+                    value="#{productCodeList.nextFirstResult}"/>
+        </s:link>
+        
+        <s:link view="/ProductCodeList.xhtml" 
+            rendered="#{productCodeList.nextExists}" 
+               value="Last Page #{messages.right}#{messages.right}"
+                  id="lastPage">
+            <f:param name="firstResult" 
+                    value="#{productCodeList.lastFirstResult}"/>
+        </s:link>
+        
+    </div>
+    
+    <s:div styleClass="actionButtons" rendered="#{empty from}">
+        <s:button view="/ProductCodeEdit.xhtml"
+                    id="create" 
+                 value="Create productCode">
+            <f:param name="productCodeTextCode"/>
+        </s:button>
+    </s:div>
+    
+</ui:define>
+
+</ui:composition>
+

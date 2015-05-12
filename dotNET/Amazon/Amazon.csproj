@@ -1,0 +1,97 @@
+﻿<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{93046886-3F1C-45D9-AE75-8E38CD110581}</ProjectGuid>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <OutputType>Library</OutputType>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <AssemblyName>Amazon</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>Amazon</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EC2\EC2Helper.cs" />
+    <Compile Include="EC2\EC2Operation.cs" />
+    <Compile Include="EC2\EC2Request.cs" />
+    <Compile Include="EC2\EC2Response.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="S3\AWSAuthConnection.cs" />
+    <Compile Include="S3\Bucket.cs" />
+    <Compile Include="S3\CommonPrefixEntry.cs" />
+    <Compile Include="S3\GetResponse.cs" />
+    <Compile Include="S3\ListAllMyBucketsResponse.cs" />
+    <Compile Include="S3\ListBucketResponse.cs" />
+    <Compile Include="S3\ListEntry.cs" />
+    <Compile Include="S3\LocationResponse.cs" />
+    <Compile Include="S3\Owner.cs" />
+    <Compile Include="S3\QueryStringAuthGenerator.cs" />
+    <Compile Include="S3\Response.cs" />
+    <Compile Include="S3\S3SampleApplication.cs" />
+    <Compile Include="S3\S3Object.cs" />
+    <Compile Include="S3\S3TestWithJunitSyntax.cs" />
+    <Compile Include="S3\Utils.cs" />
+    <Compile Include="SQS\AmazonSQS.cs" />
+    <Compile Include="SQS\AmazonSQSClient.cs" />
+    <Compile Include="SQS\AmazonSQSConfig.cs" />
+    <Compile Include="SQS\AmazonSQSException.cs" />
+    <Compile Include="SQS\Model\Attribute.cs" />
+    <Compile Include="SQS\Model\CreateQueue.cs" />
+    <Compile Include="SQS\Model\CreateQueueResponse.cs" />
+    <Compile Include="SQS\Model\CreateQueueResult.cs" />
+    <Compile Include="SQS\Model\DeleteMessage.cs" />
+    <Compile Include="SQS\Model\DeleteMessageResponse.cs" />
+    <Compile Include="SQS\Model\DeleteQueue.cs" />
+    <Compile Include="SQS\Model\DeleteQueueResponse.cs" />
+    <Compile Include="SQS\Model\Error.cs" />
+    <Compile Include="SQS\Model\ErrorResponse.cs" />
+    <Compile Include="SQS\Model\GetQueueAttributes.cs" />
+    <Compile Include="SQS\Model\GetQueueAttributesResponse.cs" />
+    <Compile Include="SQS\Model\GetQueueAttributesResult.cs" />
+    <Compile Include="SQS\Model\ListQueues.cs" />
+    <Compile Include="SQS\Model\ListQueuesResponse.cs" />
+    <Compile Include="SQS\Model\ListQueuesResult.cs" />
+    <Compile Include="SQS\Model\Message.cs" />
+    <Compile Include="SQS\Model\ReceiveMessage.cs" />
+    <Compile Include="SQS\Model\ReceiveMessageResponse.cs" />
+    <Compile Include="SQS\Model\ReceiveMessageResult.cs" />
+    <Compile Include="SQS\Model\ResponseMetadata.cs" />
+    <Compile Include="SQS\Model\SendMessage.cs" />
+    <Compile Include="SQS\Model\SendMessageResponse.cs" />
+    <Compile Include="SQS\Model\SendMessageResult.cs" />
+    <Compile Include="SQS\Model\SetQueueAttributes.cs" />
+    <Compile Include="SQS\Model\SetQueueAttributesResponse.cs" />
+    <Compile Include="SQS\XMLHelper.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSHARP.Targets" />
+  <ProjectExtensions>
+    <VisualStudio AllowExistingFolder="true" />
+  </ProjectExtensions>
+</Project>

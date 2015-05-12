@@ -1,0 +1,13 @@
+Package: AtgMortgage
+Version: 0.0.1
+Date: 2010/08/24
+Title: Mortgage Classes for ATG
+Author: Ryan Sheftel <ryan.sheftel@credit-suisse.com>
+Maintainer: Ryan Sheftel <ryan.sheftel@credit-suisse.com>
+SaveImage: yes
+Depends: R (>= 2.11.1), utils (>= 1.9.0), methods (>= 1.9.0), R.oo (>=
+        1.2.3), zoo (>= 1.2-1), Java, AtgData, AtgMath
+Description: Mortgage Classes for ATG
+License: This software is owned by it's author and may not be used or
+        copied by anyone without his explicit permission.
+Built: R 2.11.1; ; 2011-05-28 10:33:01.691 UTC; windows

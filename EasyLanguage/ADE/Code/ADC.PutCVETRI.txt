@@ -1,0 +1,37 @@
+Inputs:
+	Sym(StringSimple),
+	Interval(NumericSimple),
+	BarID(NumericSimple),
+	vTRI(NumericSimple);
+
+Vars:
+	LastSym(""),
+	LastInterval(-1),
+	Index(0),
+	DataMap(0),
+	BarMap(0),
+	BarList(0),
+	TRIList(0);
+
+if Sym <> LastSym or Interval <> LastInterval then begin
+	LastSym = Sym;
+	LastInterval = Interval;
+
+	DataMap = ADE.GetMap("CVETRI", Sym, Interval);
+	BarMap = MapSC.Get(DataMap, ":BarMap");
+
+	BarList = ADE.FindOrAddListN(DataMap, ":Bar");
+	TRIList = ADE.FindOrAddListN(DataMap, "TRI");
+end;
+
+Index = MapNN.Get(BarMap, BarID);
+
+Value1 = ADE.PutOrPushN(TRIList, Index, vTRI);
+
+if Index = 0 then begin
+	Value1 = ListN.PushBack(BarList, BarID);
+	Index = ListN.Count(BarList);
+	Value1 = MapNN.Put(BarMap, BarID, Index);
+end;
+
+ADC.PutCVETRI = Index;

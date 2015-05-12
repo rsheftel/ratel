@@ -1,0 +1,63 @@
+alter proc dbo.Upload
+as
+delete ASC_MAP
+insert into ASC_MAP
+select ID, SYMBOL, RESOLUTION_SIZE, RESOLUTION, FIELD, TIME_ZONE, PRICE_SCALE, 
+VOLUME_SCALE, START_ROW, 
+START_DATE, substring(cast(START_TIME as varchar),13,7), 
+FINISH_DATE, substring(cast(FINISH_TIME as varchar),13,7), 
+FILE_NAME
+from INTERBASEUPLINK...ASC_MAP
+
+delete ASC_TEMPLATES
+insert into ASC_TEMPLATES
+select * from INTERBASEUPLINK...ASC_TEMPLATES
+
+delete DATA_FEEDS
+insert into DATA_FEEDS
+select * from INTERBASEUPLINK...DATA_FEEDS
+
+delete DICTIONARY
+insert into DICTIONARY
+select * from INTERBASEUPLINK...DICTIONARY
+
+delete EXCHANGES
+insert into EXCHANGES
+select EXCHANGE, EXCHANGE_NAME, HOLIDAY, SETTING, SESSION, TIME_ZONE, MAP_ID, 
+USE_DAYLIGHT, BIAS, STANDARD_BIAS, STANDARD_DAY_OF_WEEK, STANDARD_DAY, STANDARD_MONTH, 
+substring(cast(STANDARD_TIME as varchar),13,7), 
+DAYLIGHT_BIAS, DAYLIGHT_DAY_OF_WEEK, DAYLIGHT_DAY, DAYLIGHT_MONTH, 
+substring(cast(DAYLIGHT_TIME as varchar),13,7), DESCRIPTION 
+from INTERBASEUPLINK...EXCHANGES
+
+delete HOLIDAYS
+insert into HOLIDAYS
+select * from INTERBASEUPLINK...HOLIDAYS
+
+delete HOLIDAY_DETAILS
+insert into HOLIDAY_DETAILS
+select * from INTERBASEUPLINK...HOLIDAY_DETAILS
+
+delete SESSIONS
+insert into SESSIONS
+select * from INTERBASEUPLINK...SESSIONS
+
+delete SESSION_DETAILS
+insert into SESSION_DETAILS
+select SESSION, OPEN_DAY, substring(cast(OPEN_TIME as varchar),13,7), 
+CLOSE_DAY, substring(cast(CLOSE_TIME as varchar),13,7), SEOC, 
+substring(cast(DRIBBLE as varchar),13,7), 
+substring(cast(SETTLEMENT as varchar),13,7)
+from INTERBASEUPLINK...SESSION_DETAILS
+
+delete SETTINGS
+insert into SETTINGS
+select * from INTERBASEUPLINK...SETTINGS
+
+if not exists(select null from SETTINGS where SETTING=99999)
+begin
+	insert SETTINGS values(99999, 112, 10000, 10000, 2)
+end
+
+grant EXECUTE on Upload to sim
+

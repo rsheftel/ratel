@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<!--
+		All objects are registered with the MuleManager. The AutowireUMOManagerFactoryBean
+		is responsible for determining the UMOManager to implement, creates a default UMOModel
+		and autowires the components to the model and all other global objects to the MuleManager.
+	-->
+	<bean id="muleManager"
+		class="org.mule.extras.spring.config.AutowireUMOManagerFactoryBean" />
+
+	<!-- Used to set mule object names to their corresponding bean id -->
+	<bean id="muleNameProcessor"
+		class="org.mule.extras.spring.config.MuleObjectNameProcessor" />
+
+	<bean id="JmxAgent" class="org.mule.management.agents.JmxAgent" />
+	<bean id="Mx4jAgent" class="org.mule.management.agents.Mx4jAgent">
+		<property name="jmxAdaptorUrl" value="http://0.0.0.0:9999" />
+		<property name="login" value="admin" />
+		<property name="password" value="malbec" />
+	</bean>
+
+	<!-- Load the embedded broker -->
+	<bean id="broker"
+		class="org.apache.activemq.xbean.BrokerFactoryBean">
+		<property name="config" value="classpath:activemq-config.xml" />
+		<property name="start" value="true" />
+	</bean>
+
+	<bean id="jmsConnector"
+		class="org.mule.providers.jms.activemq.ActiveMqJmsConnector">
+
+		<property name="specification" value="1.1" />
+		<property name="connectionFactoryJndiName"
+			value="ConnectionFactory" />
+		<property name="jndiInitialFactory"
+			value="org.apache.activemq.jndi.ActiveMQInitialContextFactory" />
+		<property name="connectionFactoryProperties">
+			<map>
+				<entry>
+					<key>
+						<value>brokerURL</value>
+					</key>
+					<value>tcp://localhost:61616</value>
+				</entry>
+			</map>
+		</property>
+	</bean>
+
+	<!-- TODO Figure out how to use this -->
+	<bean id="EmailConnector"
+		class="org.mule.providers.email.SmtpConnector">
+		<property name="fromAddress" value="DevTest@fftw.com" />
+	</bean>
+
+
+	<!--
+		An interceptor is a peice of code that can be configued to execute
+		before and/or after an event is received for a component.
+		You can define a stack of interceptors that will be executed in sequence.
+		You can then configure the stack on your components.
+		Note the interceptor stack must not be a singleton.  Each component needs its
+		own copy of an interceptor stack.Th
+	-->
+	<bean id="defaultInterceptorStack" class="java.util.ArrayList">
+		<constructor-arg>
+			<list>
+				<bean id="loggingInterceptor"
+					class="org.mule.interceptors.LoggingInterceptor" />
+				<bean id="timerInterceptor"
+					class="org.mule.interceptors.TimerInterceptor" />
+			</list>
+		</constructor-arg>
+	</bean>
+
+	<!--
+		This configures the endpoint to be the PomsSender.  This allows any Mule 
+		component to send to the PomsSender via the endpoint
+	-->
+	<bean id="PomsSenderUMO" class="org.mule.impl.MuleDescriptor">
+		<property name="inboundEndpoint">
+			<bean class="org.mule.impl.endpoint.MuleEndpoint">
+				<property name="endpointURI">
+					<bean
+						class="org.mule.impl.endpoint.MuleEndpointURI">
+						<constructor-arg>
+							<value>${poms.queue.uri}</value>
+						</constructor-arg>
+					</bean>
+				</property>
+				<!--<property name="connector" ref="vmQueue" />-->
+			</bean>
+		</property>
+		<property name="implementation">
+			<value>PomsSender</value>
+		</property>
+		<!--
+			Here we tell this component to use the interceptor stack defined above
+		-->
+		<property name="interceptors">
+			<ref local="defaultInterceptorStack" />
+		</property>
+	</bean>
+
+</beans>
+

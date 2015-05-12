@@ -25,8 +25,20 @@ isWindows <- function() {
     Sys.getenv("OS") == "Windows_NT"
 }
 
+dataDirectory <- function() {
+    ifElse(isWindows(), "V:/", "/data/")
+}
+
+tsdbUploadDirectory <- function() {
+	paste(dataDirectory(),"TSDB_upload/Today/",sep="")
+}
+
 homeDirectory <- function() {
     ifElse(isWindows(), "H:/", "~/")
+}
+
+tempDirectory <- function(){
+	squish(dataDirectory(),'/temp_TSDB/')
 }
 
 loadBloomberg <- function() {

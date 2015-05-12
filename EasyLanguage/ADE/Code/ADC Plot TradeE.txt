@@ -1,0 +1,29 @@
+{
+	Indicator:	'ADC Plot TradeE'
+}
+{ Source Template:  'ADE Template - Plot.txt', by Progster 11/2004 	}
+
+Inputs:
+	Interval(ADE.Daily),    // number of minutes, or ADE.Daily, ADE.Weekly, ADE.Monthly
+	UseFile(ADE.UseFile);   // default UseFile is returned by ADE.UseFile function
+
+Vars:
+	Class("TradeE"),
+	vorderType(0),
+	vsize(0),
+	vcurrentPosition(0);
+
+
+// If UseFile is true, load any previously stored data from the file on the first bar.
+if CurrentBar = 1 and UseFile then
+	Value1 = ADE.OpenMap(Class, GetSymbolName, Interval);
+
+// Retrieve the Class data for this symbol and bar interval.
+Value1 = ADC.GetTradeE(GetSymbolName, Interval, ADE.BarID, 
+	vorderType,	
+	vsize,	
+	vcurrentPosition);	
+
+Plot1(vorderType, "orderType");
+Plot2(vsize, "size");
+Plot3(vcurrentPosition, "currentPosition");

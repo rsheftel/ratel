@@ -1,0 +1,49 @@
+Package: R.methodsS3
+====================
+
+Version: 1.2.1 [2010-09-18]
+o BUG FIX: isGenericS3(), isGenericS4(), getGenericS3() and getMethodS3()
+  failed to locate functions created in the global environment while
+  there exist a function with the same name in the 'base' package.  
+  The problem only affects the above functions and nothing else and it
+  did not exist prior to R.methodsS3 v1.2.0 when the package did not yet
+  have a namespace.  Thanks John Oleynick for reporting on this problem.
+o BUG FIX: isGenericS3() and isGenericS4() did not support specifying
+  the function by name as a character string, despite it was documented
+  to do so.  Thanks John Oleynick for reporting on this.
+
+
+Version: 1.2.0 [2010-03-13]
+o Added a NAMESPACE.
+
+
+Version: 1.1.0 [2010-01-02]
+o Added getDispatchMethodS3() and findDispatchMethodsS3().
+
+
+Version: 1.0.3 [2008-07-02]
+o Renamed HISTORY file to NEWS.
+
+
+Version: 1.0.2 [2008-05-08]
+o Added getMethodS3() and getGenericS3().
+o BUG FIX: isGenericS3() and isGenericS4() gave an error if 
+  a function was passed.
+
+
+Version: 1.0.1 [2008-03-06]
+o Added paper to citation("R.methodsS3").
+o BUG FIX: Regular expression pattern 'a-Z' is illegal on (at least) 
+  some locale, e.g. 'C' (where 'A-z' works). The only way to specify 
+  the ASCII alphabet is to list all characters explicitly, which we now
+  do in all methods of the package.  See the r-devel thread 
+  "invalid regular expression '[a-Z]'" on 2008-03-05 for details.
+
+
+Version: 1.0.0 [2007-09-17]
+o Created by extracting setMethodS3() and related methods from the 
+  R.oo package.  The purpose is to provide setMethodS3() without
+  having to load (the already lightweight) R.oo package.  For 
+  previous history related to the methods in this package, please
+  see the history of the R.oo package.
+

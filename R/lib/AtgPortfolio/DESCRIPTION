@@ -1,0 +1,12 @@
+Package: AtgPortfolio
+Version: 0.0.1
+Date: 2010/09/22
+Title: Portfolio Construction
+Author: The Team <nobody@foo.com>
+Maintainer: The Team <nobody@foo.com>
+SaveImage: yes
+Depends: AtgData, AtgMath, STO
+Description: Portfolio Construction Classes for ATG
+License: This code is owned by its author.  Usage by anyone else is
+        prohibited.
+Built: R 2.11.1; ; 2011-05-15 15:42:03.551 UTC; windows

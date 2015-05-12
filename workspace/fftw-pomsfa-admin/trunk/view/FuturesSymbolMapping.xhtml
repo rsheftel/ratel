@@ -1,0 +1,136 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                             "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+                template="layout/template.xhtml">
+                       
+<ui:define name="body">
+    
+    <h:messages globalOnly="true" styleClass="message" id="globalMessages"/>
+    
+    <rich:panel>
+        <f:facet name="header">FuturesSymbolMapping</f:facet>
+
+        <s:decorate id="id" template="layout/display.xhtml">
+            <ui:define name="label">id</ui:define>
+            #{futuresSymbolMappingHome.instance.id}
+        </s:decorate>
+
+        <s:decorate id="platformSymbol" template="layout/display.xhtml">
+            <ui:define name="label">platformSymbol</ui:define>
+            #{futuresSymbolMappingHome.instance.platformSymbol}
+        </s:decorate>
+
+        <s:decorate id="bloombergSymbol" template="layout/display.xhtml">
+            <ui:define name="label">bloombergSymbol</ui:define>
+            #{futuresSymbolMappingHome.instance.bloombergSymbol}
+        </s:decorate>
+
+        <s:decorate id="multiplier" template="layout/display.xhtml">
+            <ui:define name="label">multiplier</ui:define>
+            <h:outputText value="#{futuresSymbolMappingHome.instance.multiplier}">
+                <f:convertNumber/>
+            </h:outputText>
+        </s:decorate>
+
+        <s:decorate id="description" template="layout/display.xhtml">
+            <ui:define name="label">description</ui:define>
+            #{futuresSymbolMappingHome.instance.description}
+        </s:decorate>
+
+        <div style="clear:both"/>
+        
+    </rich:panel>
+    
+    <div class="actionButtons">      
+
+        <s:button view="/FuturesSymbolMappingEdit.xhtml" 
+                    id="edit" 
+                 value="Edit"/>
+
+        <s:button view="/#{empty futuresSymbolMappingFrom ? 'FuturesSymbolMappingList' : futuresSymbolMappingFrom}.xhtml"
+                    id="done"
+                 value="Done"/>
+
+    </div>
+
+    <rich:tabPanel switchType="ajax">
+
+    <rich:tab label="productCode">
+    <div class="association" id="productCodeParent">
+        
+        <h:outputText value="No productCode" 
+                   rendered="#{futuresSymbolMappingHome.instance.productCode == null}"/>
+        
+        <rich:dataTable var="productCode" 
+                   value="#{futuresSymbolMappingHome.instance.productCode}" 
+                rendered="#{futuresSymbolMappingHome.instance.productCode != null}"
+              rowClasses="rvgRowOne,rvgRowTwo"
+                      id="productCodeTable">
+            <h:column>
+                <f:facet name="header">textCode</f:facet>
+                #{productCode.textCode}
+            </h:column>
+            <h:column>
+                <f:facet name="header">productCode</f:facet>
+                #{productCode.productCode}
+            </h:column>
+            <h:column>
+                <f:facet name="header">description</f:facet>
+                #{productCode.description}
+            </h:column>
+            <h:column>
+                <f:facet name="header">action</f:facet>
+                <s:link id="viewproductCode" 
+                     value="View" 
+                      view="/ProductCode.xhtml">
+                    <f:param name="productCodeTextCode" 
+                           value="#{productCode.textCode}"/>
+                </s:link>
+            </h:column>
+        </rich:dataTable>
+        
+    </div>
+    </rich:tab>
+
+    <rich:tab label="platform">
+    <div class="association" id="platformParent">
+        
+        <h:outputText value="No platform" 
+                   rendered="#{futuresSymbolMappingHome.instance.platform == null}"/>
+        
+        <rich:dataTable var="platform" 
+                   value="#{futuresSymbolMappingHome.instance.platform}" 
+                rendered="#{futuresSymbolMappingHome.instance.platform != null}"
+              rowClasses="rvgRowOne,rvgRowTwo"
+                      id="platformTable">
+            <h:column>
+                <f:facet name="header">platformId</f:facet>
+                #{platform.platformId}
+            </h:column>
+            <h:column>
+                <f:facet name="header">description</f:facet>
+                #{platform.description}
+            </h:column>
+            <h:column>
+                <f:facet name="header">action</f:facet>
+                <s:link id="viewplatform" 
+                     value="View" 
+                      view="/Platform.xhtml">
+                    <f:param name="platformPlatformId" 
+                           value="#{platform.platformId}"/>
+                </s:link>
+            </h:column>
+        </rich:dataTable>
+        
+    </div>
+    </rich:tab>
+</rich:tabPanel>
+</ui:define>
+
+</ui:composition>

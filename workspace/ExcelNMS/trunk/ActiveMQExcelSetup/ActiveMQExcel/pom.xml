@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>malbec</groupId>
+  <artifactId>ActiveMQExcelPublisher</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <name>Class Library</name>
+  <packaging>dotnet:library</packaging>
+  
+  <dependencies>
+      <dependency>
+        <groupId>malbec</groupId>
+        <artifactId>ActiveMQLibrary</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <type>dotnet:library</type>
+      </dependency>
+
+      <dependency>
+        <groupId>org.apache.activemq.nms</groupId>
+        <artifactId>Apache.NMS</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <type>dotnet:library</type>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.activemq.nms</groupId>
+        <artifactId>Apache.NMS.ActiveMQ</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <type>dotnet:library</type>
+      </dependency>
+
+      <dependency>
+  	<groupId>log4net</groupId>
+  	<artifactId>apache-log4net</artifactId>
+        <version>1.2.10</version>
+        <type>dotnet:library</type>
+      </dependency>
+
+      <dependency>
+        <groupId>Microsoft.Office.Interop.Excel</groupId>
+        <artifactId>Microsoft.Office.Interop.Excel</artifactId>
+        <version>11.0.0.0</version>
+        <type>dotnet:gac_32</type>
+        <scope>system</scope>
+        <classifier>71e9bce111e9429c</classifier>
+        <systemPath>
+          ${env.GAC_ROOT}\GAC_MSIL\Microsoft.Office.Interop.Excel\11.0.0.0__71e9bce111e9429c\Microsoft.Office.Interop.Excel.dll
+        </systemPath>
+      </dependency>
+
+  </dependencies>
+  
+  <build>
+    <sourceDirectory>.</sourceDirectory>
+    <testSourceDirectory>Test1</testSourceDirectory>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.dotnet.plugins</groupId>
+        <artifactId>maven-dotnet-compiler-plugin</artifactId>
+        <extensions>true</extensions>
+      </plugin>
+    </plugins>
+  </build>
+</project>

@@ -1,0 +1,681 @@
+valuationDate,sectorCategory,DENOM_CURR_CDE,spread
+4/3/2006,Agency,USD,35
+4/3/2006,Agency,EUR,22
+4/3/2006,Agency,GBP,18
+4/3/2006,ABS,USD,47
+4/3/2006,CMBS,USD,69
+4/3/2006,MBS,USD,97
+4/3/2006,Credit_AAA-BBB,USD,83
+4/3/2006,Credit_AAA-BBB,EUR,42
+4/3/2006,Credit_AAA-BBB,GBP,74
+4/3/2006,Credit_AAA-A,USD,69
+4/3/2006,Credit_AAA-A,EUR,35
+4/3/2006,Credit_AAA-A,GBP,69
+4/3/2006,Credit_AAA-AA,USD,56
+4/3/2006,Credit_AAA-AA,EUR,25
+4/3/2006,Credit_AAA-AA,GBP,54
+4/3/2006,Credit_US CORP 1-10,USD,80
+4/3/2006,Credit_glagg_crd_1_5YRS,USD,58
+4/3/2006,Credit_glagg_crd_1_5YRS,EUR,31
+4/3/2006,Credit_glagg_crd_1_5YRS,GBP,44
+4/3/2006,Credit_glagg_crd_1_3YRS,USD,48
+4/3/2006,Credit_glagg_crd_1_3YRS,EUR,25
+4/3/2006,Credit_glagg_crd_1_3YRS,GBP,34
+4/3/2006,Credit_glagg _crd>5.0YRS,USD,101
+4/3/2006,Credit_glagg _crd>5.0YRS,EUR,62
+4/3/2006,Credit_glagg _crd>5.0YRS,GBP,93
+4/3/2006,Credit_glagg_crd_exJPY_aa_3,USD,58
+4/3/2006,Credit_glagg_crd_exJPY_aa_3,EUR,30
+4/3/2006,Credit_glagg_crd_exJPY_aa_3,GBP,53
+4/3/2006,Credit_glagg_crd_exJPY_exBBB,USD,70
+4/3/2006,Credit_glagg_crd_exJPY_exBBB,EUR,38
+4/3/2006,Credit_glagg_crd_exJPY_exBBB,GBP,69
+4/3/2006,Credit_Global Agg (Original),USD,62
+4/3/2006,Credit_Global Agg (Original),EUR,19
+4/3/2006,Credit_Global Agg (Original),GBP,31
+4/4/2006,Agency,USD,35
+4/4/2006,Agency,EUR,22
+4/4/2006,Agency,GBP,18
+4/4/2006,ABS,USD,46
+4/4/2006,CMBS,USD,68
+4/4/2006,MBS,USD,97
+4/4/2006,Credit_AAA-BBB,USD,83
+4/4/2006,Credit_AAA-BBB,EUR,42
+4/4/2006,Credit_AAA-BBB,GBP,74
+4/4/2006,Credit_AAA-A,USD,69
+4/4/2006,Credit_AAA-A,EUR,35
+4/4/2006,Credit_AAA-A,GBP,69
+4/4/2006,Credit_AAA-AA,USD,56
+4/4/2006,Credit_AAA-AA,EUR,25
+4/4/2006,Credit_AAA-AA,GBP,54
+4/4/2006,Credit_US CORP 1-10,USD,80
+4/4/2006,Credit_glagg_crd_1_5YRS,USD,58
+4/4/2006,Credit_glagg_crd_1_5YRS,EUR,31
+4/4/2006,Credit_glagg_crd_1_5YRS,GBP,44
+4/4/2006,Credit_glagg_crd_1_3YRS,USD,48
+4/4/2006,Credit_glagg_crd_1_3YRS,EUR,25
+4/4/2006,Credit_glagg_crd_1_3YRS,GBP,34
+4/4/2006,Credit_glagg _crd>5.0YRS,USD,101
+4/4/2006,Credit_glagg _crd>5.0YRS,EUR,62
+4/4/2006,Credit_glagg _crd>5.0YRS,GBP,93
+4/4/2006,Credit_glagg_crd_exJPY_aa_3,USD,58
+4/4/2006,Credit_glagg_crd_exJPY_aa_3,EUR,30
+4/4/2006,Credit_glagg_crd_exJPY_aa_3,GBP,53
+4/4/2006,Credit_glagg_crd_exJPY_exBBB,USD,70
+4/4/2006,Credit_glagg_crd_exJPY_exBBB,EUR,38
+4/4/2006,Credit_glagg_crd_exJPY_exBBB,GBP,69
+4/4/2006,Credit_Global Agg (Original),USD,62
+4/4/2006,Credit_Global Agg (Original),EUR,19
+4/4/2006,Credit_Global Agg (Original),GBP,31
+4/5/2006,Agency,USD,35
+4/5/2006,Agency,EUR,22
+4/5/2006,Agency,GBP,18
+4/5/2006,ABS,USD,45
+4/5/2006,CMBS,USD,68
+4/5/2006,MBS,USD,97
+4/5/2006,Credit_AAA-BBB,USD,83
+4/5/2006,Credit_AAA-BBB,EUR,42
+4/5/2006,Credit_AAA-BBB,GBP,74
+4/5/2006,Credit_AAA-A,USD,69
+4/5/2006,Credit_AAA-A,EUR,34
+4/5/2006,Credit_AAA-A,GBP,69
+4/5/2006,Credit_AAA-AA,USD,56
+4/5/2006,Credit_AAA-AA,EUR,25
+4/5/2006,Credit_AAA-AA,GBP,54
+4/5/2006,Credit_US CORP 1-10,USD,80
+4/5/2006,Credit_glagg_crd_1_5YRS,USD,57
+4/5/2006,Credit_glagg_crd_1_5YRS,EUR,31
+4/5/2006,Credit_glagg_crd_1_5YRS,GBP,44
+4/5/2006,Credit_glagg_crd_1_3YRS,USD,48
+4/5/2006,Credit_glagg_crd_1_3YRS,EUR,26
+4/5/2006,Credit_glagg_crd_1_3YRS,GBP,35
+4/5/2006,Credit_glagg _crd>5.0YRS,USD,101
+4/5/2006,Credit_glagg _crd>5.0YRS,EUR,62
+4/5/2006,Credit_glagg _crd>5.0YRS,GBP,93
+4/5/2006,Credit_glagg_crd_exJPY_aa_3,USD,58
+4/5/2006,Credit_glagg_crd_exJPY_aa_3,EUR,30
+4/5/2006,Credit_glagg_crd_exJPY_aa_3,GBP,53
+4/5/2006,Credit_glagg_crd_exJPY_exBBB,USD,69
+4/5/2006,Credit_glagg_crd_exJPY_exBBB,EUR,38
+4/5/2006,Credit_glagg_crd_exJPY_exBBB,GBP,69
+4/5/2006,Credit_Global Agg (Original),USD,61
+4/5/2006,Credit_Global Agg (Original),EUR,19
+4/5/2006,Credit_Global Agg (Original),GBP,31
+4/6/2006,Agency,USD,35
+4/6/2006,Agency,EUR,22
+4/6/2006,Agency,GBP,17
+4/6/2006,ABS,USD,45
+4/6/2006,CMBS,USD,67
+4/6/2006,MBS,USD,96
+4/6/2006,Credit_AAA-BBB,USD,83
+4/6/2006,Credit_AAA-BBB,EUR,42
+4/6/2006,Credit_AAA-BBB,GBP,74
+4/6/2006,Credit_AAA-A,USD,69
+4/6/2006,Credit_AAA-A,EUR,35
+4/6/2006,Credit_AAA-A,GBP,68
+4/6/2006,Credit_AAA-AA,USD,56
+4/6/2006,Credit_AAA-AA,EUR,25
+4/6/2006,Credit_AAA-AA,GBP,54
+4/6/2006,Credit_US CORP 1-10,USD,80
+4/6/2006,Credit_glagg_crd_1_5YRS,USD,57
+4/6/2006,Credit_glagg_crd_1_5YRS,EUR,31
+4/6/2006,Credit_glagg_crd_1_5YRS,GBP,44
+4/6/2006,Credit_glagg_crd_1_3YRS,USD,48
+4/6/2006,Credit_glagg_crd_1_3YRS,EUR,26
+4/6/2006,Credit_glagg_crd_1_3YRS,GBP,35
+4/6/2006,Credit_glagg _crd>5.0YRS,USD,101
+4/6/2006,Credit_glagg _crd>5.0YRS,EUR,62
+4/6/2006,Credit_glagg _crd>5.0YRS,GBP,93
+4/6/2006,Credit_glagg_crd_exJPY_aa_3,USD,58
+4/6/2006,Credit_glagg_crd_exJPY_aa_3,EUR,30
+4/6/2006,Credit_glagg_crd_exJPY_aa_3,GBP,53
+4/6/2006,Credit_glagg_crd_exJPY_exBBB,USD,69
+4/6/2006,Credit_glagg_crd_exJPY_exBBB,EUR,38
+4/6/2006,Credit_glagg_crd_exJPY_exBBB,GBP,69
+4/6/2006,Credit_Global Agg (Original),USD,61
+4/6/2006,Credit_Global Agg (Original),EUR,19
+4/6/2006,Credit_Global Agg (Original),GBP,31
+4/7/2006,Agency,USD,35
+4/7/2006,Agency,EUR,22
+4/7/2006,Agency,GBP,18
+4/7/2006,ABS,USD,45
+4/7/2006,CMBS,USD,68
+4/7/2006,MBS,USD,95
+4/7/2006,Credit_AAA-BBB,USD,83
+4/7/2006,Credit_AAA-BBB,EUR,42
+4/7/2006,Credit_AAA-BBB,GBP,73
+4/7/2006,Credit_AAA-A,USD,69
+4/7/2006,Credit_AAA-A,EUR,35
+4/7/2006,Credit_AAA-A,GBP,68
+4/7/2006,Credit_AAA-AA,USD,56
+4/7/2006,Credit_AAA-AA,EUR,25
+4/7/2006,Credit_AAA-AA,GBP,54
+4/7/2006,Credit_US CORP 1-10,USD,80
+4/7/2006,Credit_glagg_crd_1_5YRS,USD,57
+4/7/2006,Credit_glagg_crd_1_5YRS,EUR,31
+4/7/2006,Credit_glagg_crd_1_5YRS,GBP,43
+4/7/2006,Credit_glagg_crd_1_3YRS,USD,48
+4/7/2006,Credit_glagg_crd_1_3YRS,EUR,25
+4/7/2006,Credit_glagg_crd_1_3YRS,GBP,34
+4/7/2006,Credit_glagg _crd>5.0YRS,USD,101
+4/7/2006,Credit_glagg _crd>5.0YRS,EUR,62
+4/7/2006,Credit_glagg _crd>5.0YRS,GBP,92
+4/7/2006,Credit_glagg_crd_exJPY_aa_3,USD,58
+4/7/2006,Credit_glagg_crd_exJPY_aa_3,EUR,30
+4/7/2006,Credit_glagg_crd_exJPY_aa_3,GBP,52
+4/7/2006,Credit_glagg_crd_exJPY_exBBB,USD,70
+4/7/2006,Credit_glagg_crd_exJPY_exBBB,EUR,38
+4/7/2006,Credit_glagg_crd_exJPY_exBBB,GBP,68
+4/7/2006,Credit_Global Agg (Original),USD,61
+4/7/2006,Credit_Global Agg (Original),EUR,19
+4/7/2006,Credit_Global Agg (Original),GBP,31
+4/10/2006,Agency,USD,35
+4/10/2006,Agency,EUR,21
+4/10/2006,Agency,GBP,18
+4/10/2006,ABS,USD,46
+4/10/2006,CMBS,USD,68
+4/10/2006,MBS,USD,97
+4/10/2006,Credit_AAA-BBB,USD,83
+4/10/2006,Credit_AAA-BBB,EUR,42
+4/10/2006,Credit_AAA-BBB,GBP,73
+4/10/2006,Credit_AAA-A,USD,69
+4/10/2006,Credit_AAA-A,EUR,34
+4/10/2006,Credit_AAA-A,GBP,68
+4/10/2006,Credit_AAA-AA,USD,56
+4/10/2006,Credit_AAA-AA,EUR,25
+4/10/2006,Credit_AAA-AA,GBP,53
+4/10/2006,Credit_US CORP 1-10,USD,80
+4/10/2006,Credit_glagg_crd_1_5YRS,USD,57
+4/10/2006,Credit_glagg_crd_1_5YRS,EUR,30
+4/10/2006,Credit_glagg_crd_1_5YRS,GBP,43
+4/10/2006,Credit_glagg_crd_1_3YRS,USD,48
+4/10/2006,Credit_glagg_crd_1_3YRS,EUR,25
+4/10/2006,Credit_glagg_crd_1_3YRS,GBP,34
+4/10/2006,Credit_glagg _crd>5.0YRS,USD,101
+4/10/2006,Credit_glagg _crd>5.0YRS,EUR,62
+4/10/2006,Credit_glagg _crd>5.0YRS,GBP,92
+4/10/2006,Credit_glagg_crd_exJPY_aa_3,USD,58
+4/10/2006,Credit_glagg_crd_exJPY_aa_3,EUR,30
+4/10/2006,Credit_glagg_crd_exJPY_aa_3,GBP,52
+4/10/2006,Credit_glagg_crd_exJPY_exBBB,USD,69
+4/10/2006,Credit_glagg_crd_exJPY_exBBB,EUR,38
+4/10/2006,Credit_glagg_crd_exJPY_exBBB,GBP,68
+4/10/2006,Credit_Global Agg (Original),USD,62
+4/10/2006,Credit_Global Agg (Original),EUR,19
+4/10/2006,Credit_Global Agg (Original),GBP,31
+4/11/2006,Agency,USD,35
+4/11/2006,Agency,EUR,22
+4/11/2006,Agency,GBP,18
+4/11/2006,ABS,USD,46
+4/11/2006,CMBS,USD,67
+4/11/2006,MBS,USD,97
+4/11/2006,Credit_AAA-BBB,USD,83
+4/11/2006,Credit_AAA-BBB,EUR,42
+4/11/2006,Credit_AAA-BBB,GBP,73
+4/11/2006,Credit_AAA-A,USD,69
+4/11/2006,Credit_AAA-A,EUR,35
+4/11/2006,Credit_AAA-A,GBP,68
+4/11/2006,Credit_AAA-AA,USD,56
+4/11/2006,Credit_AAA-AA,EUR,25
+4/11/2006,Credit_AAA-AA,GBP,53
+4/11/2006,Credit_US CORP 1-10,USD,79
+4/11/2006,Credit_glagg_crd_1_5YRS,USD,57
+4/11/2006,Credit_glagg_crd_1_5YRS,EUR,31
+4/11/2006,Credit_glagg_crd_1_5YRS,GBP,43
+4/11/2006,Credit_glagg_crd_1_3YRS,USD,48
+4/11/2006,Credit_glagg_crd_1_3YRS,EUR,25
+4/11/2006,Credit_glagg_crd_1_3YRS,GBP,34
+4/11/2006,Credit_glagg _crd>5.0YRS,USD,101
+4/11/2006,Credit_glagg _crd>5.0YRS,EUR,62
+4/11/2006,Credit_glagg _crd>5.0YRS,GBP,92
+4/11/2006,Credit_glagg_crd_exJPY_aa_3,USD,58
+4/11/2006,Credit_glagg_crd_exJPY_aa_3,EUR,30
+4/11/2006,Credit_glagg_crd_exJPY_aa_3,GBP,52
+4/11/2006,Credit_glagg_crd_exJPY_exBBB,USD,69
+4/11/2006,Credit_glagg_crd_exJPY_exBBB,EUR,38
+4/11/2006,Credit_glagg_crd_exJPY_exBBB,GBP,68
+4/11/2006,Credit_Global Agg (Original),USD,61
+4/11/2006,Credit_Global Agg (Original),EUR,19
+4/11/2006,Credit_Global Agg (Original),GBP,31
+4/12/2006,Agency,USD,35
+4/12/2006,Agency,EUR,21
+4/12/2006,Agency,GBP,18
+4/12/2006,ABS,USD,45
+4/12/2006,CMBS,USD,67
+4/12/2006,MBS,USD,96
+4/12/2006,Credit_AAA-BBB,USD,83
+4/12/2006,Credit_AAA-BBB,EUR,42
+4/12/2006,Credit_AAA-BBB,GBP,73
+4/12/2006,Credit_AAA-A,USD,69
+4/12/2006,Credit_AAA-A,EUR,34
+4/12/2006,Credit_AAA-A,GBP,68
+4/12/2006,Credit_AAA-AA,USD,56
+4/12/2006,Credit_AAA-AA,EUR,25
+4/12/2006,Credit_AAA-AA,GBP,53
+4/12/2006,Credit_US CORP 1-10,USD,79
+4/12/2006,Credit_glagg_crd_1_5YRS,USD,57
+4/12/2006,Credit_glagg_crd_1_5YRS,EUR,30
+4/12/2006,Credit_glagg_crd_1_5YRS,GBP,43
+4/12/2006,Credit_glagg_crd_1_3YRS,USD,48
+4/12/2006,Credit_glagg_crd_1_3YRS,EUR,25
+4/12/2006,Credit_glagg_crd_1_3YRS,GBP,34
+4/12/2006,Credit_glagg _crd>5.0YRS,USD,101
+4/12/2006,Credit_glagg _crd>5.0YRS,EUR,62
+4/12/2006,Credit_glagg _crd>5.0YRS,GBP,92
+4/12/2006,Credit_glagg_crd_exJPY_aa_3,USD,57
+4/12/2006,Credit_glagg_crd_exJPY_aa_3,EUR,29
+4/12/2006,Credit_glagg_crd_exJPY_aa_3,GBP,52
+4/12/2006,Credit_glagg_crd_exJPY_exBBB,USD,69
+4/12/2006,Credit_glagg_crd_exJPY_exBBB,EUR,38
+4/12/2006,Credit_glagg_crd_exJPY_exBBB,GBP,68
+4/12/2006,Credit_Global Agg (Original),USD,61
+4/12/2006,Credit_Global Agg (Original),EUR,19
+4/12/2006,Credit_Global Agg (Original),GBP,31
+4/13/2006,Agency,USD,35
+4/13/2006,Agency,EUR,22
+4/13/2006,Agency,GBP,17
+4/13/2006,ABS,USD,46
+4/13/2006,CMBS,USD,68
+4/13/2006,MBS,USD,96
+4/13/2006,Credit_AAA-BBB,USD,83
+4/13/2006,Credit_AAA-BBB,EUR,42
+4/13/2006,Credit_AAA-BBB,GBP,73
+4/13/2006,Credit_AAA-A,USD,69
+4/13/2006,Credit_AAA-A,EUR,34
+4/13/2006,Credit_AAA-A,GBP,68
+4/13/2006,Credit_AAA-AA,USD,57
+4/13/2006,Credit_AAA-AA,EUR,25
+4/13/2006,Credit_AAA-AA,GBP,54
+4/13/2006,Credit_US CORP 1-10,USD,80
+4/13/2006,Credit_glagg_crd_1_5YRS,USD,57
+4/13/2006,Credit_glagg_crd_1_5YRS,EUR,31
+4/13/2006,Credit_glagg_crd_1_5YRS,GBP,43
+4/13/2006,Credit_glagg_crd_1_3YRS,USD,48
+4/13/2006,Credit_glagg_crd_1_3YRS,EUR,26
+4/13/2006,Credit_glagg_crd_1_3YRS,GBP,34
+4/13/2006,Credit_glagg _crd>5.0YRS,USD,102
+4/13/2006,Credit_glagg _crd>5.0YRS,EUR,62
+4/13/2006,Credit_glagg _crd>5.0YRS,GBP,92
+4/13/2006,Credit_glagg_crd_exJPY_aa_3,USD,58
+4/13/2006,Credit_glagg_crd_exJPY_aa_3,EUR,30
+4/13/2006,Credit_glagg_crd_exJPY_aa_3,GBP,52
+4/13/2006,Credit_glagg_crd_exJPY_exBBB,USD,70
+4/13/2006,Credit_glagg_crd_exJPY_exBBB,EUR,38
+4/13/2006,Credit_glagg_crd_exJPY_exBBB,GBP,68
+4/13/2006,Credit_Global Agg (Original),USD,61
+4/13/2006,Credit_Global Agg (Original),EUR,19
+4/13/2006,Credit_Global Agg (Original),GBP,31
+4/14/2006,Agency,USD,35
+4/14/2006,Agency,EUR,22
+4/14/2006,Agency,GBP,17
+4/14/2006,ABS,USD,46
+4/14/2006,CMBS,USD,68
+4/14/2006,MBS,USD,96
+4/14/2006,Credit_AAA-BBB,USD,83
+4/14/2006,Credit_AAA-BBB,EUR,42
+4/14/2006,Credit_AAA-BBB,GBP,73
+4/14/2006,Credit_AAA-A,USD,69
+4/14/2006,Credit_AAA-A,EUR,34
+4/14/2006,Credit_AAA-A,GBP,68
+4/14/2006,Credit_AAA-AA,USD,57
+4/14/2006,Credit_AAA-AA,EUR,25
+4/14/2006,Credit_AAA-AA,GBP,54
+4/14/2006,Credit_US CORP 1-10,USD,80
+4/14/2006,Credit_glagg_crd_1_5YRS,USD,57
+4/14/2006,Credit_glagg_crd_1_5YRS,EUR,31
+4/14/2006,Credit_glagg_crd_1_5YRS,GBP,43
+4/14/2006,Credit_glagg_crd_1_3YRS,USD,48
+4/14/2006,Credit_glagg_crd_1_3YRS,EUR,26
+4/14/2006,Credit_glagg_crd_1_3YRS,GBP,34
+4/14/2006,Credit_glagg _crd>5.0YRS,USD,102
+4/14/2006,Credit_glagg _crd>5.0YRS,EUR,62
+4/14/2006,Credit_glagg _crd>5.0YRS,GBP,92
+4/14/2006,Credit_glagg_crd_exJPY_aa_3,USD,58
+4/14/2006,Credit_glagg_crd_exJPY_aa_3,EUR,30
+4/14/2006,Credit_glagg_crd_exJPY_aa_3,GBP,52
+4/14/2006,Credit_glagg_crd_exJPY_exBBB,USD,70
+4/14/2006,Credit_glagg_crd_exJPY_exBBB,EUR,38
+4/14/2006,Credit_glagg_crd_exJPY_exBBB,GBP,68
+4/14/2006,Credit_Global Agg (Original),USD,61
+4/14/2006,Credit_Global Agg (Original),EUR,19
+4/14/2006,Credit_Global Agg (Original),GBP,31
+4/17/2006,Agency,USD,35
+4/17/2006,Agency,EUR,22
+4/17/2006,Agency,GBP,17
+4/17/2006,ABS,USD,46
+4/17/2006,CMBS,USD,67
+4/17/2006,MBS,USD,96
+4/17/2006,Credit_AAA-BBB,USD,83
+4/17/2006,Credit_AAA-BBB,EUR,42
+4/17/2006,Credit_AAA-BBB,GBP,73
+4/17/2006,Credit_AAA-A,USD,69
+4/17/2006,Credit_AAA-A,EUR,35
+4/17/2006,Credit_AAA-A,GBP,68
+4/17/2006,Credit_AAA-AA,USD,56
+4/17/2006,Credit_AAA-AA,EUR,25
+4/17/2006,Credit_AAA-AA,GBP,53
+4/17/2006,Credit_US CORP 1-10,USD,80
+4/17/2006,Credit_glagg_crd_1_5YRS,USD,57
+4/17/2006,Credit_glagg_crd_1_5YRS,EUR,31
+4/17/2006,Credit_glagg_crd_1_5YRS,GBP,43
+4/17/2006,Credit_glagg_crd_1_3YRS,USD,47
+4/17/2006,Credit_glagg_crd_1_3YRS,EUR,26
+4/17/2006,Credit_glagg_crd_1_3YRS,GBP,34
+4/17/2006,Credit_glagg _crd>5.0YRS,USD,101
+4/17/2006,Credit_glagg _crd>5.0YRS,EUR,62
+4/17/2006,Credit_glagg _crd>5.0YRS,GBP,92
+4/17/2006,Credit_glagg_crd_exJPY_aa_3,USD,58
+4/17/2006,Credit_glagg_crd_exJPY_aa_3,EUR,30
+4/17/2006,Credit_glagg_crd_exJPY_aa_3,GBP,52
+4/17/2006,Credit_glagg_crd_exJPY_exBBB,USD,70
+4/17/2006,Credit_glagg_crd_exJPY_exBBB,EUR,38
+4/17/2006,Credit_glagg_crd_exJPY_exBBB,GBP,68
+4/17/2006,Credit_Global Agg (Original),USD,61
+4/17/2006,Credit_Global Agg (Original),EUR,19
+4/17/2006,Credit_Global Agg (Original),GBP,31
+4/18/2006,Agency,USD,35
+4/18/2006,Agency,EUR,21
+4/18/2006,Agency,GBP,17
+4/18/2006,ABS,USD,46
+4/18/2006,CMBS,USD,66
+4/18/2006,MBS,USD,95
+4/18/2006,Credit_AAA-BBB,USD,83
+4/18/2006,Credit_AAA-BBB,EUR,42
+4/18/2006,Credit_AAA-BBB,GBP,73
+4/18/2006,Credit_AAA-A,USD,69
+4/18/2006,Credit_AAA-A,EUR,34
+4/18/2006,Credit_AAA-A,GBP,67
+4/18/2006,Credit_AAA-AA,USD,56
+4/18/2006,Credit_AAA-AA,EUR,25
+4/18/2006,Credit_AAA-AA,GBP,53
+4/18/2006,Credit_US CORP 1-10,USD,79
+4/18/2006,Credit_glagg_crd_1_5YRS,USD,57
+4/18/2006,Credit_glagg_crd_1_5YRS,EUR,30
+4/18/2006,Credit_glagg_crd_1_5YRS,GBP,42
+4/18/2006,Credit_glagg_crd_1_3YRS,USD,46
+4/18/2006,Credit_glagg_crd_1_3YRS,EUR,25
+4/18/2006,Credit_glagg_crd_1_3YRS,GBP,33
+4/18/2006,Credit_glagg _crd>5.0YRS,USD,101
+4/18/2006,Credit_glagg _crd>5.0YRS,EUR,62
+4/18/2006,Credit_glagg _crd>5.0YRS,GBP,92
+4/18/2006,Credit_glagg_crd_exJPY_aa_3,USD,58
+4/18/2006,Credit_glagg_crd_exJPY_aa_3,EUR,30
+4/18/2006,Credit_glagg_crd_exJPY_aa_3,GBP,52
+4/18/2006,Credit_glagg_crd_exJPY_exBBB,USD,69
+4/18/2006,Credit_glagg_crd_exJPY_exBBB,EUR,38
+4/18/2006,Credit_glagg_crd_exJPY_exBBB,GBP,67
+4/18/2006,Credit_Global Agg (Original),USD,61
+4/18/2006,Credit_Global Agg (Original),EUR,19
+4/18/2006,Credit_Global Agg (Original),GBP,30
+4/19/2006,Agency,USD,35
+4/19/2006,Agency,EUR,22
+4/19/2006,Agency,GBP,18
+4/19/2006,ABS,USD,45
+4/19/2006,CMBS,USD,66
+4/19/2006,MBS,USD,93
+4/19/2006,Credit_AAA-BBB,USD,83
+4/19/2006,Credit_AAA-BBB,EUR,42
+4/19/2006,Credit_AAA-BBB,GBP,73
+4/19/2006,Credit_AAA-A,USD,69
+4/19/2006,Credit_AAA-A,EUR,34
+4/19/2006,Credit_AAA-A,GBP,68
+4/19/2006,Credit_AAA-AA,USD,56
+4/19/2006,Credit_AAA-AA,EUR,25
+4/19/2006,Credit_AAA-AA,GBP,53
+4/19/2006,Credit_US CORP 1-10,USD,80
+4/19/2006,Credit_glagg_crd_1_5YRS,USD,57
+4/19/2006,Credit_glagg_crd_1_5YRS,EUR,30
+4/19/2006,Credit_glagg_crd_1_5YRS,GBP,43
+4/19/2006,Credit_glagg_crd_1_3YRS,USD,47
+4/19/2006,Credit_glagg_crd_1_3YRS,EUR,25
+4/19/2006,Credit_glagg_crd_1_3YRS,GBP,33
+4/19/2006,Credit_glagg _crd>5.0YRS,USD,101
+4/19/2006,Credit_glagg _crd>5.0YRS,EUR,62
+4/19/2006,Credit_glagg _crd>5.0YRS,GBP,92
+4/19/2006,Credit_glagg_crd_exJPY_aa_3,USD,58
+4/19/2006,Credit_glagg_crd_exJPY_aa_3,EUR,30
+4/19/2006,Credit_glagg_crd_exJPY_aa_3,GBP,52
+4/19/2006,Credit_glagg_crd_exJPY_exBBB,USD,69
+4/19/2006,Credit_glagg_crd_exJPY_exBBB,EUR,38
+4/19/2006,Credit_glagg_crd_exJPY_exBBB,GBP,68
+4/19/2006,Credit_Global Agg (Original),USD,60
+4/19/2006,Credit_Global Agg (Original),EUR,19
+4/19/2006,Credit_Global Agg (Original),GBP,30
+4/20/2006,Agency,USD,34
+4/20/2006,Agency,EUR,21
+4/20/2006,Agency,GBP,18
+4/20/2006,ABS,USD,45
+4/20/2006,CMBS,USD,66
+4/20/2006,MBS,USD,93
+4/20/2006,Credit_AAA-BBB,USD,82
+4/20/2006,Credit_AAA-BBB,EUR,42
+4/20/2006,Credit_AAA-BBB,GBP,72
+4/20/2006,Credit_AAA-A,USD,68
+4/20/2006,Credit_AAA-A,EUR,34
+4/20/2006,Credit_AAA-A,GBP,67
+4/20/2006,Credit_AAA-AA,USD,56
+4/20/2006,Credit_AAA-AA,EUR,25
+4/20/2006,Credit_AAA-AA,GBP,52
+4/20/2006,Credit_US CORP 1-10,USD,79
+4/20/2006,Credit_glagg_crd_1_5YRS,USD,56
+4/20/2006,Credit_glagg_crd_1_5YRS,EUR,30
+4/20/2006,Credit_glagg_crd_1_5YRS,GBP,42
+4/20/2006,Credit_glagg_crd_1_3YRS,USD,46
+4/20/2006,Credit_glagg_crd_1_3YRS,EUR,25
+4/20/2006,Credit_glagg_crd_1_3YRS,GBP,32
+4/20/2006,Credit_glagg _crd>5.0YRS,USD,100
+4/20/2006,Credit_glagg _crd>5.0YRS,EUR,61
+4/20/2006,Credit_glagg _crd>5.0YRS,GBP,91
+4/20/2006,Credit_glagg_crd_exJPY_aa_3,USD,57
+4/20/2006,Credit_glagg_crd_exJPY_aa_3,EUR,30
+4/20/2006,Credit_glagg_crd_exJPY_aa_3,GBP,51
+4/20/2006,Credit_glagg_crd_exJPY_exBBB,USD,69
+4/20/2006,Credit_glagg_crd_exJPY_exBBB,EUR,38
+4/20/2006,Credit_glagg_crd_exJPY_exBBB,GBP,67
+4/20/2006,Credit_Global Agg (Original),USD,60
+4/20/2006,Credit_Global Agg (Original),EUR,19
+4/20/2006,Credit_Global Agg (Original),GBP,30
+4/21/2006,Agency,USD,34
+4/21/2006,Agency,EUR,21
+4/21/2006,Agency,GBP,18
+4/21/2006,ABS,USD,44
+4/21/2006,CMBS,USD,66
+4/21/2006,MBS,USD,92
+4/21/2006,Credit_AAA-BBB,USD,82
+4/21/2006,Credit_AAA-BBB,EUR,42
+4/21/2006,Credit_AAA-BBB,GBP,72
+4/21/2006,Credit_AAA-A,USD,68
+4/21/2006,Credit_AAA-A,EUR,34
+4/21/2006,Credit_AAA-A,GBP,67
+4/21/2006,Credit_AAA-AA,USD,55
+4/21/2006,Credit_AAA-AA,EUR,25
+4/21/2006,Credit_AAA-AA,GBP,53
+4/21/2006,Credit_US CORP 1-10,USD,79
+4/21/2006,Credit_glagg_crd_1_5YRS,USD,56
+4/21/2006,Credit_glagg_crd_1_5YRS,EUR,31
+4/21/2006,Credit_glagg_crd_1_5YRS,GBP,42
+4/21/2006,Credit_glagg_crd_1_3YRS,USD,46
+4/21/2006,Credit_glagg_crd_1_3YRS,EUR,25
+4/21/2006,Credit_glagg_crd_1_3YRS,GBP,33
+4/21/2006,Credit_glagg _crd>5.0YRS,USD,100
+4/21/2006,Credit_glagg _crd>5.0YRS,EUR,62
+4/21/2006,Credit_glagg _crd>5.0YRS,GBP,91
+4/21/2006,Credit_glagg_crd_exJPY_aa_3,USD,57
+4/21/2006,Credit_glagg_crd_exJPY_aa_3,EUR,30
+4/21/2006,Credit_glagg_crd_exJPY_aa_3,GBP,52
+4/21/2006,Credit_glagg_crd_exJPY_exBBB,USD,68
+4/21/2006,Credit_glagg_crd_exJPY_exBBB,EUR,38
+4/21/2006,Credit_glagg_crd_exJPY_exBBB,GBP,67
+4/21/2006,Credit_Global Agg (Original),USD,59
+4/21/2006,Credit_Global Agg (Original),EUR,19
+4/21/2006,Credit_Global Agg (Original),GBP,30
+4/24/2006,Agency,USD,34
+4/24/2006,Agency,EUR,21
+4/24/2006,Agency,GBP,18
+4/24/2006,ABS,USD,45
+4/24/2006,CMBS,USD,65
+4/24/2006,MBS,USD,92
+4/24/2006,Credit_AAA-BBB,USD,81
+4/24/2006,Credit_AAA-BBB,EUR,41
+4/24/2006,Credit_AAA-BBB,GBP,72
+4/24/2006,Credit_AAA-A,USD,67
+4/24/2006,Credit_AAA-A,EUR,34
+4/24/2006,Credit_AAA-A,GBP,67
+4/24/2006,Credit_AAA-AA,USD,55
+4/24/2006,Credit_AAA-AA,EUR,25
+4/24/2006,Credit_AAA-AA,GBP,52
+4/24/2006,Credit_US CORP 1-10,USD,78
+4/24/2006,Credit_glagg_crd_1_5YRS,USD,56
+4/24/2006,Credit_glagg_crd_1_5YRS,EUR,30
+4/24/2006,Credit_glagg_crd_1_5YRS,GBP,42
+4/24/2006,Credit_glagg_crd_1_3YRS,USD,46
+4/24/2006,Credit_glagg_crd_1_3YRS,EUR,25
+4/24/2006,Credit_glagg_crd_1_3YRS,GBP,32
+4/24/2006,Credit_glagg _crd>5.0YRS,USD,99
+4/24/2006,Credit_glagg _crd>5.0YRS,EUR,61
+4/24/2006,Credit_glagg _crd>5.0YRS,GBP,91
+4/24/2006,Credit_glagg_crd_exJPY_aa_3,USD,57
+4/24/2006,Credit_glagg_crd_exJPY_aa_3,EUR,29
+4/24/2006,Credit_glagg_crd_exJPY_aa_3,GBP,51
+4/24/2006,Credit_glagg_crd_exJPY_exBBB,USD,68
+4/24/2006,Credit_glagg_crd_exJPY_exBBB,EUR,38
+4/24/2006,Credit_glagg_crd_exJPY_exBBB,GBP,67
+4/24/2006,Credit_Global Agg (Original),USD,59
+4/24/2006,Credit_Global Agg (Original),EUR,19
+4/24/2006,Credit_Global Agg (Original),GBP,30
+4/25/2006,Agency,USD,33
+4/25/2006,Agency,EUR,21
+4/25/2006,Agency,GBP,18
+4/25/2006,ABS,USD,43
+4/25/2006,CMBS,USD,65
+4/25/2006,MBS,USD,92
+4/25/2006,Credit_AAA-BBB,USD,81
+4/25/2006,Credit_AAA-BBB,EUR,41
+4/25/2006,Credit_AAA-BBB,GBP,71
+4/25/2006,Credit_AAA-A,USD,67
+4/25/2006,Credit_AAA-A,EUR,33
+4/25/2006,Credit_AAA-A,GBP,66
+4/25/2006,Credit_AAA-AA,USD,55
+4/25/2006,Credit_AAA-AA,EUR,24
+4/25/2006,Credit_AAA-AA,GBP,52
+4/25/2006,Credit_US CORP 1-10,USD,78
+4/25/2006,Credit_glagg_crd_1_5YRS,USD,55
+4/25/2006,Credit_glagg_crd_1_5YRS,EUR,30
+4/25/2006,Credit_glagg_crd_1_5YRS,GBP,41
+4/25/2006,Credit_glagg_crd_1_3YRS,USD,45
+4/25/2006,Credit_glagg_crd_1_3YRS,EUR,24
+4/25/2006,Credit_glagg_crd_1_3YRS,GBP,31
+4/25/2006,Credit_glagg _crd>5.0YRS,USD,99
+4/25/2006,Credit_glagg _crd>5.0YRS,EUR,60
+4/25/2006,Credit_glagg _crd>5.0YRS,GBP,90
+4/25/2006,Credit_glagg_crd_exJPY_aa_3,USD,56
+4/25/2006,Credit_glagg_crd_exJPY_aa_3,EUR,29
+4/25/2006,Credit_glagg_crd_exJPY_aa_3,GBP,51
+4/25/2006,Credit_glagg_crd_exJPY_exBBB,USD,68
+4/25/2006,Credit_glagg_crd_exJPY_exBBB,EUR,37
+4/25/2006,Credit_glagg_crd_exJPY_exBBB,GBP,66
+4/25/2006,Credit_Global Agg (Original),USD,59
+4/25/2006,Credit_Global Agg (Original),EUR,19
+4/25/2006,Credit_Global Agg (Original),GBP,30
+4/26/2006,Agency,USD,33
+4/26/2006,Agency,EUR,22
+4/26/2006,Agency,GBP,18
+4/26/2006,ABS,USD,43
+4/26/2006,CMBS,USD,65
+4/26/2006,MBS,USD,91
+4/26/2006,Credit_AAA-BBB,USD,81
+4/26/2006,Credit_AAA-BBB,EUR,41
+4/26/2006,Credit_AAA-BBB,GBP,71
+4/26/2006,Credit_AAA-A,USD,67
+4/26/2006,Credit_AAA-A,EUR,34
+4/26/2006,Credit_AAA-A,GBP,66
+4/26/2006,Credit_AAA-AA,USD,54
+4/26/2006,Credit_AAA-AA,EUR,25
+4/26/2006,Credit_AAA-AA,GBP,52
+4/26/2006,Credit_US CORP 1-10,USD,79
+4/26/2006,Credit_glagg_crd_1_5YRS,USD,55
+4/26/2006,Credit_glagg_crd_1_5YRS,EUR,30
+4/26/2006,Credit_glagg_crd_1_5YRS,GBP,41
+4/26/2006,Credit_glagg_crd_1_3YRS,USD,45
+4/26/2006,Credit_glagg_crd_1_3YRS,EUR,25
+4/26/2006,Credit_glagg_crd_1_3YRS,GBP,32
+4/26/2006,Credit_glagg _crd>5.0YRS,USD,98
+4/26/2006,Credit_glagg _crd>5.0YRS,EUR,61
+4/26/2006,Credit_glagg _crd>5.0YRS,GBP,90
+4/26/2006,Credit_glagg_crd_exJPY_aa_3,USD,56
+4/26/2006,Credit_glagg_crd_exJPY_aa_3,EUR,29
+4/26/2006,Credit_glagg_crd_exJPY_aa_3,GBP,50
+4/26/2006,Credit_glagg_crd_exJPY_exBBB,USD,67
+4/26/2006,Credit_glagg_crd_exJPY_exBBB,EUR,37
+4/26/2006,Credit_glagg_crd_exJPY_exBBB,GBP,66
+4/26/2006,Credit_Global Agg (Original),USD,59
+4/26/2006,Credit_Global Agg (Original),EUR,19
+4/26/2006,Credit_Global Agg (Original),GBP,30
+4/27/2006,Agency,USD,33
+4/27/2006,Agency,EUR,22
+4/27/2006,Agency,GBP,18
+4/27/2006,ABS,USD,45
+4/27/2006,CMBS,USD,65
+4/27/2006,MBS,USD,91
+4/27/2006,Credit_AAA-BBB,USD,81
+4/27/2006,Credit_AAA-BBB,EUR,41
+4/27/2006,Credit_AAA-BBB,GBP,71
+4/27/2006,Credit_AAA-A,USD,67
+4/27/2006,Credit_AAA-A,EUR,34
+4/27/2006,Credit_AAA-A,GBP,66
+4/27/2006,Credit_AAA-AA,USD,55
+4/27/2006,Credit_AAA-AA,EUR,25
+4/27/2006,Credit_AAA-AA,GBP,52
+4/27/2006,Credit_US CORP 1-10,USD,78
+4/27/2006,Credit_glagg_crd_1_5YRS,USD,56
+4/27/2006,Credit_glagg_crd_1_5YRS,EUR,31
+4/27/2006,Credit_glagg_crd_1_5YRS,GBP,42
+4/27/2006,Credit_glagg_crd_1_3YRS,USD,47
+4/27/2006,Credit_glagg_crd_1_3YRS,EUR,25
+4/27/2006,Credit_glagg_crd_1_3YRS,GBP,33
+4/27/2006,Credit_glagg _crd>5.0YRS,USD,98
+4/27/2006,Credit_glagg _crd>5.0YRS,EUR,60
+4/27/2006,Credit_glagg _crd>5.0YRS,GBP,89
+4/27/2006,Credit_glagg_crd_exJPY_aa_3,USD,56
+4/27/2006,Credit_glagg_crd_exJPY_aa_3,EUR,30
+4/27/2006,Credit_glagg_crd_exJPY_aa_3,GBP,51
+4/27/2006,Credit_glagg_crd_exJPY_exBBB,USD,68
+4/27/2006,Credit_glagg_crd_exJPY_exBBB,EUR,38
+4/27/2006,Credit_glagg_crd_exJPY_exBBB,GBP,66
+4/27/2006,Credit_Global Agg (Original),USD,58
+4/27/2006,Credit_Global Agg (Original),EUR,19
+4/27/2006,Credit_Global Agg (Original),GBP,30
+4/28/2006,Agency,USD,33
+4/28/2006,Agency,EUR,22
+4/28/2006,Agency,GBP,18
+4/28/2006,ABS,USD,44
+4/28/2006,CMBS,USD,66
+4/28/2006,MBS,USD,90
+4/28/2006,Credit_AAA-BBB,USD,81
+4/28/2006,Credit_AAA-BBB,EUR,41
+4/28/2006,Credit_AAA-BBB,GBP,71
+4/28/2006,Credit_AAA-A,USD,67
+4/28/2006,Credit_AAA-A,EUR,34
+4/28/2006,Credit_AAA-A,GBP,66
+4/28/2006,Credit_AAA-AA,USD,55
+4/28/2006,Credit_AAA-AA,EUR,25
+4/28/2006,Credit_AAA-AA,GBP,52
+4/28/2006,Credit_US CORP 1-10,USD,79
+4/28/2006,Credit_glagg_crd_1_5YRS,USD,57
+4/28/2006,Credit_glagg_crd_1_5YRS,EUR,31
+4/28/2006,Credit_glagg_crd_1_5YRS,GBP,42
+4/28/2006,Credit_glagg_crd_1_3YRS,USD,47
+4/28/2006,Credit_glagg_crd_1_3YRS,EUR,25
+4/28/2006,Credit_glagg_crd_1_3YRS,GBP,34
+4/28/2006,Credit_glagg _crd>5.0YRS,USD,98
+4/28/2006,Credit_glagg _crd>5.0YRS,EUR,60
+4/28/2006,Credit_glagg _crd>5.0YRS,GBP,89
+4/28/2006,Credit_glagg_crd_exJPY_aa_3,USD,57
+4/28/2006,Credit_glagg_crd_exJPY_aa_3,EUR,30
+4/28/2006,Credit_glagg_crd_exJPY_aa_3,GBP,51
+4/28/2006,Credit_glagg_crd_exJPY_exBBB,USD,68
+4/28/2006,Credit_glagg_crd_exJPY_exBBB,EUR,38
+4/28/2006,Credit_glagg_crd_exJPY_exBBB,GBP,66
+4/28/2006,Credit_Global Agg (Original),USD,58
+4/28/2006,Credit_Global Agg (Original),EUR,19
+4/28/2006,Credit_Global Agg (Original),GBP,29

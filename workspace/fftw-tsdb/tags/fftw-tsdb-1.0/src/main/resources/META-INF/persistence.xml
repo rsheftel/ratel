@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Persistence deployment descriptor for dev profile -->
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" 
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd" 
+             version="1.0">
+             
+   <persistence-unit name="TSDB" transaction-type="RESOURCE_LOCAL">
+      <class>com.fftw.tsdb.domain.cds.MarkitCompositeHistPK</class>
+      <class>com.fftw.tsdb.domain.cds.MarkitCompositeHist</class>
+      <class>com.fftw.tsdb.domain.cds.CreditRating</class>  
+      <class>com.fftw.tsdb.domain.cds.CdsTicker</class>  
+      <class>com.fftw.tsdb.domain.Attribute</class>
+      <class>com.fftw.tsdb.domain.DataSource</class>
+      <class>com.fftw.tsdb.domain.GeneralAttributeValue</class>
+      <class>com.fftw.tsdb.domain.Ticker</class>
+      <class>com.fftw.tsdb.domain.TimeSeries</class>
+      <class>com.fftw.tsdb.domain.TimeSeriesAttributeMap</class>
+      <class>com.fftw.tsdb.domain.TimeSeriesAttributeMapPK</class>      
+      <class>com.fftw.tsdb.domain.TimeSeriesData</class>
+      <class>com.fftw.tsdb.domain.TimeSeriesDataPK</class>      
+      <properties>
+        <property name="hibernate.dialect" value="${hibernate.dialect}" />
+        <property name="hibernate.connection.driver_class" value="${hibernate.connection.driver}"/>
+        <property name="hibernate.connection.username" value="${hibernate.connection.username}"/>
+        <property name="hibernate.connection.password" value="${hibernate.connection.password}"/>
+        <property name="hibernate.connection.url" value="${hibernate.connection.url}"/>                
+        <property name="hibernate.hbm2ddl.auto" value="${hibernate.hbm2ddl.auto}"/>
+        <property name="hibernate.format_sql" value="${hibernate.format_sql}"/>
+        <property name="hibernate.show_sql" value="${hibernate.show.sql}"/>
+        <property name="hibernate.jdbc.batch_size" value="${hibernate.jdbc.batch_size}"/>
+        <property name="hibernate.cache.use_second_level_cache" value="${hibernate.cache.use_second_level_cache}"/>
+      </properties>
+   </persistence-unit>
+    
+</persistence>

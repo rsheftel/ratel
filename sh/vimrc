@@ -1,0 +1,8 @@
+set wildmode=list:longest,full
+set history=50
+set nowrap
+set shiftwidth=4
+set shiftround
+set expandtab
+set autoindent
+:colorscheme evening

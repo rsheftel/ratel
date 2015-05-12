@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns="http://jboss.com/products/seam/pages"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://jboss.com/products/seam/pages http://jboss.com/products/seam/pages-2.0.xsd">
+      
+   <param name="firstResult" value="#{futuresSymbolMappingList.firstResult}"/>
+   <param name="order" value="#{futuresSymbolMappingList.order}"/>
+   <param name="from"/>
+   <param name="platformSymbol" value="#{futuresSymbolMappingList.futuresSymbolMapping.platformSymbol}"/>
+   <param name="bloombergSymbol" value="#{futuresSymbolMappingList.futuresSymbolMapping.bloombergSymbol}"/>
+   <param name="description" value="#{futuresSymbolMappingList.futuresSymbolMapping.description}"/>
+
+</page>

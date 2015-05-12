@@ -1,10 +1,10 @@
 Package:      Core
 Version:      0.0.1
-Date:         2010/06/23
-Title:        Super Core Infrastructure Classes
-Author:       The Ratel Team <nobody@foo.com>
-Maintainer:   The Ratel Team <nobody@foo.com>
+Date:         2007/03/27
+Title:        Super Core Infrastructure Classes for Global Systematic Fund
+Author:       The Code Committee <sim_team@malbecpartners.com>
+Maintainer:   The Code Committee <sim_team@malbecpartners.com>
 SaveImage:    yes
-Depends:      R (>= 1.9.0), utils (>= 1.9.0), methods (>= 1.9.0), R.oo (>= 1.2.3), zoo (>= 1.2-1), colorspace, RUnit, rJava
+Depends:      R (>= 1.9.0), utils (>= 1.9.0), methods (>= 1.9.0), R.oo (>= 1.2.3), RJDBC(>= 0.1-4), zoo (>= 1.2-1), colorspace, RUnit
 Description:  Super Core Infrastructure Classes for Global Systematic Fund
-License:      Some license...
+License:      This software is owned by it's author and may not be used or copied by anyone without his explicit permission.

@@ -1,0 +1,71 @@
+<dataset>
+    <attribute attribute_id="1" attribute_name="quote_type"
+        table_name="general_attribute_value"
+        primary_key_col_name="attribute_value_id"
+        description_col_name="attribute_value_name" />
+
+    <attribute attribute_id="2" attribute_name="ticker"
+        table_name="ticker" primary_key_col_name="ticker_id"
+        description_col_name="ticker_name" />
+
+    <attribute attribute_id="3" attribute_name="option_type"
+        table_name="general_attribute_value"
+        primary_key_col_name="attribute_value_id"
+        description_col_name="attribute_value_name" />
+
+    <attribute attribute_id="4" attribute_name="strike"
+        table_name="general_attribute_value"
+        primary_key_col_name="attribute_value_id"
+        description_col_name="attribute_value_name" />
+
+    <attribute attribute_id="5" attribute_name="tier"
+        table_name="general_attribute_value"
+        primary_key_col_name="attribute_value_id"
+        description_col_name="attribute_value_name" />
+
+    <attribute attribute_id="6" attribute_name="ccy"
+        table_name="general_attribute_value"
+        primary_key_col_name="attribute_value_id"
+        description_col_name="attribute_value_name" />
+
+    <attribute attribute_id="7" attribute_name="doc_clause"
+        table_name="general_attribute_value"
+        primary_key_col_name="attribute_value_id"
+        description_col_name="attribute_value_name" />
+
+    <attribute attribute_id="8" attribute_name="tenor"
+        table_name="general_attribute_value"
+        primary_key_col_name="attribute_value_id"
+        description_col_name="attribute_value_name" />
+
+    <attribute attribute_id="9" attribute_name="cds_ticker"
+        table_name="cds_ticker" primary_key_col_name="cds_ticker_id"
+        description_col_name="cds_ticker_name" />
+
+    <attribute attribute_id="10" attribute_name="quote_side"
+        table_name="general_attribute_value"
+        primary_key_col_name="attribute_value_id"
+        description_col_name="attribute_value_name" />
+   
+    <attribute attribute_id="11" attribute_name="quote_convention"
+        table_name="general_attribute_value"
+        primary_key_col_name="attribute_value_id"
+        description_col_name="attribute_value_name" />
+        
+    <attribute attribute_id="12" attribute_name="instrument"
+        table_name="general_attribute_value"
+        primary_key_col_name="attribute_value_id"
+        description_col_name="attribute_value_name" />     
+        
+    <data_source data_source_id="1" data_source_name="goldman" />
+    <data_source data_source_id="2" data_source_name="jp morgan" />
+    <data_source data_source_id="3" data_source_name="markit" />
+
+    <credit_rating rating_value="1" snp="AAA" fitch="AAA" moodys="Aaa" />
+
+    <T_Markit_Cds_Composite_Hist ccy="AUD" date="2007-06-25 00:00:00.000" docClause="MR" ticker="A"
+        tier="SNRFOR" avRating="AAA" compositeDepth5y="4" recovery="0.4" shortName="Agilent Tech Inc"
+        spread6m="0.00198" spread1y="0.00269" spread2y="0.00369" spread3y="0.00469" spread4y="0.00569"
+        spread5y="0.00669" spread7y="0.00769" spread10y="0.00725" spread15y="0.01275" spread20y="0.00890"
+        spread30y="0.00990" />
+</dataset>

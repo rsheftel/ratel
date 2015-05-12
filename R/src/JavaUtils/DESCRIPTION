@@ -1,10 +1,10 @@
 Package:      JavaUtils
 Version:      0.0.1
-Date:         2010/06/23
+Date:         2007/12/18
 Title:        Utilities for using the Java wrapper
-Author:       The Ratel Team <nobody@foo.com>
-Maintainer:   The Ratel Team <nobody@foo.com>
+Author:       The Code Committee <sim_team@malbecpartners.com>
+Maintainer:   The Code Committee <sim_team@malbecpartners.com>
 SaveImage:    yes
 Depends:      rJava, Core, Java
 Description:  Utilities for using the Java wrapper
-License:      Some license...
+License:      This software is owned by it's author and may not be used or copied by anyone without his explicit permission.

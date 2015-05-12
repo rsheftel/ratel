@@ -1,0 +1,12 @@
+Package: Core
+Version: 0.0.1
+Date: 2010/06/23
+Title: Super Core Infrastructure Classes
+Author: The Team <nobody@foo.com>
+Maintainer: The Team <nobody@foo.com>
+SaveImage: yes
+Depends: R (>= 1.9.0), utils (>= 1.9.0), methods (>= 1.9.0), R.oo (>=
+        1.2.3), zoo (>= 1.2-1), xts, colorspace, reshape, RUnit, rJava
+Description: Super Core Infrastructure Classes
+License: Some license...
+Built: R 2.11.1; ; 2011-05-28 10:31:11.126 UTC; windows

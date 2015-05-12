@@ -1,0 +1,159 @@
+<Configuration>
+  <Daemon.SolutionSettings>
+    <SkipFilesAndFolders>
+      <Item>2541686B-1673-43BF-AF89-3163945DB009</Item>
+      <Item>6A57EDF7-2A33-4023-9FB6-D539780988FF/d:Properties</Item>
+      <Item>BD90E610-88B9-4017-AD07-5563A049D4FE/d:Properties</Item>
+    </SkipFilesAndFolders>
+  </Daemon.SolutionSettings>
+  <CodeStyleSettings>
+    <ExternalPath IsNull="False">
+    </ExternalPath>
+    <Sharing>SOLUTION</Sharing>
+    <CSharp>
+      <FormatSettings>
+        <ALIGN_MULTILINE_ARGUMENT>False</ALIGN_MULTILINE_ARGUMENT>
+        <ALIGN_MULTILINE_ARRAY_AND_OBJECT_INITIALIZER>False</ALIGN_MULTILINE_ARRAY_AND_OBJECT_INITIALIZER>
+        <ALIGN_MULTILINE_EXPRESSION>False</ALIGN_MULTILINE_EXPRESSION>
+        <ALIGN_MULTILINE_EXTENDS_LIST>False</ALIGN_MULTILINE_EXTENDS_LIST>
+        <ALIGN_MULTILINE_FOR_STMT>False</ALIGN_MULTILINE_FOR_STMT>
+        <ALIGN_MULTILINE_PARAMETER>False</ALIGN_MULTILINE_PARAMETER>
+        <ALIGN_MULTIPLE_DECLARATION>False</ALIGN_MULTIPLE_DECLARATION>
+        <ALIGN_MULTLINE_TYPE_PARAMETER_CONSTRAINS>False</ALIGN_MULTLINE_TYPE_PARAMETER_CONSTRAINS>
+        <ALIGN_MULTLINE_TYPE_PARAMETER_LIST>False</ALIGN_MULTLINE_TYPE_PARAMETER_LIST>
+        <ANONYMOUS_METHOD_DECLARATION_BRACES>END_OF_LINE</ANONYMOUS_METHOD_DECLARATION_BRACES>
+        <BLANK_LINES_AROUND_FIELD>0</BLANK_LINES_AROUND_FIELD>
+        <BLANK_LINES_AROUND_REGION>0</BLANK_LINES_AROUND_REGION>
+        <BLANK_LINES_INSIDE_REGION>0</BLANK_LINES_INSIDE_REGION>
+        <CASE_BLOCK_BRACES>END_OF_LINE</CASE_BLOCK_BRACES>
+        <EMPTY_BLOCK_STYLE>TOGETHER_SAME_LINE</EMPTY_BLOCK_STYLE>
+        <EXPLICIT_PRIVATE_MODIFIER>False</EXPLICIT_PRIVATE_MODIFIER>
+        <FORCE_ATTRIBUTE_STYLE>JOIN</FORCE_ATTRIBUTE_STYLE>
+        <FORCE_FIXED_BRACES_STYLE>ALWAYS_REMOVE</FORCE_FIXED_BRACES_STYLE>
+        <FORCE_FOR_BRACES_STYLE>ALWAYS_REMOVE</FORCE_FOR_BRACES_STYLE>
+        <FORCE_FOREACH_BRACES_STYLE>ALWAYS_REMOVE</FORCE_FOREACH_BRACES_STYLE>
+        <FORCE_IFELSE_BRACES_STYLE>ALWAYS_REMOVE</FORCE_IFELSE_BRACES_STYLE>
+        <FORCE_USING_BRACES_STYLE>ALWAYS_REMOVE</FORCE_USING_BRACES_STYLE>
+        <FORCE_WHILE_BRACES_STYLE>ALWAYS_REMOVE</FORCE_WHILE_BRACES_STYLE>
+        <INDENT_SIZE>4</INDENT_SIZE>
+        <INITIALIZER_BRACES>END_OF_LINE</INITIALIZER_BRACES>
+        <INVOCABLE_DECLARATION_BRACES>END_OF_LINE</INVOCABLE_DECLARATION_BRACES>
+        <KEEP_BLANK_LINES_IN_CODE>1</KEEP_BLANK_LINES_IN_CODE>
+        <KEEP_BLANK_LINES_IN_DECLARATIONS>1</KEEP_BLANK_LINES_IN_DECLARATIONS>
+        <MODIFIERS_ORDER IsNull="False">
+          <Item>public</Item>
+          <Item>protected</Item>
+          <Item>internal</Item>
+          <Item>private</Item>
+          <Item>new</Item>
+          <Item>abstract</Item>
+          <Item>virtual</Item>
+          <Item>override</Item>
+          <Item>sealed</Item>
+          <Item>static</Item>
+          <Item>readonly</Item>
+          <Item>extern</Item>
+          <Item>unsafe</Item>
+          <Item>volatile</Item>
+        </MODIFIERS_ORDER>
+        <OTHER_BRACES>END_OF_LINE</OTHER_BRACES>
+        <PLACE_ACCESSORHOLDER_ATTRIBUTE_ON_SAME_LINE>True</PLACE_ACCESSORHOLDER_ATTRIBUTE_ON_SAME_LINE>
+        <PLACE_CATCH_ON_NEW_LINE>False</PLACE_CATCH_ON_NEW_LINE>
+        <PLACE_ELSE_ON_NEW_LINE>False</PLACE_ELSE_ON_NEW_LINE>
+        <PLACE_FINALLY_ON_NEW_LINE>False</PLACE_FINALLY_ON_NEW_LINE>
+        <PLACE_METHOD_ATTRIBUTE_ON_SAME_LINE>True</PLACE_METHOD_ATTRIBUTE_ON_SAME_LINE>
+        <PLACE_TYPE_ATTRIBUTE_ON_SAME_LINE>True</PLACE_TYPE_ATTRIBUTE_ON_SAME_LINE>
+        <SIMPLE_EMBEDDED_STATEMENT_STYLE>ON_SINGLE_LINE</SIMPLE_EMBEDDED_STATEMENT_STYLE>
+        <SPACE_AROUND_BITWISE_OP>False</SPACE_AROUND_BITWISE_OP>
+        <SPACE_AROUND_MULTIPLICATIVE_OP>True</SPACE_AROUND_MULTIPLICATIVE_OP>
+        <SPACE_BEFORE_ATTRIBUTE_COLON>True</SPACE_BEFORE_ATTRIBUTE_COLON>
+        <TYPE_DECLARATION_BRACES>END_OF_LINE</TYPE_DECLARATION_BRACES>
+        <WRAP_AFTER_DECLARATION_LPAR>True</WRAP_AFTER_DECLARATION_LPAR>
+        <WRAP_AFTER_INVOCATION_LPAR>True</WRAP_AFTER_INVOCATION_LPAR>
+        <WRAP_ARGUMENTS_STYLE>CHOP_IF_LONG</WRAP_ARGUMENTS_STYLE>
+        <WRAP_BEFORE_EXTENDS_COLON>True</WRAP_BEFORE_EXTENDS_COLON>
+        <WRAP_EXTENDS_LIST_STYLE>CHOP_IF_LONG</WRAP_EXTENDS_LIST_STYLE>
+        <WRAP_MULTIPLE_TYPE_PARAMEER_CONSTRAINTS_STYLE>CHOP_ALWAYS</WRAP_MULTIPLE_TYPE_PARAMEER_CONSTRAINTS_STYLE>
+        <WRAP_PARAMETERS_STYLE>CHOP_IF_LONG</WRAP_PARAMETERS_STYLE>
+      </FormatSettings>
+      <UsingsSettings />
+      <Naming2 />
+    </CSharp>
+    <VB>
+      <FormatSettings>
+        <INDENT_SIZE>4</INDENT_SIZE>
+      </FormatSettings>
+      <ImportsSettings />
+      <Naming2 />
+    </VB>
+    <GenerateMemberBody />
+    <Naming2>
+      <ExceptionName IsNull="False">
+      </ExceptionName>
+      <PredefinedRule Inspect="True" Prefix="" Suffix="" Style="aaBb" ElementKind="Locals">
+        <ExtraRule Prefix="" Suffix="_" Style="aaBb" />
+      </PredefinedRule>
+      <PredefinedRule Inspect="True" Prefix="" Suffix="" Style="aaBb" ElementKind="Parameters">
+        <ExtraRule Prefix="" Suffix="_" Style="aaBb" />
+      </PredefinedRule>
+      <PredefinedRule Inspect="True" Prefix="" Suffix="" Style="aaBb" ElementKind="MethodPropertyEvent">
+        <ExtraRule Prefix="" Suffix="" Style="AaBb" />
+        <ExtraRule Prefix="" Suffix="DO_NOT_CALL_EXCEPT_FROM_BRIDGE" Style="aaBb" />
+        <ExtraRule Prefix="" Suffix="_" Style="aaBb" />
+      </PredefinedRule>
+      <PredefinedRule Inspect="True" Prefix="" Suffix="" Style="AaBb" ElementKind="TypesAndNamespaces" />
+      <PredefinedRule Inspect="True" Prefix="" Suffix="" Style="AaBb" ElementKind="Interfaces" />
+      <PredefinedRule Inspect="True" Prefix="" Suffix="" Style="AA_BB" ElementKind="TypeParameters">
+        <ExtraRule Prefix="T" Suffix="" Style="AaBb" />
+        <ExtraRule Prefix="" Suffix="" Style="AaBb" />
+      </PredefinedRule>
+      <PredefinedRule Inspect="True" Prefix="" Suffix="" Style="aaBb" ElementKind="LocalConstants" />
+      <PredefinedRule Inspect="True" Prefix="" Suffix="" Style="aaBb" ElementKind="PublicFields">
+        <ExtraRule Prefix="" Suffix="" Style="AA_BB" />
+      </PredefinedRule>
+      <PredefinedRule Inspect="True" Prefix="" Suffix="" Style="AA_BB" ElementKind="Constants" />
+      <PredefinedRule Inspect="True" Prefix="" Suffix="" Style="AA_BB" ElementKind="StaticReadonly">
+        <ExtraRule Prefix="" Suffix="" Style="aaBb" />
+        <ExtraRule Prefix="" Suffix="_" Style="aaBb" />
+      </PredefinedRule>
+      <PredefinedRule Inspect="True" Prefix="" Suffix="" Style="AA_BB" ElementKind="EnumMember" />
+      <PredefinedRule Inspect="True" Prefix="" Suffix="" Style="aaBb" ElementKind="Other" />
+      <PredefinedRule Inspect="True" Prefix="" Suffix="" Style="AaBb" ElementKind="PrivateStaticReadonly" />
+      <PredefinedRule Inspect="True" Prefix="_" Suffix="" Style="aaBb" ElementKind="PrivateInstanceFields" />
+      <PredefinedRule Inspect="True" Prefix="_" Suffix="" Style="aaBb" ElementKind="PrivateStaticFields" />
+      <PredefinedRule Inspect="True" Prefix="" Suffix="" Style="AaBb" ElementKind="PrivateConstants" />
+      <Abbreviation Text="STO" />
+      <Abbreviation Text="GUI" />
+      <Abbreviation Text="DMA" />
+      <Abbreviation Text="QGUI" />
+      <Abbreviation Text="OHLC" />
+      <Abbreviation Text="EW" />
+      <Abbreviation Text="EWMA" />
+      <Abbreviation Text="EWSD" />
+      <Abbreviation Text="EWZ" />
+      <Abbreviation Text="KAMA" />
+      <Abbreviation Text="RSS" />
+      <Abbreviation Text="MSS" />
+      <Abbreviation Text="RSI" />
+      <Abbreviation Text="TD" />
+      <Abbreviation Text="ATR" />
+      <Abbreviation Text="CS" />
+      <Abbreviation Text="MA" />
+      <Abbreviation Text="DTD" />
+      <Abbreviation Text="LBO" />
+      <Abbreviation Text="TC" />
+      <Abbreviation Text="FX" />
+      <Abbreviation Text="CDS" />
+      <Abbreviation Text="RC" />
+      <Abbreviation Text="DTDRC" />
+      <Abbreviation Text="RE" />
+      <Abbreviation Text="QRE" />
+      <Abbreviation Text="OHL" />
+      <Abbreviation Text="JVM" />
+      <Abbreviation Text="AT" />
+      <Abbreviation Text="USD" />
+      <Abbreviation Text="PNL" />
+      <Abbreviation Text="DTDATR" />
+    </Naming2>
+  </CodeStyleSettings>
+</Configuration>

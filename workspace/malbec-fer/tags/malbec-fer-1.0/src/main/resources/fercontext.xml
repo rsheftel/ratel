@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<!-- Configuration for Fix Execution Router (FER) -->
+
+	<!-- Global (reused) configuration items first -->
+	<bean id="GlobalEmailSettings" class="malbec.util.EmailSettings">
+		<constructor-arg>
+			<props>
+				<prop key="mail.to">${mail.to}</prop>
+				<prop key="mail.from">${mail.from}</prop>
+				<prop key="mail.host">${mail.host}</prop>
+			</props>
+		</constructor-arg>
+	</bean>
+
+	<!-- COM Clients/Destinations -->
+	<bean id="RediPlusAPI"
+		class="malbec.fer.rediplus.RediPlusDestination">
+		<constructor-arg>
+			<value>REDI</value>
+		</constructor-arg>
+		<constructor-arg>
+			<props>
+				<prop key="userID">${rp.userid}</prop>
+				<prop key="password">${rp.password}</prop>
+				<prop key="forceToTicket">true</prop>
+			</props>
+		</constructor-arg>
+		<constructor-arg>
+			<ref local="GlobalEmailSettings" />
+		</constructor-arg>
+	</bean>
+	
+	<!-- Create the JMS listener -->
+	<bean id="JmsServerApp" class="malbec.fer.jms.JmsServerApp">
+		<constructor-arg>
+			<value>JmsServer</value>
+		</constructor-arg>
+		<constructor-arg>
+			<props>
+				<prop key="jms.brokerurl">${jms.brokerurl}</prop>
+				<prop key="jms.command.queue">FER.Command</prop>
+				<prop key="jms.response.queue">FER.Response</prop>
+			</props>
+		</constructor-arg>
+	</bean>
+
+	<!-- ** The Core application ** -->
+	<!-- Strategy mappings -->
+	<bean id="SAM" class="malbec.util.StrategyAccountMapper">
+		<constructor-arg>
+			<value>true</value>
+		</constructor-arg>
+	</bean>
+	
+	<bean id="FerRouter" class="malbec.fer.FerRouter"
+		init-method="start">
+		<constructor-arg>
+			<ref local="GlobalEmailSettings" />
+		</constructor-arg>
+		<constructor-arg>
+			<ref local="SAM" />
+		</constructor-arg>
+		
+		<property name="orderDestinations">
+			<list>
+				<ref local="RediPlusAPI" />
+			</list>
+		</property>
+		<property name="jmsConnections">
+			<list>
+				<ref local="JmsServerApp" />
+			</list>
+		</property>
+	</bean>
+
+</beans>

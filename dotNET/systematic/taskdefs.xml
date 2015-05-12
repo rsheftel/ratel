@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+
+<project name="taskdefs" basedir="." default="">
+
+    <!-- make sure that we base the classpath on the correct directory -->
+
+    <dirname property="taskdefs.basedir" file="T:/JuggerNET/bin"/>
+    
+    <!-- define all of the extension tasks and types that might be used by our examples -->
+
+    <taskdef name="ccinfo" classname="com.codemesh.tools.cpp.CCInfo" 
+	     classpath="${taskdefs.basedir}/../ant-support/ant-codemesh.jar"/>
+
+    <taskdef name="cctest" classname="com.codemesh.tools.cpp.CCTest" 
+	     classpath="${taskdefs.basedir}/../ant-support/ant-codemesh.jar"/>
+
+    <taskdef name="cctests" classname="com.codemesh.tools.cpp.CCTestSuite" 
+	     classpath="${taskdefs.basedir}/../ant-support/ant-codemesh.jar"/>
+
+    <taskdef name="rc" classname="com.codemesh.tools.cpp.RC" 
+	     classpath="${taskdefs.basedir}/../ant-support/ant-codemesh.jar"/>
+
+    <taskdef name="cc" classname="com.codemesh.tools.cpp.CC" 
+	     classpath="${taskdefs.basedir}/../ant-support/ant-codemesh.jar"/>
+
+    <taskdef name="acc" classname="com.codemesh.tools.cpp.ACC" 
+	     classpath="${taskdefs.basedir}/../ant-support/ant-codemesh.jar"/>
+
+    <taskdef name="bcc" classname="com.codemesh.tools.cpp.BCC" 
+	     classpath="${taskdefs.basedir}/../ant-support/ant-codemesh.jar"/>
+
+    <taskdef name="gcc" classname="com.codemesh.tools.cpp.GCC" 
+	     classpath="${taskdefs.basedir}/../ant-support/ant-codemesh.jar"/>
+
+    <taskdef name="sgicc" classname="com.codemesh.tools.cpp.SgiCC" 
+	     classpath="${taskdefs.basedir}/../ant-support/ant-codemesh.jar"/>
+
+    <taskdef name="suncc" classname="com.codemesh.tools.cpp.SunCC" 
+	     classpath="${taskdefs.basedir}/../ant-support/ant-codemesh.jar"/>
+
+    <taskdef name="msvc" classname="com.codemesh.tools.cpp.MSVC" 
+	     classpath="${taskdefs.basedir}/../ant-support/ant-codemesh.jar"/>
+
+    <taskdef name="vacc" classname="com.codemesh.tools.cpp.VACC" 
+	     classpath="${taskdefs.basedir}/../ant-support/ant-codemesh.jar"/>
+
+    <taskdef name="junction" classname="com.codemesh.tools.codegen.Junction" 
+	     classpath="${taskdefs.basedir}/../ant-support/ant-codemesh.jar"/>
+
+    <taskdef name="juggernet" classname="com.codemesh.tools.codegen.Juggernet" 
+	     classpath="${taskdefs.basedir}/../ant-support/ant-codemesh.jar"/>
+
+    <taskdef name="cgtestsuite" classname="com.codemesh.tools.test.TestSuite" 
+	     classpath="${taskdefs.basedir}/../ant-support/ant-codemesh.jar"/>
+
+    <typedef name="cgtestcase" classname="com.codemesh.tools.test.TestCaseImpl" 
+	     classpath="${taskdefs.basedir}/../ant-support/ant-codemesh.jar"/>
+
+    <typedef name="ccopts" classname="com.codemesh.tools.cpp.CCOptionSet" 
+	     classpath="${taskdefs.basedir}/../ant-support/ant-codemesh.jar"/>
+
+    <typedef name="ccpath" classname="com.codemesh.tools.cpp.CCPath" 
+	     classpath="${taskdefs.basedir}/../ant-support/ant-codemesh.jar"/>
+
+    <typedef name="ccfileset" classname="com.codemesh.tools.cpp.CCFileSet" 
+	     classpath="${taskdefs.basedir}/../ant-support/ant-codemesh.jar"/>
+
+    <typedef name="modelfile" classname="com.codemesh.tools.codegen.ModelFile" 
+	     classpath="${taskdefs.basedir}/../ant-support/ant-codemesh.jar"/>
+
+    <typedef name="sourcecodeprep" classname="com.codemesh.tools.filters.SourceCodePrep" 
+	     classpath="${basedir}/../ant-support/ant-codemesh.jar"/>
+	     
+    <typedef name="junit" classname="org.apache.tools.ant.taskdefs.optional.junit.JUnitTask" 
+	     classpath="${basedir}/../lib/ant-junit.jar"/>
+	     
+
+
+</project>

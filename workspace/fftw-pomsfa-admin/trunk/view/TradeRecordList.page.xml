@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns="http://jboss.com/products/seam/pages"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://jboss.com/products/seam/pages http://jboss.com/products/seam/pages-2.0.xsd">
+      
+   <param name="firstResult" value="#{tradeRecordList.firstResult}"/>
+   <param name="order" value="#{tradeRecordList.order}"/>
+   <param name="from"/>
+   <param name="execId" value="#{tradeRecordList.tradeRecord.execId}"/>
+   <param name="securityId" value="#{tradeRecordList.tradeRecord.securityId}"/>
+   <param name="traderName" value="#{tradeRecordList.tradeRecord.traderName}"/>
+   <param name="account" value="#{tradeRecordList.tradeRecord.account}"/>
+   <param name="broker" value="#{tradeRecordList.tradeRecord.broker}"/>
+   <param name="primeBroker" value="#{tradeRecordList.tradeRecord.primeBroker}"/>
+   <param name="errorMsg" value="#{tradeRecordList.tradeRecord.errorMsg}"/>
+   <param name="processingStatus" value="#{tradeRecordList.tradeRecord.processingStatus}"/>
+   <param name="tradingStrategy" value="#{tradeRecordList.tradeRecord.tradingStrategy}"/>
+   <param name="transCode" value="#{tradeRecordList.tradeRecord.transCode}"/>
+
+</page>

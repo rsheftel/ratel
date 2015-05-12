@@ -1,0 +1,10 @@
+LIBRARY	"QExcelTS"
+EXPORTS
+	BusinessDaysAgo
+	RetrieveOneTimeSeriesByName
+	RetrieveOneSymbol
+	LiveDescription
+	RetrieveOneSymbolClose
+	AmqPublish
+	AmqPublishOne
+	AmqGetValue

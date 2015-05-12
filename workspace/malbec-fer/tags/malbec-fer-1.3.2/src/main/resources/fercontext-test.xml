@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<!-- Configuration for Fix Execution Router (FER) -->
+
+	<!-- Global (reused) configuration items first -->
+	<bean id="GlobalEmailSettings" class="malbec.util.EmailSettings">
+		<constructor-arg>
+			<props>
+				<prop key="mail.to">${mail.to}</prop>
+				<prop key="mail.from">${mail.from}</prop>
+				<prop key="mail.host">${mail.host}</prop>
+			</props>
+		</constructor-arg>
+	</bean>
+
+	<!-- Each FIX Connection/Destinations -->
+	<bean id="TestFixConnection" class="malbec.fer.fix.FixDestination">
+		<constructor-arg>
+			<value>TEST</value>
+		</constructor-arg>
+		<constructor-arg>
+			<props>
+				<prop key="BeginString">FIX.4.4</prop>
+				<prop key="TargetCompID">EXECUTOR</prop>
+				<prop key="SenderCompID">SPRING_TEST_CLIENT</prop>
+				<prop key="SocketConnectHost">localhost</prop>
+				<prop key="SocketConnectPort">9001</prop>
+				<prop key="ConnectionType">initiator</prop>
+				<prop key="HeartBtInt">30</prop>
+				<prop key="FileStorePath">logs/fix</prop>
+				<prop key="ClientStartDay">Monday</prop>
+				<prop key="ClientStartTime">06:30:00</prop>
+				<prop key="ClientEndDay">Friday</prop>
+				<prop key="ClientEndTime">18:00:00</prop>
+				<prop key="StartTime">06:50:00</prop>
+				<prop key="EndTime">17:52:00</prop>
+				<prop key="TimeZone">US/Eastern</prop>
+			</props>
+		</constructor-arg>
+		<constructor-arg>
+			<ref local="GlobalEmailSettings" />
+		</constructor-arg>
+	</bean>
+
+	<!-- COM Clients/Destinations -->
+	<bean id="TestComServer"
+		class="malbec.fer.rediplus.RediPlusDestination">
+		<constructor-arg>
+			<value>TRP</value>
+		</constructor-arg>
+		<constructor-arg>
+			<props>
+				<prop key="userID">gc320050</prop>
+				<prop key="password">mal200</prop>
+				<prop key="forceToTicket">true</prop>
+			</props>
+		</constructor-arg>
+		<constructor-arg>
+			<ref local="GlobalEmailSettings" />
+		</constructor-arg>
+	</bean>
+	
+	<!-- Create the JMS listener -->
+	<bean id="JmsServerApp" class="malbec.fer.jms.JmsServerApp">
+		<constructor-arg>
+			<value>JmsServer</value>
+		</constructor-arg>
+		<constructor-arg>
+			<props>
+				<prop key="jms.brokerurl">${jms.brokerurl}</prop>
+				<prop key="jms.command.queue">FER.Command</prop>
+				<prop key="jms.response.queue">FER.Response</prop>
+			</props>
+		</constructor-arg>
+	</bean>
+
+	<!-- ** The Core application ** -->
+	<!-- Strategy mappings -->
+	<bean id="SAM" class="malbec.util.StrategyAccountMapper">
+		<constructor-arg>
+			<value>true</value>
+		</constructor-arg>
+	</bean>
+	
+	<bean id="FerRouter" class="malbec.fer.FerRouter"
+		init-method="start">
+		<constructor-arg>
+			<ref local="GlobalEmailSettings" />
+		</constructor-arg>
+		<constructor-arg>
+			<ref local="SAM" />
+		</constructor-arg>
+		
+		<property name="orderDestinations">
+			<list>
+				<ref local="TestFixConnection" />
+				<ref local="TestComServer" />
+			</list>
+		</property>
+		<property name="jmsConnections">
+			<list>
+				<ref local="JmsServerApp" />
+			</list>
+		</property>
+	</bean>
+
+</beans>

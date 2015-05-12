@@ -1,0 +1,43 @@
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "ActiveMQExcelSetup", "ActiveMQExcelSetup\ActiveMQExcelSetup.vdproj", "{D06C28CC-E631-4C3E-A640-DFEDC32512F1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ActiveMQExcel", "ActiveMQExcel\ActiveMQExcel.csproj", "{EFD4B874-EDFD-4552-BB64-5213E9D5F684}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ActiveMQLibrary", "ActiveMQLibrary\ActiveMQLibrary.csproj", "{B9845220-F7EF-4908-A52D-26F5C4590918}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ActiveMQLibraryTest", "ActiveMQLibraryTest\ActiveMQLibraryTest.csproj", "{792CE15B-7849-4727-9387-B74B2C7E92E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ActiveMQExcelTest", "ActiveMQExcelTest\ActiveMQExcelTest.csproj", "{55485157-587E-4BDB-BC53-E37790CB3C69}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D06C28CC-E631-4C3E-A640-DFEDC32512F1}.Debug|Any CPU.ActiveCfg = Debug
+		{D06C28CC-E631-4C3E-A640-DFEDC32512F1}.Debug|Any CPU.Build.0 = Debug
+		{D06C28CC-E631-4C3E-A640-DFEDC32512F1}.Release|Any CPU.ActiveCfg = Release
+		{D06C28CC-E631-4C3E-A640-DFEDC32512F1}.Release|Any CPU.Build.0 = Release
+		{EFD4B874-EDFD-4552-BB64-5213E9D5F684}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFD4B874-EDFD-4552-BB64-5213E9D5F684}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFD4B874-EDFD-4552-BB64-5213E9D5F684}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFD4B874-EDFD-4552-BB64-5213E9D5F684}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9845220-F7EF-4908-A52D-26F5C4590918}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9845220-F7EF-4908-A52D-26F5C4590918}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9845220-F7EF-4908-A52D-26F5C4590918}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9845220-F7EF-4908-A52D-26F5C4590918}.Release|Any CPU.Build.0 = Release|Any CPU
+		{792CE15B-7849-4727-9387-B74B2C7E92E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{792CE15B-7849-4727-9387-B74B2C7E92E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{792CE15B-7849-4727-9387-B74B2C7E92E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{792CE15B-7849-4727-9387-B74B2C7E92E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55485157-587E-4BDB-BC53-E37790CB3C69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55485157-587E-4BDB-BC53-E37790CB3C69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55485157-587E-4BDB-BC53-E37790CB3C69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55485157-587E-4BDB-BC53-E37790CB3C69}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

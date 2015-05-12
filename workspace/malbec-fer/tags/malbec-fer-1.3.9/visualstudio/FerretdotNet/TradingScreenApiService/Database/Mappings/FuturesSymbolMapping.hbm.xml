@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="TradingScreenApiService"
+                   namespace="TradingScreenApiService.Database.Mappings">
+
+	<!-- more mapping info here -->
+	<class name="FuturesSymbolMapping">
+		<id name="Id" column="ID"/>
+		<property name="PlatformId" />
+		<property name="BloombergSymbolRoot" />
+        <property name="PlatformReceivingSymbolRoot" />
+        <property name="PlatformSendingSymbolRoot" />
+        <property name="PriceMultiplier" />
+	</class>
+
+</hibernate-mapping>
+

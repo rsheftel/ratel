@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WatchListItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsFolder>true</IsFolder>
+  <BarConstruction>Last</BarConstruction>
+  <Folder>
+    <FolderName>Symbol Lists</FolderName>
+    <Contents>
+      <WatchListItem>
+        <IsFolder>true</IsFolder>
+        <BarConstruction>Last</BarConstruction>
+        <Folder>
+          <FolderName>TEST</FolderName>
+          <Contents>
+            <WatchListItem>
+              <IsFolder>false</IsFolder>
+              <BarConstruction>Last</BarConstruction>
+              <Symbol>
+                <CurrencyType>USD</CurrencyType>
+                <StrikePrice>0</StrikePrice>
+                <ExpirationDate>2100-05-05T00:00:00</ExpirationDate>
+                <ContractType>NoContract</ContractType>
+                <Name>RE.TEST.TY.1C</Name>
+                <Exchange>CBOT</Exchange>
+                <SymbolInformation>
+                  <CompanyName />
+                  <Sector />
+                  <Industry />
+                  <Margin>0</Margin>
+                  <TickSize>0</TickSize>
+                  <ContractSize>1000</ContractSize>
+                  <DecimalPlaces>2</DecimalPlaces>
+                </SymbolInformation>
+                <AssetClass>Future</AssetClass>
+              </Symbol>
+            </WatchListItem>
+          </Contents>
+          <Frequency>-1</Frequency>
+          <InheritsHistService>true</InheritsHistService>
+          <HistService />
+          <InheritsRealtimeService>true</InheritsRealtimeService>
+          <RealtimeService />
+          <InheritsBrokerService>true</InheritsBrokerService>
+          <BrokerService />
+          <InheritsSaveTicks>true</InheritsSaveTicks>
+          <SaveTicks>false</SaveTicks>
+          <InheritsSaveBars>true</InheritsSaveBars>
+          <SaveBars>true</SaveBars>
+          <DownloadStartDate>0001-01-01T00:00:00</DownloadStartDate>
+          <InheritsDownloadStartDate>true</InheritsDownloadStartDate>
+          <InheritsFrequency>true</InheritsFrequency>
+        </Folder>
+      </WatchListItem>
+      <WatchListItem>
+        <IsFolder>true</IsFolder>
+        <BarConstruction>Last</BarConstruction>
+        <Folder>
+          <FolderName>USD Swap Rates</FolderName>
+          <Contents>
+            <WatchListItem>
+              <IsFolder>false</IsFolder>
+              <BarConstruction>Last</BarConstruction>
+              <Symbol>
+                <CurrencyType>USD</CurrencyType>
+                <StrikePrice>0</StrikePrice>
+                <ExpirationDate>0001-01-01T00:00:00</ExpirationDate>
+                <ContractType>NoContract</ContractType>
+                <Name>USSWAP10</Name>
+                <Exchange />
+                <SymbolInformation>
+                  <Margin>0</Margin>
+                  <TickSize>0</TickSize>
+                  <ContractSize>0</ContractSize>
+                  <DecimalPlaces>2</DecimalPlaces>
+                </SymbolInformation>
+                <AssetClass>Stock</AssetClass>
+              </Symbol>
+            </WatchListItem>
+            <WatchListItem>
+              <IsFolder>false</IsFolder>
+              <BarConstruction>Last</BarConstruction>
+              <Symbol>
+                <CurrencyType>USD</CurrencyType>
+                <StrikePrice>0</StrikePrice>
+                <ExpirationDate>0001-01-01T00:00:00</ExpirationDate>
+                <ContractType>NoContract</ContractType>
+                <Name>USSWAP2</Name>
+                <Exchange />
+                <SymbolInformation>
+                  <Margin>0</Margin>
+                  <TickSize>0</TickSize>
+                  <ContractSize>0</ContractSize>
+                  <DecimalPlaces>2</DecimalPlaces>
+                </SymbolInformation>
+                <AssetClass>Stock</AssetClass>
+              </Symbol>
+            </WatchListItem>
+            <WatchListItem>
+              <IsFolder>false</IsFolder>
+              <BarConstruction>Last</BarConstruction>
+              <Symbol>
+                <CurrencyType>USD</CurrencyType>
+                <StrikePrice>0</StrikePrice>
+                <ExpirationDate>0001-01-01T00:00:00</ExpirationDate>
+                <ContractType>NoContract</ContractType>
+                <Name>USSWAP30</Name>
+                <Exchange />
+                <SymbolInformation>
+                  <Margin>0</Margin>
+                  <TickSize>0</TickSize>
+                  <ContractSize>0</ContractSize>
+                  <DecimalPlaces>2</DecimalPlaces>
+                </SymbolInformation>
+                <AssetClass>Stock</AssetClass>
+              </Symbol>
+            </WatchListItem>
+            <WatchListItem>
+              <IsFolder>false</IsFolder>
+              <BarConstruction>Last</BarConstruction>
+              <Symbol>
+                <CurrencyType>USD</CurrencyType>
+                <StrikePrice>0</StrikePrice>
+                <ExpirationDate>0001-01-01T00:00:00</ExpirationDate>
+                <ContractType>NoContract</ContractType>
+                <Name>USSWAP5</Name>
+                <Exchange />
+                <SymbolInformation>
+                  <Margin>0</Margin>
+                  <TickSize>0</TickSize>
+                  <ContractSize>0</ContractSize>
+                  <DecimalPlaces>2</DecimalPlaces>
+                </SymbolInformation>
+                <AssetClass>Stock</AssetClass>
+              </Symbol>
+            </WatchListItem>
+          </Contents>
+          <Frequency>1440</Frequency>
+          <InheritsHistService>false</InheritsHistService>
+          <HistService />
+          <InheritsRealtimeService>false</InheritsRealtimeService>
+          <RealtimeService>Gissing</RealtimeService>
+          <InheritsBrokerService>false</InheritsBrokerService>
+          <BrokerService>Paper Broker</BrokerService>
+          <InheritsSaveTicks>true</InheritsSaveTicks>
+          <SaveTicks>false</SaveTicks>
+          <InheritsSaveBars>false</InheritsSaveBars>
+          <SaveBars>false</SaveBars>
+          <DownloadStartDate>0001-01-01T00:00:00</DownloadStartDate>
+          <InheritsDownloadStartDate>true</InheritsDownloadStartDate>
+          <InheritsFrequency>false</InheritsFrequency>
+        </Folder>
+      </WatchListItem>
+    </Contents>
+    <Frequency>1440</Frequency>
+    <InheritsHistService>false</InheritsHistService>
+    <HistService>Yahoo</HistService>
+    <InheritsRealtimeService>false</InheritsRealtimeService>
+    <RealtimeService />
+    <InheritsBrokerService>false</InheritsBrokerService>
+    <BrokerService>Paper Broker</BrokerService>
+    <InheritsSaveTicks>false</InheritsSaveTicks>
+    <SaveTicks>false</SaveTicks>
+    <InheritsSaveBars>true</InheritsSaveBars>
+    <SaveBars>true</SaveBars>
+    <DownloadStartDate>0001-01-01T00:00:00</DownloadStartDate>
+    <InheritsDownloadStartDate>false</InheritsDownloadStartDate>
+    <InheritsFrequency>false</InheritsFrequency>
+  </Folder>
+</WatchListItem>

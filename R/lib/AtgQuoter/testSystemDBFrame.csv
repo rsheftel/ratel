@@ -1,0 +1,5 @@
+systemdb_systems.name*,systemdb_parameters.name*,systemdb_parameters.system_id*,systemdb_prm_value_sets.system_id*,systemdb_prm_value_sets.name*,systemdb_param_values.parameter_value_set_id*,systemdb_param_values.parameter_id*,systemdb_param_values.as_of_date*,systemdb_param_values.parameter_value
+Quoter2,lambda,*systemdb_systems.id,*systemdb_systems.id,gt02.1c,*systemdb_prm_value_sets.id,*systemdb_parameters.id,11/17/2010,427.408416
+Quoter2,sigma,*systemdb_systems.id,*systemdb_systems.id,gt02.1c,*systemdb_prm_value_sets.id,*systemdb_parameters.id,11/17/2010,0.000661
+Quoter2,kArrival,*systemdb_systems.id,*systemdb_systems.id,gt02.1c,*systemdb_prm_value_sets.id,*systemdb_parameters.id,11/17/2010,67.564451
+Quoter2,sdNorm,*systemdb_systems.id,*systemdb_systems.id,gt02.1c,*systemdb_prm_value_sets.id,*systemdb_parameters.id,11/17/2010,277.230769

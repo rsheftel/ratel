@@ -1,0 +1,97 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                             "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:rich="http://richfaces.org/rich"
+                template="layout/template.xhtml">
+                       
+<ui:define name="body">
+    
+    <h:messages globalOnly="true" styleClass="message" id="globalMessages"/>
+    
+    <rich:panel>
+        <f:facet name="header">TradingStrategy</f:facet>
+
+        <s:decorate id="id" template="layout/display.xhtml">
+            <ui:define name="label">id</ui:define>
+            #{tradingStrategyHome.instance.id}
+        </s:decorate>
+
+        <s:decorate id="fixTag" template="layout/display.xhtml">
+            <ui:define name="label">fixTag</ui:define>
+            #{tradingStrategyHome.instance.fixTag}
+        </s:decorate>
+
+        <s:decorate id="tagValue" template="layout/display.xhtml">
+            <ui:define name="label">tagValue</ui:define>
+            #{tradingStrategyHome.instance.tagValue}
+        </s:decorate>
+
+        <s:decorate id="bloombergAccount" template="layout/display.xhtml">
+            <ui:define name="label">bloombergAccount</ui:define>
+            #{tradingStrategyHome.instance.bloombergAccount}
+        </s:decorate>
+
+        <s:decorate id="bloombergStrategy" template="layout/display.xhtml">
+            <ui:define name="label">bloombergStrategy</ui:define>
+            #{tradingStrategyHome.instance.bloombergStrategy}
+        </s:decorate>
+
+        <div style="clear:both"/>
+        
+    </rich:panel>
+    
+    <div class="actionButtons">      
+
+        <s:button view="/TradingStrategyEdit.xhtml" 
+                    id="edit" 
+                 value="Edit"/>
+
+        <s:button view="/#{empty tradingStrategyFrom ? 'TradingStrategyList' : tradingStrategyFrom}.xhtml"
+                    id="done"
+                 value="Done"/>
+
+    </div>
+
+    <rich:tabPanel switchType="ajax">
+
+    <rich:tab label="platform">
+    <div class="association" id="platformParent">
+        
+        <h:outputText value="No platform" 
+                   rendered="#{tradingStrategyHome.instance.platform == null}"/>
+        
+        <rich:dataTable var="platform" 
+                   value="#{tradingStrategyHome.instance.platform}" 
+                rendered="#{tradingStrategyHome.instance.platform != null}"
+              rowClasses="rvgRowOne,rvgRowTwo"
+                      id="platformTable">
+            <h:column>
+                <f:facet name="header">platformId</f:facet>
+                #{platform.platformId}
+            </h:column>
+            <h:column>
+                <f:facet name="header">description</f:facet>
+                #{platform.description}
+            </h:column>
+            <h:column>
+                <f:facet name="header">action</f:facet>
+                <s:link id="viewplatform" 
+                     value="View" 
+                      view="/Platform.xhtml">
+                    <f:param name="platformPlatformId" 
+                           value="#{platform.platformId}"/>
+                </s:link>
+            </h:column>
+        </rich:dataTable>
+        
+    </div>
+    </rich:tab>
+</rich:tabPanel>
+</ui:define>
+
+</ui:composition>

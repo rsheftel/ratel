@@ -1,0 +1,356 @@
+<project name="systematic.jar wrapper" default="all" basedir=".">
+
+    <property name="target.dir" value="${basedir}/generated"/>
+
+    <property environment="env" />
+
+    <property name="maindir" value="${env.MAIN}" />
+    <property name="javaSystematic" value="${maindir}\Java\systematic"/>
+    <property name="dotNET" value="${maindir}\dotNET"/>
+    <property name="cSharpLib" value="${dotNET}\lib"/>
+
+    <taskdef name="juggernet" classname="com.codemesh.tools.codegen.Juggernet" 
+         classpath="T:/JuggerNET/ant-support/ant-codemesh.jar"/>
+    <typedef name="junit" classname="org.apache.tools.ant.taskdefs.optional.junit.JUnitTask" 
+	 classpath="T:/JuggerNET/lib/ant-junit.jar;${javaSystematic}/lib/junit.jar"/>
+	     
+    <property environment="env"/>
+    <property name="debug.flags" value="false" />
+    <property name="doc.generate" value="false" />
+
+    <property name="csc.compiler" value="C:/Windows/Microsoft.NET/Framework/v2.0.50727/csc.exe" />
+    <property name="devenv" value="C:\Program Files\Microsoft Visual Studio 9.0\Common7\IDE\devenv.com" />
+    <property name="tsclean" value="C:\Program Files\Quantys\tsclean.bat"/>
+    <property name="resharperSettings" value="${env.APPDATA}\JetBrains\ReSharper\v4.5\vs9.0" />
+    <property name="jre.lib.dir" value="${java.home}/lib" />
+    <property name="jdk.dir" value="${java.home}" />
+
+    <property name="run.path" value="${target.dir};" />
+    <property name="run.path.name" value="PATH" />
+    <property name="reconPath" value="U:/Tools/Recon" />
+   
+    <property name="com.codemesh.xmog.home" value="T:/JuggerNET" />
+
+                
+    <target name="all" depends="build" />
+
+    <target name="j" depends="jar-java" description="build the java code into systematic jar" />
+    <target name="jw" depends="build-wrapper"  description="build systematic.dll from systematic.jar (java->c# bridge)"/>
+    <target name="jQ" depends="build-wrapper,buildPlugin,vsBuildNotExcel" description="[Excel Safe!] builds everything that doesn't interfere with Excel (c#, java)"/>
+    <target name="q" depends="buildPlugin" description="builds *just* the Q.dll from the c# source" />
+
+    <target name="build" depends="build-wrapper,buildPlugin,rebuildQExcelTS" description="[KILL EXCEL] Builds everything"/>
+    <target name="clean" description="Deletes generated files">
+        <delete dir="${target.dir}" />
+    </target>
+    
+    <target name="killQ">
+        <exec executable="cmd">
+	    <arg value="/c"/>
+	    <arg value="taskkill"/>
+	    <arg value="/T"/>
+	    <arg value="/F"/>
+	    <arg value="/IM"/>
+	    <arg value="QRun.exe"/>
+        </exec>
+        <exec executable="cmd">
+	    <arg value="/c"/>
+	    <arg value="taskkill"/>
+	    <arg value="/T"/>
+	    <arg value="/F"/>
+	    <arg value="/IM"/>
+	    <arg value="QRunGui.exe"/>
+        </exec>
+        <sleep seconds="2" />
+    </target>
+    
+    <target name="killRecon">
+         <exec executable="cmd">
+    	    <arg value="/c"/>
+    	    <arg value="taskkill"/>
+    	    <arg value="/T"/>
+    	    <arg value="/F"/>
+    	    <arg value="/FI"/>
+    	    <arg value="WINDOWTITLE eq Recon*"/>
+        </exec>
+    </target>
+    
+    <target name="installServices">
+        <exec executable="cmd">
+            <arg value="/c"/>
+            <arg value="C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\installutil"/>
+            <arg value="/u"/>
+            <arg value="${maindir}\dotNET\QRun\bin\Debug\QRun.exe"/>
+        </exec>
+        <exec executable="cmd">
+            <arg value="/c"/>
+            <arg value="C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\installutil"/>
+            <arg value="${maindir}\dotNET\QRun\bin\Debug\QRun.exe"/>
+        </exec>
+    </target>
+    
+    <target name="buildQ" depends="buildPlugin"/>
+
+    <target name="copyResharperSettings" description="copy resharper settings file to VS config">
+    	<copy file="${dotNET}/UserSettings.xml" todir="${resharperSettings}" verbose="true" overwrite="true"/>
+    </target>
+    <target name="publishResharperSettings" description="copy resharper settings file INTO SVN dir">
+    	<copy file="${resharperSettings}/UserSettings.xml" todir="${dotNET}" verbose="true" overwrite="true"/>
+    </target>
+        
+    <path id="qClassPath">
+        <pathelement location="${java.home}/../lib/tools.jar" />
+        <fileset dir="${javaSystematic}/lib">
+            <include name="*.jar" />
+        </fileset>
+    </path>
+    
+    <target name="help">
+    	<exec executable="cmd">
+    	    <arg value="/c"/>
+    	    <arg value="build"/>
+    	    <arg value="-projecthelp" />
+    	</exec>
+    </target>
+    
+    <target name="installNetRecon">
+    	<delete>
+	    <fileset dir="${reconPath}"/>
+        </delete>
+    	<copy todir="${reconPath}">
+    	    <fileset dir="${dotNET}/QRunGui/bin/Debug"/>
+    	</copy>
+    	<move file="${reconPath}/QRunGui.exe" tofile="${reconPath}/QRunGuiHideFromKQ.exe" />
+    </target>
+
+    <target name="jar-java" >
+        <delete file="${javaSystematic}/lib/systematic.jar" />
+        <delete>
+            <fileset dir="${javaSystematic}/bin"/>
+        </delete>
+	<copy includeemptydirs="false" todir="${javaSystematic}/bin">
+            <fileset dir="${javaSystematic}/src" excludes="**/*.launch, **/*.testsuite, **/*.deploy, **/*.location, **/*.execution, **/*.datapool, **/*.artifact, **/*.html, **/*.svg, **/*.java"/>
+        </copy>
+        <copy includeemptydirs="false" todir="${javaSystematic}/bin">
+            <fileset dir="${javaSystematic}/test" excludes="**/*.launch, **/*.testsuite, **/*.deploy, **/*.location, **/*.execution, **/*.datapool, **/*.artifact, **/*.html, **/*.svg, **/*.java"/>
+        </copy>        
+        <javac 
+                debug="on"
+                debuglevel="source,lines,vars"
+                destdir="${javaSystematic}/bin" 
+                classpathref="qClassPath" 
+                fork="yes"
+                executable="C:\Program Files\Java\jdk1.6.0_06\bin\javac"
+                
+        >
+            <src path="${javaSystematic}/src" />
+            <src path="${javaSystematic}/test" />
+        </javac>
+        
+        <jar destfile="${javaSystematic}/lib/systematic.jar" basedir="." duplicate="preserve">
+            <fileset dir="${javaSystematic}/src"/>
+            <fileset dir="${javaSystematic}/test"/>
+            <fileset dir="${javaSystematic}/bin"/>
+            <fileset file="${javaSystematic}/jri.dll"/>
+            <fileset file="${javaSystematic}/libjri.so"/>
+        </jar>
+        <delete>
+            <fileset dir="${javaSystematic}/test-results"/>
+        </delete>
+    </target>
+ 
+    <target name="build-wrapper" depends="jar-java">
+    	<echo message="building systematic.dll with ikvmc.exe"/>
+        <exec executable="T:\ikvm\bin\ikvmc.exe" failonerror="true" error="C:\logs\ikvm.error.log">
+            <arg value="-out:${cSharpLib}\systematic.dll"/>
+	    <arg value="-target:library"/>
+	    <arg value="${javaSystematic}/lib/*.jar"/>
+        </exec>
+    </target>
+    
+    
+    <target name="buildPlugin">
+        <exec executable="${devenv}" failonerror="true">
+	    <arg value="${dotNET}\dotNET.sln"/>
+	    <arg value="/Build"/>
+	    <arg value="Debug"/>
+	    <arg value="/project"/>
+	    <arg value="Q"/>
+        </exec>
+        <exec executable="${devenv}" failonerror="true">
+	    <arg value="${dotNET}\dotNET.sln"/>
+	    <arg value="/Build"/>
+	    <arg value="Debug"/>
+	    <arg value="/project"/>
+	    <arg value="QRun"/>
+        </exec>
+	<!--exec executable="${devenv}" failonerror="true">
+	    <arg value="${dotNET}\dotNET.sln"/>
+	    <arg value="/Build"/>
+	    <arg value="Release"/>
+	    <arg value="/project"/>
+	    <arg value="Q"/>
+	</exec>
+	<exec executable="${devenv}" failonerror="true">
+	    <arg value="${dotNET}\dotNET.sln"/>
+	    <arg value="/Build"/>
+	    <arg value="Release"/>
+	    <arg value="/project"/>
+	    <arg value="QRun"/>
+        </exec-->
+    </target>
+    
+    <target name="tsClean">   
+        <exec executable="cmd">
+            <arg value="/c"/>
+            <arg value="${tsclean}"/>
+            <arg value="-s"/>
+        </exec> 
+    </target>
+    
+    <target name="vsBuildNotExcel">  
+    
+        <exec executable="cmd" failonerror="true">
+            <arg value="/c"/>
+            <arg value="jrun_ant"/>
+            <arg value="util.MsiVdProjectUpgrader"/>
+        </exec>
+        <exec executable="${devenv}" failonerror="true">
+	    <arg value="${dotNET}\dotNET.sln"/>
+	    <arg value="/build"/>
+	    <arg value="Debug"/>
+	    <arg value="/project"/>
+	    <arg value="Q"/>
+        </exec>        
+
+        <exec executable="${devenv}" failonerror="true">
+	    <arg value="${dotNET}\dotNET.sln"/>
+	    <arg value="/build"/>
+	    <arg value="Debug"/>
+	    <arg value="/project"/>
+	    <arg value="QRun"/>
+        </exec>  
+	<!--exec executable="${devenv}" failonerror="true">
+	    <arg value="${dotNET}\dotNET.sln"/>
+	    <arg value="/build"/>
+	    <arg value="Release"/>
+	    <arg value="/project"/>
+	    <arg value="Q"/>
+	</exec>        
+
+	<exec executable="${devenv}" failonerror="true">
+	    <arg value="${dotNET}\dotNET.sln"/>
+	    <arg value="/build"/>
+	    <arg value="Release"/>
+	    <arg value="/project"/>
+	    <arg value="QRun"/>
+        </exec-->  
+        <exec executable="${devenv}" failonerror="true">
+            <arg value="${dotNET}\dotNET.sln"/>
+            <arg value="/build"/>
+            <arg value="Debug"/>
+            <arg value="/project"/>
+            <arg value="ZedGraph"/>
+        </exec> 
+        <!--exec executable="${devenv}" failonerror="true">
+            <arg value="${dotNET}\dotNET.sln"/>
+            <arg value="/build"/>
+            <arg value="Release"/>
+            <arg value="/project"/>
+            <arg value="ZedGraph"/>
+        </exec--> 
+        <exec executable="${devenv}" failonerror="true">
+	    <arg value="${dotNET}\dotNET.sln"/>
+	    <arg value="/build"/>
+	    <arg value="Debug"/>
+	    <arg value="/project"/>
+	    <arg value="Gui"/>
+        </exec>  
+	<exec executable="${devenv}" failonerror="true">
+	    <arg value="${dotNET}\dotNET.sln"/>
+	    <arg value="/build"/>
+	    <arg value="Debug"/>
+	    <arg value="/project"/>
+	    <arg value="QRunGui"/>
+        </exec> 
+	<!--exec executable="${devenv}" failonerror="true">
+	    <arg value="${dotNET}\dotNET.sln"/>
+	    <arg value="/build"/>
+	    <arg value="Release"/>
+	    <arg value="/project"/>
+	    <arg value="Gui"/>
+	</exec>  
+	<exec executable="${devenv}" failonerror="true">
+	    <arg value="${dotNET}\dotNET.sln"/>
+	    <arg value="/build"/>
+	    <arg value="Release"/>
+	    <arg value="/project"/>
+	    <arg value="QRunGui"/>
+        </exec--> 
+    </target>
+        
+    <target name="rebuildQExcelTS" depends="tsClean,vsBuildNotExcel"> 
+        
+        <exec executable="${devenv}" failonerror="true">
+	    <arg value="${dotNET}\dotNET.sln"/>
+	    <arg value="/build"/>
+	    <arg value="Debug"/>
+	    <arg value="/project"/>
+	    <arg value="QExcel"/>
+        </exec>        
+        <exec executable="${devenv}" failonerror="true">
+	    <arg value="${dotNET}\dotNET.sln"/>
+	    <arg value="/build"/>
+	    <arg value="Debug"/>
+	    <arg value="/project"/>
+	    <arg value="QExcelTS"/>
+        </exec>        
+        <exec executable="${devenv}" failonerror="true">
+	    <arg value="${dotNET}\dotNET.sln"/>
+	    <arg value="/build"/>
+	    <arg value="Debug"/>
+	    <arg value="/project"/>
+	    <arg value="QExcelSetup"/>
+        </exec>
+        <exec executable="cmd" failonerror="true">
+            <arg value="/c"/>
+            <arg value="jrun_ant"/>
+            <arg value="util.MsiVdProjectUpgrader"/>
+            <arg value="-useZeros"/>
+            <arg value="true"/>
+        </exec>
+        <copy file="${dotNET}\QExcelSetup\Debug\QExcelSetup.msi" todir="${dotNET}\QExcelSetup" verbose="true" overwrite="true"/>
+	<antcall target="installQExcel" />
+    </target>
+    
+    
+    <target name="installQExcel">
+	<exec executable="cmd" failonerror="true">
+	    <arg value="/c"/>
+	    <arg value="msiexec.exe"/>
+	    <arg value="/i"/>
+	    <arg value="${dotNET}\QExcelSetup\QExcelSetup.msi"/> 
+	    <arg value="/qb"/>
+	</exec>       
+
+	<exec executable="cmd" failonerror="true">
+	    <arg value="/c"/>
+	    <arg value="msiexec.exe"/>
+	    <arg value="/fa"/>
+	    <arg value="${dotNET}\QExcelSetup\QExcelSetup.msi"/>
+	</exec>       
+
+    </target>
+    
+    <target name="releaseQExcelSetup">
+    	<echo message="release q excel and TS setup installer to U:"/>
+    	<tstamp>
+    	    <format property="current_date" pattern="yyyyMMdd" />
+    	</tstamp>
+    	<property name="releaseFile" value="U:\Tools\QExcel\releases\${current_date}\QExcelSetup.msi" />
+    	<available property="already-released" file="${releaseFile}" />
+    	<fail message="destination release file already exists at ${releaseFile}, please move it aside." if="already-released" />
+     	<copy file="${dotNET}\QExcelSetup\Debug\QExcelSetup.msi" tofile="${releaseFile}" verbose="true" overwrite="false"/>
+    </target>
+</project>
+

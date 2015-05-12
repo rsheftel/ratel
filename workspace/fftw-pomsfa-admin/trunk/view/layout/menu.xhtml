@@ -1,0 +1,36 @@
+<rich:toolBar 
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:s="http://jboss.com/products/seam/taglib"
+    xmlns:rich="http://richfaces.org/rich">
+    <rich:toolBarGroup>
+        <h:outputText value="#{projectName}:"/>
+        <s:link view="/home.xhtml" value="Home"/>
+    </rich:toolBarGroup>
+    <s:link view="/TradingStrategyList.xhtml" 
+           value="TradingStrategy List" 
+     propagation="none"/>
+    <s:link view="/TradeRecordList.xhtml" 
+           value="TradeRecord List" 
+     propagation="none"/>
+    <s:link view="/MarketCalendarList.xhtml" 
+           value="MarketCalendar List" 
+     propagation="none"/>
+    <s:link view="/PlatformList.xhtml" 
+           value="Platform List" 
+     propagation="none"/>
+    <s:link view="/FuturesSymbolMappingList.xhtml" 
+           value="FuturesSymbolMapping List" 
+     propagation="none"/>
+    <s:link view="/ProductCodeList.xhtml" 
+           value="ProductCode List" 
+     propagation="none"/>
+    <!-- @newMenuItem@ -->
+    <rich:toolBarGroup location="right">
+        <h:outputText value="Welcome, #{identity.username}!" rendered="#{identity.loggedIn}"/>
+        <s:link view="/login.xhtml" value="Login" rendered="#{not identity.loggedIn}"/>
+        <s:link view="/home.xhtml" action="#{identity.logout}" value="Logout" rendered="#{identity.loggedIn}"/>
+    </rich:toolBarGroup>
+</rich:toolBar>

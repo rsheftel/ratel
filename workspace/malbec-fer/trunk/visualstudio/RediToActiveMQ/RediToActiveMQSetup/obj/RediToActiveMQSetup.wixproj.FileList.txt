@@ -1,0 +1,2 @@
+C:\Developer\SDWorkspace\RediToActiveMQ\RediToActiveMQSetup\bin\Debug\RediToActiveMQSetup.wixpdb
+obj\Debug\Product.wixobj

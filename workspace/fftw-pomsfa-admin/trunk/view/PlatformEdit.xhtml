@@ -1,0 +1,356 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                             "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:s="http://jboss.com/products/seam/taglib"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:a="http://richfaces.org/a4j"
+                xmlns:rich="http://richfaces.org/rich"
+                template="layout/template.xhtml">
+                       
+<ui:define name="body">
+    
+    <h:messages globalOnly="true" styleClass="message" id="globalMessages"/>
+
+    <h:form id="platform" styleClass="edit">
+    
+        <rich:panel>
+            <f:facet name="header">#{platformHome.managed ? 'Edit' : 'Add'} Platform</f:facet>
+
+            <s:decorate id="platformIdDecoration" template="layout/edit.xhtml">
+                <ui:define name="label">platformId</ui:define>
+                <h:inputText id="platformId" 
+                       disabled="#{platformHome.managed}"
+                       required="true"
+                           size="5"
+                      maxlength="5"
+                          value="#{platformHome.instance.platformId}">
+                    <a:support event="onblur" reRender="platformIdDecoration" bypassUpdates="true"/>
+                </h:inputText>
+            </s:decorate>
+
+            <s:decorate id="descriptionDecoration" template="layout/edit.xhtml">
+                <ui:define name="label">description</ui:define>
+                <h:inputText id="description" 
+                           size="50"
+                      maxlength="50"
+                          value="#{platformHome.instance.description}">
+                    <a:support event="onblur" reRender="descriptionDecoration" bypassUpdates="true"/>
+                </h:inputText>
+            </s:decorate>
+        
+            <div style="clear:both">
+                <span class="required">*</span> 
+                required fields
+            </div>
+            
+        </rich:panel>
+                
+        <div class="actionButtons">
+
+            <h:commandButton id="save" 
+                          value="Save" 
+                         action="#{platformHome.persist}"
+                       disabled="#{!platformHome.wired}"
+                       rendered="#{!platformHome.managed}"/>  
+                          			  
+            <h:commandButton id="update" 
+                          value="Save" 
+                         action="#{platformHome.update}"
+                       rendered="#{platformHome.managed}"/>
+                        			  
+            <h:commandButton id="delete" 
+                          value="Delete" 
+                         action="#{platformHome.remove}"
+                       rendered="#{platformHome.managed}"/>
+                    
+            <s:button id="done" 
+                   value="Done"
+             propagation="end"
+                    view="/Platform.xhtml"
+                rendered="#{platformHome.managed}"/>
+                
+            <s:button id="cancel" 
+                   value="Cancel"
+             propagation="end"
+                    view="/#{empty platformFrom ? 'PlatformList' : platformFrom}.xhtml"
+                rendered="#{!platformHome.managed}"/>
+
+        </div>
+    </h:form>
+
+<rich:tabPanel switchType="ajax">
+
+    <rich:tab label="tradeRecords">
+        <div class="association" id="tradeRecordsChildren">
+        
+            <h:outputText value="No tradeRecords" 
+                       rendered="#{empty platformHome.tradeRecords}"/>
+        
+            <rich:dataTable value="#{platformHome.tradeRecords}" 
+                           var="tradeRecord" 
+                      rendered="#{not empty platformHome.tradeRecords}" 
+                    rowClasses="rvgRowOne,rvgRowTwo"
+                            id="tradeRecordsTable">
+                <h:column>
+                    <f:facet name="header">tradeRecordId</f:facet>
+                    <h:outputText value="#{tradeRecord.tradeRecordId}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">creationDate</f:facet>
+                    <h:outputText value="#{tradeRecord.creationDate}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">tradeSeqNum</f:facet>
+                    <h:outputText value="#{tradeRecord.tradeSeqNum}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">execId</f:facet>
+                    <h:outputText value="#{tradeRecord.execId}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">status</f:facet>
+                    <h:outputText value="#{tradeRecord.status}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">securityIdFlag</f:facet>
+                    <h:outputText value="#{tradeRecord.securityIdFlag}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">securityId</f:facet>
+                    <h:outputText value="#{tradeRecord.securityId}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">traderName</f:facet>
+                    <h:outputText value="#{tradeRecord.traderName}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">side</f:facet>
+                    <h:outputText value="#{tradeRecord.side}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">quantity</f:facet>
+                    <h:outputText value="#{tradeRecord.quantity}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">priceDisplay</f:facet>
+                    <h:outputText value="#{tradeRecord.priceDisplay}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">price</f:facet>
+                    <h:outputText value="#{tradeRecord.price}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">settleDate</f:facet>
+                    <h:outputText value="#{tradeRecord.settleDate}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">account</f:facet>
+                    <h:outputText value="#{tradeRecord.account}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">productCode</f:facet>
+                    <h:outputText value="#{tradeRecord.productCode}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">sourceCode</f:facet>
+                    <h:outputText value="#{tradeRecord.sourceCode}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">broker</f:facet>
+                    <h:outputText value="#{tradeRecord.broker}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">primeBroker</f:facet>
+                    <h:outputText value="#{tradeRecord.primeBroker}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">ticketNumber</f:facet>
+                    <h:outputText value="#{tradeRecord.ticketNumber}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">returnCode</f:facet>
+                    <h:outputText value="#{tradeRecord.returnCode}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">errorMsg</f:facet>
+                    <h:outputText value="#{tradeRecord.errorMsg}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">ackReceived</f:facet>
+                    <h:outputText value="#{tradeRecord.ackReceived}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">acceptRejectReceived</f:facet>
+                    <h:outputText value="#{tradeRecord.acceptRejectReceived}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">processingStatus</f:facet>
+                    <h:outputText value="#{tradeRecord.processingStatus}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">tradingStrategy</f:facet>
+                    <h:outputText value="#{tradeRecord.tradingStrategy}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">transCode</f:facet>
+                    <h:outputText value="#{tradeRecord.transCode}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">lastUpdated</f:facet>
+                    <h:outputText value="#{tradeRecord.lastUpdated}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">action</f:facet>
+                    <s:link view="/TradeRecord.xhtml" 
+                              id="selecttradeRecord" 
+                           value="Select"
+                     propagation="none">
+                        <f:param name="tradeRecordTradeRecordId" 
+                                value="#{tradeRecord.tradeRecordId}"/>
+                        <f:param name="tradeRecordFrom" value="Platform"/>
+                    </s:link>
+                </h:column>
+            </rich:dataTable>
+        
+        </div>
+          
+        <f:subview rendered="#{platformHome.managed}" id="tradeRecords">
+        <div class="actionButtons">
+            <s:button id="addtradeRecord" 
+                   value="Add tradeRecord"
+                    view="/TradeRecordEdit.xhtml"
+             propagation="none">
+                 <f:param name="platformPlatformId" 
+                         value="#{platformHome.instance.platformId}"/>
+                 <f:param name="tradeRecordFrom" value="Platform"/>
+            </s:button>
+        </div>
+        </f:subview>
+    </rich:tab>
+
+    <rich:tab label="futuresSymbolMappings">
+        <div class="association" id="futuresSymbolMappingsChildren">
+        
+            <h:outputText value="No futuresSymbolMappings" 
+                       rendered="#{empty platformHome.futuresSymbolMappings}"/>
+        
+            <rich:dataTable value="#{platformHome.futuresSymbolMappings}" 
+                           var="futuresSymbolMapping" 
+                      rendered="#{not empty platformHome.futuresSymbolMappings}" 
+                    rowClasses="rvgRowOne,rvgRowTwo"
+                            id="futuresSymbolMappingsTable">
+                <h:column>
+                    <f:facet name="header">id</f:facet>
+                    <h:outputText value="#{futuresSymbolMapping.id}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">platformSymbol</f:facet>
+                    <h:outputText value="#{futuresSymbolMapping.platformSymbol}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">bloombergSymbol</f:facet>
+                    <h:outputText value="#{futuresSymbolMapping.bloombergSymbol}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">multiplier</f:facet>
+                    <h:outputText value="#{futuresSymbolMapping.multiplier}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">description</f:facet>
+                    <h:outputText value="#{futuresSymbolMapping.description}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">action</f:facet>
+                    <s:link view="/FuturesSymbolMapping.xhtml" 
+                              id="selectfuturesSymbolMapping" 
+                           value="Select"
+                     propagation="none">
+                        <f:param name="futuresSymbolMappingId" 
+                                value="#{futuresSymbolMapping.id}"/>
+                        <f:param name="futuresSymbolMappingFrom" value="Platform"/>
+                    </s:link>
+                </h:column>
+            </rich:dataTable>
+        
+        </div>
+          
+        <f:subview rendered="#{platformHome.managed}" id="futuresSymbolMappings">
+        <div class="actionButtons">
+            <s:button id="addfuturesSymbolMapping" 
+                   value="Add futuresSymbolMapping"
+                    view="/FuturesSymbolMappingEdit.xhtml"
+             propagation="none">
+                 <f:param name="platformPlatformId" 
+                         value="#{platformHome.instance.platformId}"/>
+                 <f:param name="futuresSymbolMappingFrom" value="Platform"/>
+            </s:button>
+        </div>
+        </f:subview>
+    </rich:tab>
+
+    <rich:tab label="tradingStrategies">
+        <div class="association" id="tradingStrategiesChildren">
+        
+            <h:outputText value="No tradingStrategies" 
+                       rendered="#{empty platformHome.tradingStrategies}"/>
+        
+            <rich:dataTable value="#{platformHome.tradingStrategies}" 
+                           var="tradingStrategy" 
+                      rendered="#{not empty platformHome.tradingStrategies}" 
+                    rowClasses="rvgRowOne,rvgRowTwo"
+                            id="tradingStrategiesTable">
+                <h:column>
+                    <f:facet name="header">id</f:facet>
+                    <h:outputText value="#{tradingStrategy.id}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">fixTag</f:facet>
+                    <h:outputText value="#{tradingStrategy.fixTag}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">tagValue</f:facet>
+                    <h:outputText value="#{tradingStrategy.tagValue}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">bloombergAccount</f:facet>
+                    <h:outputText value="#{tradingStrategy.bloombergAccount}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">bloombergStrategy</f:facet>
+                    <h:outputText value="#{tradingStrategy.bloombergStrategy}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">action</f:facet>
+                    <s:link view="/TradingStrategy.xhtml" 
+                              id="selecttradingStrategy" 
+                           value="Select"
+                     propagation="none">
+                        <f:param name="tradingStrategyId" 
+                                value="#{tradingStrategy.id}"/>
+                        <f:param name="tradingStrategyFrom" value="Platform"/>
+                    </s:link>
+                </h:column>
+            </rich:dataTable>
+        
+        </div>
+          
+        <f:subview rendered="#{platformHome.managed}" id="tradingStrategies">
+        <div class="actionButtons">
+            <s:button id="addtradingStrategy" 
+                   value="Add tradingStrategy"
+                    view="/TradingStrategyEdit.xhtml"
+             propagation="none">
+                 <f:param name="platformPlatformId" 
+                         value="#{platformHome.instance.platformId}"/>
+                 <f:param name="tradingStrategyFrom" value="Platform"/>
+            </s:button>
+        </div>
+        </f:subview>
+    </rich:tab>
+</rich:tabPanel>
+</ui:define>
+
+</ui:composition>

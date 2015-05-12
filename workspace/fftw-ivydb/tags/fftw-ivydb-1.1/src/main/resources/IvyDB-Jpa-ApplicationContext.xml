@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd">
+
+    <bean id="entityManagerFactory"
+        class="org.springframework.orm.jpa.LocalEntityManagerFactoryBean">
+        <property name="persistenceUnitName" value="IVYDB" />
+    </bean>
+
+    <bean id="TxManager"
+        class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory"
+            ref="entityManagerFactory" />
+    </bean>
+    <tx:annotation-driven transaction-manager="TxManager" />
+
+    <!-- JPA annotations bean post processor -->
+    <bean
+        class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor" />
+
+    <!-- Exception translation bean post processor -->
+    <bean
+        class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
+
+    <bean id="SecurityPriceDao"
+        class="com.fftw.ivydb.dao.SecurityPriceDaoImpl">
+        <constructor-arg>
+            <value>com.fftw.ivydb.domain.SecurityPrice</value>
+        </constructor-arg>
+    </bean>
+    
+    <bean id="StandardOptionPriceDao"
+        class="com.fftw.ivydb.dao.StandardOptionPriceDaoImpl">
+        <constructor-arg>
+            <value>com.fftw.ivydb.domain.StandardOptionPrice</value>
+        </constructor-arg>
+    </bean>
+
+</beans>

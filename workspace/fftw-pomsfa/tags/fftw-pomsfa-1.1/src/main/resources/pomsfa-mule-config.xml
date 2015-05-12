@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mule-configuration PUBLIC "-//MuleSource //DTD mule-configuration XML V1.0//EN"
+                                "http://mule.mulesource.org/dtds/mule-configuration.dtd">
+
+<mule-configuration id="pomsfa" version="1.0">
+
+	<description></description>
+
+	<container-context
+		className="org.mule.extras.spring.SpringContainerContext">
+		<properties>
+			<property name="configFile"
+				value="classpath:activemq-spring.xml" />
+		</properties>
+	</container-context>
+
+	<agents>
+		<agent name="JmxAgent"
+			className="org.mule.management.agents.JmxAgent" />
+	</agents>
+
+	<connector name="jmsConnector"
+		className="org.mule.providers.jms.JmsConnector">
+		<properties>
+			<property name="specification" value="1.1" />
+			<!-- The container name must be the same as above in
+				container-context element or empty (then the first available
+				one will be used.
+			-->
+			<container-property name="connectionFactory"
+				reference="activeMqConnectionFactory" />
+		</properties>
+	</connector>
+
+	<!-- global-endpoints>
+		<endpoint name="PomsOutboundQueue"
+		address="vm://poms.outbound.queue" />
+		<endpoint name="PomsInboundQueue"
+		address="vm://poms.inbound.queue" />
+		</global-endpoints-->
+
+	<!--
+		An interceptor is a piece of code that can be configured to execute
+		before and/or after an event is received for a component.
+		You can define a stack of interceptors that will be executed in sequence.
+		You can then configure the stack on your components.
+	-->
+	<interceptor-stack name="default">
+		<interceptor
+			className="org.mule.interceptors.LoggingInterceptor" />
+		<interceptor className="org.mule.interceptors.TimerInterceptor" />
+	</interceptor-stack>
+
+	<model name="internalBridge">
+		<mule-descriptor name="cmfReceiverUMO"
+			implementation="org.mule.components.simple.BridgeComponent">
+			<inbound-router>
+				<endpoint address="vm://poms.outbound.queue" />
+			</inbound-router>
+			<outbound-router>
+				<router
+					className="org.mule.routing.outbound.OutboundPassThroughRouter">
+					<endpoint address="vm://poms.inbound.queue" />
+				</router>
+			</outbound-router>
+		</mule-descriptor>
+	</model>
+
+</mule-configuration>

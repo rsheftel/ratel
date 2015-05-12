@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+<!-- Configuration for POMS/AIM -->
+
+<!-- This session Id links the PomsSender instance to the session Id in the cfg file -->
+	<bean id="CmfSessionSettings"
+		class="com.fftw.bloomberg.cmfp.CmfSessionSettings">
+		<constructor-arg>
+			<value>aggregator_cmf.cfg</value>
+		</constructor-arg>
+	</bean>
+
+	<bean id="PomsSender"
+		class="com.fftw.bloomberg.aggregator.CmfSenderApplication">
+		<property name="dao" ref="tradeRecordDao" />
+		<property name="mailer" ref="emailSender" />
+	</bean>
+
+</beans>
+

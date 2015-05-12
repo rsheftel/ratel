@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd">
+
+    <bean id="entityManagerFactory"
+        class="org.springframework.orm.jpa.LocalEntityManagerFactoryBean">
+        <property name="persistenceUnitName" value="TSDB" />
+    </bean>
+
+    <bean id="TxManager"
+        class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory"
+            ref="entityManagerFactory" />
+    </bean>
+    <tx:annotation-driven transaction-manager="TxManager" />
+
+    <!-- JPA annotations bean post processor -->
+    <bean
+        class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor" />
+
+    <!-- Exception translation bean post processor -->
+    <bean
+        class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
+
+    <bean id="MarkitCompositeHistDao"
+        class="com.fftw.tsdb.dao.cds.MarkitCompositeHistDaoImpl">
+        <constructor-arg>
+            <value>com.fftw.tsdb.domain.cds.MarkitCompositeHist</value>
+        </constructor-arg>
+    </bean>
+    <bean id="AttributeDao"
+        class="com.fftw.tsdb.dao.GenericDaoImpl">
+        <constructor-arg>
+            <value>com.fftw.tsdb.domain.Attribute</value>
+        </constructor-arg>
+    </bean>
+    <bean id="TimeSeriesDao"
+        class="com.fftw.tsdb.dao.TimeSeriesDaoImpl">
+        <constructor-arg>
+            <value>com.fftw.tsdb.domain.TimeSeries</value>
+        </constructor-arg>
+    </bean>
+    <bean id="TimeSeriesDataDao"
+        class="com.fftw.tsdb.dao.GenericDaoImpl">
+        <constructor-arg>
+            <value>com.fftw.tsdb.domain.TimeSeriesData</value>
+        </constructor-arg>
+    </bean>
+    <bean id="TickerDao"
+        class="com.fftw.tsdb.dao.GenericDaoImpl">
+        <constructor-arg>
+            <value>com.fftw.tsdb.domain.Ticker</value>
+        </constructor-arg>
+    </bean>
+    <bean id="CdsTickerDao"
+        class="com.fftw.tsdb.dao.GenericDaoImpl">
+        <constructor-arg>
+            <value>com.fftw.tsdb.domain.cds.CdsTicker</value>
+        </constructor-arg>
+    </bean>
+    <bean id="CcyDao"
+        class="com.fftw.tsdb.dao.GenericDaoImpl">
+        <constructor-arg>
+            <value>com.fftw.tsdb.domain.Ccy</value>
+        </constructor-arg>
+    </bean>
+    <bean id="GeneralAttributeValueDao"
+        class="com.fftw.tsdb.dao.GenericDaoImpl">
+        <constructor-arg>
+            <value>com.fftw.tsdb.domain.GeneralAttributeValue</value>
+        </constructor-arg>
+    </bean>
+    <bean id="TimeSeriesAttributeMapDao"
+        class="com.fftw.tsdb.dao.GenericDaoImpl">
+        <constructor-arg>
+            <value>com.fftw.tsdb.domain.TimeSeriesAttributeMap</value>
+        </constructor-arg>
+    </bean>
+
+</beans>

@@ -1,0 +1,25 @@
+{
+	Indicator:	'ADC Plot <CLASS>'
+}
+{ Source Template:  'ADE Template - Plot.txt', by Progster 11/2004 	}
+
+Inputs:
+	<PARAM_NAME>(<PARAM_VALUE>),
+	Interval(ADE.Daily),    // number of minutes, or ADE.Daily, ADE.Weekly, ADE.Monthly
+	UseFile(ADE.UseFile);   // default UseFile is returned by ADE.UseFile function
+
+Vars:
+	Class("<CLASS>"),
+	ParamDesc(ADC.<CLASS>PD(<PARAM_LIST>)),
+	v<NAME>(0)<SEP=,|;>
+
+
+// If UseFile is true, load any previously stored data from the file on the first bar.
+if CurrentBar = 1 and UseFile then
+	Value1 = ADE.OpenMap(Class + ParamDesc, GetSymbolName, Interval);
+
+// Retrieve the Class data for this symbol and bar interval.
+Value1 = ADC.Get<CLASS>(GetSymbolName, Interval, ADE.BarID, ParamDesc,
+	v<NAME><SEP=,|);>
+
+<PLOT>(v<NAME>, "<NAME>");

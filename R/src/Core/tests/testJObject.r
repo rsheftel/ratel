@@ -1,4 +1,4 @@
-library(Core)
+library(GSFCore)
 
 .jinit()
 

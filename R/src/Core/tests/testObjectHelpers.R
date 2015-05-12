@@ -1,4 +1,4 @@
-library("Core")
+library("GSFCore")
 
 needsOne <- function(a = 1, b = NULL) {
     needs(a = "numeric", b = "character?")
@@ -16,15 +16,15 @@ needsComplicatedMap <- function(foo) {
     needs(foo = "Map(numeric, list(Map(character, numeric)))")
 }
 
-#testNeedsComplicatedMap <- function() { 
-#    outerMap <- Map("numeric", "list(Map(character, numeric))")
-#    theList <- list(NULL)
-#    theList[[1]] <- Map("character", "numeric") # don't grow arrays like this except in small (2-3 element) cases
-#    theList[[1]]$set("asdf", 7)
-#    outerMap$set(19, theList)
-#    needsComplicatedMap(outerMap)
-#    shouldBomb(needsComplicatedMap(Map("numeric", "numeric")))
-#}
+testNeedsComplicatedMap <- function() { 
+    outerMap <- Map("numeric", "list(Map(character, numeric))")
+    theList <- list(NULL)
+    theList[[1]] <- Map("character", "numeric") # don't grow arrays like this except in small (2-3 element) cases
+    theList[[1]]$set("asdf", 7)
+    outerMap$set(19, theList)
+    needsComplicatedMap(outerMap)
+    shouldBomb(needsComplicatedMap(Map("numeric", "numeric")))
+}
 
 testNeedsMultipleTypes <- function() {
     needsMultipleTypes <- function(a = NULL, b = NULL) {

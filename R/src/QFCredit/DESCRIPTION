@@ -1,0 +1,10 @@
+Package:      QFCredit
+Version:      0.0.1
+Date:         2008/06/16
+Title:        Quantys Fund Credit Analytics
+Author:       The Code Committee <sim_team@malbecpartners.com>
+Maintainer:   The Code Committee <sim_team@malbecpartners.com>
+SaveImage:    yes
+Depends:      GSFCore, GSFAnalytics, QFMath
+Description:  Quantys Fund Credit Analytics
+License:      This software is owned by it's author and may not be used or copied by anyone without his explicit permission.

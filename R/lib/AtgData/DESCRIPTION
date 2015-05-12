@@ -1,0 +1,12 @@
+Package: AtgData
+Version: 0.0.1
+Date: 2010/06/23
+Title: Atg Data Access Classes
+Author: The M4 Team <nobody@foo.com>
+Maintainer: The M4 Team <nobody@foo.com>
+SaveImage: yes
+Depends: fincad,Java,JavaUtils,RODBC
+Description: ATG Data Access Classes
+License: This code is owned by its author.  Usage by anyone else is
+        prohibited.
+Built: R 2.11.1; ; 2011-05-28 10:32:00.667 UTC; windows

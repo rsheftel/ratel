@@ -1,0 +1,38 @@
+Inputs:
+	Sym(StringSimple),
+	Interval(NumericSimple),
+	BarID(NumericSimple),
+	ParamDesc(StringSimple),
+	v<NAME>(NumericSimple)<SEP=,|;>
+
+Vars:
+	LastSym(""),
+	LastInterval(-1),
+	Index(0),
+	DataMap(0),
+	BarMap(0),
+	BarList(0),
+	<NAME>List(0)<SEP=,|;>
+
+if Sym <> LastSym or Interval <> LastInterval then begin
+	LastSym = Sym;
+	LastInterval = Interval;
+
+	DataMap = ADE.GetMap("<CLASS>" + ParamDesc, Sym, Interval);
+	BarMap = MapSC.Get(DataMap, ":BarMap");
+
+	BarList = ADE.FindOrAddListN(DataMap, ":Bar");
+	<NAME>List = ADE.FindOrAddListN(DataMap, "<NAME>");
+end;
+
+Index = MapNN.Get(BarMap, BarID);
+
+Value1 = ADE.PutOrPushN(<NAME>List, Index, v<NAME>);
+
+if Index = 0 then begin
+	Value1 = ListN.PushBack(BarList, BarID);
+	Index = ListN.Count(BarList);
+	Value1 = MapNN.Put(BarMap, BarID, Index);
+end;
+
+ADC.Put<CLASS> = Index;

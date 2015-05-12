@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns="http://jboss.com/products/seam/pages"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://jboss.com/products/seam/pages http://jboss.com/products/seam/pages-2.0.xsd"
+      no-conversation-view-id="/TradingStrategyList.xhtml"
+      login-required="true">
+   
+   <begin-conversation join="true"/>
+   
+   <action execute="#{tradingStrategyHome.wire}"/>
+   
+   <param name="tradingStrategyFrom"/>
+   <param name="tradingStrategyId" value="#{tradingStrategyHome.tradingStrategyId}"/>
+   <param name="platformFrom"/>
+   <param name="platformPlatformId" value="#{platformHome.platformPlatformId}"/>
+
+
+
+   <navigation from-action="#{tradingStrategyHome.persist}">
+       <end-conversation/>
+       <redirect view-id="/TradingStrategy.xhtml"/>
+   </navigation>
+   
+   <navigation from-action="#{tradingStrategyHome.update}">
+       <end-conversation/>
+       <redirect view-id="/TradingStrategy.xhtml"/>
+   </navigation>
+   
+   <navigation from-action="#{tradingStrategyHome.remove}">
+       <end-conversation/>
+       <redirect view-id="/TradingStrategyList.xhtml"/>
+   </navigation>
+   
+</page>

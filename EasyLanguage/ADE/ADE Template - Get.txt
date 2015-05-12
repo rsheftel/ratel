@@ -1,0 +1,35 @@
+Inputs:
+	Sym(StringSimple),
+	Interval(NumericSimple),
+	BarID(NumericSimple),
+	v<NAME>(NumericRef)<SEP=,|;>
+
+Vars:
+	LastSym(""),
+	LastInterval(-1),
+	Index(0),
+	DataMap(0),
+	BarList(0),
+	<NAME>List(0)<SEP=,|;>
+
+if Sym <> LastSym or Interval <> LastInterval then begin
+	LastSym = Sym;
+	LastInterval = Interval;
+
+	DataMap = ADE.GetRequiredMap("<CLASS>", Sym, Interval);
+	BarList = MapSC.Get(DataMap, ":Bar");
+
+	<NAME>List = MapSC.Get(DataMap, "<NAME>");
+end;
+
+if ListN.IsSorted(BarList) = false then
+	Value1 = ADE.SortDataMap(DataMap);
+
+if ListN.Lookup(BarList, BarID, Index) = false then
+	Index = Index - 1;
+
+if Index <> 0 then begin
+	v<NAME> = ListN.Get(<NAME>List, Index);
+end;
+
+ADC.Get<CLASS> = Index;

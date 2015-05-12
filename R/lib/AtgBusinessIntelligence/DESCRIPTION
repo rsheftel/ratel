@@ -1,0 +1,12 @@
+Package: AtgBusinessIntelligence
+Version: 0.0.1
+Date: 2010/11/10
+Title: Business Intelligence Class for ATG
+Author: The Team <nobody@foo.com>
+Maintainer: The Team <nobody@foo.com>
+SaveImage: yes
+Depends: AtgData,hwriter,AtgReports,Java,JavaUtils
+Description: Business Intelligence Classes for ATG
+License: This code is owned by its author.  Usage by anyone else is
+        prohibited.
+Built: R 2.11.1; ; 2011-06-01 12:24:11.201 UTC; windows

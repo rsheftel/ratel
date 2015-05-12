@@ -1,0 +1,5 @@
+<Configuration>
+  <Daemon.SolutionSettings>
+    <SkipFilesAndFolders />
+  </Daemon.SolutionSettings>
+</Configuration>
